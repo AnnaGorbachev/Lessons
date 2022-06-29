@@ -1,0 +1,100 @@
+/* обнуление стилей */
+/* очищение отступов и границ: */
+*{
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+}    
+
+/* меняет подсчет ширины блока так чт было удобнее верстать: */
+*,*:before,*:after{
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}   
+
+/* убираем линии обводки у некоторых браузеров: */
+:focus,:active{outline: none;}
+a:focus,a:active {
+  outline: none;
+}
+
+/* делает эти теги блочными */
+nav,footer,header,aside{display: block;}
+
+/* уравнивает поведение шрифтов и эл-в для разных браузеров
+запрещает увеличение шрифта самовольно-на айфонах напр */
+html,body{
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* просим теги форм наследовать семейство шрифта */
+input,button,textarea{font-family: inherit;}
+
+/* убираем некоторые особенности тегов в разных браузерах */
+/* убирается крестик в инпутах в ие , 
+убираются лишние отступы для кнопок в firefox,
+чистятся стили маркиованных списков и т д*/
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner {padding:0; border:0;}
+a,a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul,li{list-style: none;}
+img{vertical-align: top;}
+
+/* обнуляем все заголовки h */
+h1,h2,h3,h4,h5,h6{font-size: inherit;font-weight: 400;}
+
+
+
+/* lesson1 */
+.big{
+  font-size: 20px;
+    color: red;
+}
+
+span.bigger {
+  color: blue;
+}
+
+.bigger{
+  color: rgb(91, 254, 237);
+}
+
+.small span {
+  color: rgb(255, 0, 119);
+}
+
+.small>p {
+  color: rgb(192, 53, 143);
+}
+
+
+/* lesson2 */
+.arial{
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+
+}
+
+.fontsize{
+  font-size: 30px;
+}
+
+.italic{
+  font-style: italic;
+}
+/* :normal-вернет текст в нормальное состояние
+    oblic-наклонное начертание */
+
+
+.fontweight{
+  font-weight: 700;
+}

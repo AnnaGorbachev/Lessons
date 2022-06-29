@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>Html теги Часть 1,2</title>
+        <meta http-equiv="Contente-type" content="text/html;charset-UTF-B"/>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+
+    <!-- lesson2 -->
+
+        <!--Блочные-->
+        <!--только один раз-->
+        <h1>Содержимое тега h1</h1>
+        <!--много раз-->
+        <h2>Содержимое тега h2</h2>
+        <h3>Содержимое тега h3</h3>
+        <h4>Содержимое тега h4</h4>
+        <h5>Содержимое тега h5</h5>
+        <h6>Содержимое тега h6</h6>
+
+        <!--Блочный-->
+        <!--br-перенос текста-->
+        <p>Абзац №1 <span>Lorem ipsum dolor sit amet consectetur</span> adipisicing elit.<br /> Deserunt asperiores accusamus et quibusdam magni, quisquam vitae maiores explicabo odio ipsa dicta nobis fugit dignissimos molestiae!</p>
+        <p>Абзац №2 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum illum, fugit totam, reprehenderit adipisci possimus laboriosam porro esse ad iusto corrupti, quidem quod neque</p>
+
+        <!--Строчный-для выделения куска текста-->
+        <!--Внутри строчных тегов не может быть блочных-->
+
+        <span>Содержимое тега 1</span>
+        <span>Содержимое тега 2</span>
+        <span>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia minus ipsum voluptas odit animi enim aliquid, labore in, temporibus, consectetur libero cumque velit architecto. Provident asperiores dolor veniam placeat a.</span>
+
+        <!--Строчный-ссылка-->
+        <!--target-чт при нажатии откр в новом! окне браузера-->
+        <a target="_blank" href="http://google.com">
+            Ссылка
+        </a>
+
+        <!--Строчный.Без закрывающего.-->
+        <img src="" alt="Ой,нет картинки(((" />
+
+        <!--Маркированный список-->
+        <ul>
+            <li>Lorem ipsum dolor sit amet consectetur</li>
+            <li>Lorem ipsum dolor sit amet consectetur</li>
+            <li>Lorem ipsum dolor sit amet consectetur</li>
+        </ul>
+        <!--Нумерованный список-->
+        <ol>
+            <li>Lorem ipsum dolor sit amet consectetur</li>
+            <li>Lorem ipsum dolor sit amet consectetur</li>
+            <li>Lorem ipsum dolor sit amet consectetur</li>
+        </ol>
+
+
+    <!-- lesson2 -->
+
+<!-- обязат настройка тега  form! -->
+<!--Блочный.action-адрес сервера(#-заглушка)-->
+<!--method=get-по ум.перед данных-в адресной строке открыто.для малогокол данных-->
+<form action="#" method="get"></form>
+<!--method=post-скрытно,для больш кол данных,для передачи файлов-->
+<form action="#" method="post" enctype="multipart/form-data"></form>
+
+<!--поле ввода.text-тип данных.-->
+<input type="text" name="username" value="" />
+<input type="text" name="username" value="Name" />
+<input placeholder="Подпись поля" type="text" name="username" value="" />
+<!--для ввода цифр-переключит телн на цифры-->
+<input type="tel" name="username" value="" />
+<!--для ввода пароля-заменяются на звездочки-->
+<div>
+  <input type="password" name="userpass" value="" />
+</div>
+<div>
+  <p><input checked type="radio" name="cat" value="white" />Белый котик</p>
+  <p><input type="radio" name="cat" value="ginger" />Рыжий котик</p>
+</div>
+
+<br />
+<div>
+  <p><input type="radio" name="cat2" value="white" />Белый котик</p>
+  <p><input checked type="radio" name="cat2" value="ginger" />Рыжий котик</p>
+</div>
+
+<br />
+<div>
+  <p><input type="checkbox" name="cat" value="yes" />Наличие кота на диване</p>
+  <p><input type="checkbox" name="cat2" value="yes" />Наличие кота под диваном</p>
+  <p><input checked type="checkbox" name="cat3" value="yes" />Кота нет но он есть!</p>
+
+</div>
+
+<br />
+<div>
+  <p><input type="file" name="foto" /></p>
+</div>
+<!-- атрибуты name не должны повторяться.Исключение-radio -->
+
+<!-- для ввода большого текста -->
+<textarea name="text"></textarea>
+<textarea placeholder="Подпись поля" name=""></textarea>
+
+<!-- выпадающий список -->
+<div>
+  <select name="color">
+    <option value="red">Красный</option>
+    <option selected value="yellow">Желтый</option>
+    <option value="blue">Голубой</option>
+  </select>
+  <!--список-множественный выбор -->
+  <select multiple name="color">
+    <option value="red">Красный</option>
+    <option selected value="yellow">Желтый</option>
+    <option value="blue">Голубой</option>
+  </select>
+</div>
+<br />
+<div>
+  <!-- Блок действия -->
+  <!-- отправится вся форма со всеми данными -->
+  <button type="submit">Отправить</button>
+  <!-- очистятся все поля -->
+  <button type="reset">Очистить</button>
+</div>
+
+<!--disabled(блокировка)-для всех тегов кроме form  -->
+<div>
+  <br /> <input disabled type="text" name="username" value="Name" />
+  <!-- для всех интерактивных тегов-опр-ет порядок перехода 
+      между эл-ми при наж TAB 
+      Для radio tabindex д.б одинак!-->
+  <br /> <input tabindex="1" type="text" name="username" value="Name" />
+</div>
+
+    
+    </body>
+</html>
