@@ -80,7 +80,9 @@ span.bigger {
 }
 .fontsize{
   font-size: 30px;
-}
+}  
+/* font-size-размер шрифта */
+
 .italic{
   font-style: italic;
 }
@@ -90,21 +92,27 @@ span.bigger {
 .fontweight{
   font-weight: 700;
 }
+/* жирность шрифта.  норм-400 */
+
 .color{
   color: blue;
 }
 .align {
   text-align: center;
-  /* text-align: right; */
+  /*положение текста  text-align: right; */
+
 }
 .justify {
   text-align: justify;
 }
+/* выравн по ширине-растягивание */
+
 .decoration {
   text-decoration: underline;
   /* text-decoration: overline;-линия над текстом */
   /* text-decoration: line-through;-зачеркнутый */
   /* text-decoration: none;-уберет */
+  
 }
 .shadow {
   text-shadow: 1px 1px 1px black ;
@@ -115,18 +123,22 @@ span.bigger {
 }
 /* capitalize-первый символ каж слова б заглавным 
 заглавные- или строчные-lowercase  none*/
+
 .indent {
 text-indent: 50px;
 }
 /* уст велич отступа первой строки */
+
 .letterspasing {
 letter-spacing: 5px;
 }
 /* опр-ет интервал между символами */
+
 .wspasing {
   word-spacing: 10px;
 }
 /* опр-ет интервал между словами */
+
 .whitespace {
   white-space: nowrap;
 }
