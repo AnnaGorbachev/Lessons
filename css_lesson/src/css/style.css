@@ -6,7 +6,7 @@
   border: 0px;
 }    
 
-/* меняет подсчет ширины блока так чт было удобнее верстать: */
+/* меняет подсчет ширины блока width и height */
 *,*:before,*:after{
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -144,7 +144,139 @@ letter-spacing: 5px;
 }
 /* упр-ет св-ми пробелов между словами 
 nowrap-убирает переносы*/
+
 .lineheight {
 line-height: 20px;
 }
 /* уст-ет межстрочный интервал текста */
+
+/* lesson3 */
+.example-block {
+  padding: 10px 20px 30px 5px;
+  /* верх справа внизу слева */
+  /* padding: 10px 20px 30px;---верх   справа и слева   снизу*/
+  /* padding: 10px 20px;--- сверху и снизу    справа и слева */
+  /* padding: 10px  --- со всех сторон */
+  /* не прим к строчным тегам
+  не м б отрицат */
+  margin: 10px 20px 30px 5px;
+  /* м б отрицат */
+  border: 1px solid black ;
+}
+
+.width {
+  width: 700px;
+  /* только для блочных */
+  border: 1px solid black;
+}
+
+.max-width {
+  max-width: 500px;
+  border: 1px solid black;
+}
+/* мах ширина бл тегов (ограничитель ширины) */
+
+.min-width {
+  min-width: 400px;
+  border: 1px solid black;
+}
+/* ограничитель шир-ув может    уменьш нет*/
+
+.height-px {
+  height: 200px;
+  border: 1px solid black;
+}
+/* height не д на стр теги */
+
+.height {
+  height: 50%;
+  border: 1px solid black;
+}
+
+.max-height {
+  max-height: 20px;
+  border: 1px solid black;
+}
+
+.min-height {
+min-height: 200px;
+border: 1px solid black;
+}
+/* если доб больше текста-блок увеличится */
+
+.overflow-visible {
+overflow: visible;
+max-height: 50px;
+border: 1px solid black;
+}
+/* отображение содержания бл эл-та */
+
+.overflow-hidden {
+  overflow: hidden;
+  max-height: 50px;
+  border: 1px solid black;
+}
+/* обрезает все что выходит за пределы блока */
+
+.overflow-scroll {
+  overflow: scroll;
+  max-height: 50px;
+  border: 1px solid black;
+}
+/* появляется скролл */
+
+.overflow-auto {
+  overflow: auto;
+  max-height: 50px;
+  border: 1px solid black;
+}
+/* под-ет полосы прокрутки только когда они нужны */
+
+.display-block {
+  display: block;
+  padding: 20px;
+  border: 1px solid black;
+}
+/* строчному тегу задаются св-ва блока */
+
+.display-inline {
+  display: inline;
+}
+/* блочный становится строчным */
+
+.display-inline-block {
+  display: inline-block;
+  padding: 20px;
+  width: 500px;
+  border: 1px solid black;
+}
+/* эл ост строчным-выстраивается в строку,
+но на него д-ет знач высоты ширины и отступов */
+
+.display-none {
+  display: none;
+  padding: 20px;
+  width: 500px;
+  border: 1px solid black;
+}
+/* временно удаляет эл-т из док-та
+его место не резервир ся */
+
+.img-width {
+  width: 100px;
+}
+
+.img-max-min {
+  width: 100%;
+  max-width: 900px;
+  min-width: 600px;
+}
+
+.img-height {
+  height: 50px;
+}
+
+.img-max-height {
+max-height: 100px;
+}
+
