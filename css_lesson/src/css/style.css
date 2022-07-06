@@ -134,7 +134,7 @@ letter-spacing: 5px;
 }
 /* опр-ет интервал между символами */
 
-.wspasing {
+.wordspacing {
   word-spacing: 10px;
 }
 /* опр-ет интервал между словами */
@@ -180,7 +180,7 @@ line-height: 20px;
   min-width: 400px;
   border: 1px solid black;
 }
-/* ограничитель шир-ув может    уменьш нет*/
+/* ограничитель  шир-ув может уменьш нет*/
 
 .height-px {
   height: 200px;
