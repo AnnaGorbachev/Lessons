@@ -196,7 +196,7 @@ color: #273d46;
 opacity: 0.3;
 }
 
-.content-bottom {
+.content-button {
   display: inline-block;
   height: 44px;
   line-height: 44px;
@@ -212,13 +212,13 @@ opacity: 0.3;
   letter-spacing: 2.8px;
 }
 
-.content-bottom span {
+.content-button span {
   padding: 0 30px 0 0;
   background: url('../img/icons/arrow.svg') right no-repeat;
 }
 
 
-.content-bottom-two {
+.content-button-two {
   display: inline-block;
   height: 44px;
   line-height: 44px;
@@ -236,11 +236,11 @@ opacity: 0.3;
   letter-spacing: 2.8px;
 }
 
-.content-bottom-two:hover {
+.content-button-two:hover {
   background-color: #7d7d93;
 }
 
-.content-bottom-two:active {
+.content-button-two:active {
   position: relative;
   top: 4px;
   -webkit-box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.5);
@@ -248,7 +248,7 @@ opacity: 0.3;
 }
 
 
-.content-bottom-two span {
+.content-button-two span {
   padding: 0 30px 0 0;
   background: url('../img/icons/arrow.svg') right no-repeat;
 }
@@ -272,3 +272,87 @@ button {
     color: #ffffff;
 }
 
+/* lesson6-practice*/
+
+
+.contente-list {
+  margin: 56px 0 0 44px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  color: #273d46;
+}
+
+.list-psevdoklass {
+  margin: 0 0 70px 0;
+}
+
+.list-psevdoklass li{
+margin: 0 0 17px 0;
+padding: 0 0 0 34px;
+background: url('../img/check-icon.png') left no-repeat;
+}
+
+.list-psevdoklass li:first-child{
+  text-decoration: line-through;
+}
+
+.list-psevdoklass li:nth-child(2) {
+  font-weight: 700;
+}
+
+.list-psevdoklass li:nth-child(3) {
+  font-style: italic;
+}
+
+.list-psevdoklass li:last-child{
+  text-transform: uppercase;
+}
+
+
+.list-hover {
+  margin: 0 0 70px 0;
+}
+
+
+.list-hover li {
+  margin: 0 0 17px 0;
+  padding: 0 0 0 34px;
+  background: url('../img/check-icon.png') left no-repeat;
+}
+
+.list-hover li:first-child:hover{
+text-decoration: line-through;
+}
+
+.list-hover li:nth-child(2):hover {
+  color: red;
+}
+
+.list-hover li:nth-child(3):hover{
+  text-shadow: 2px 2px 2px rgb(113, 109, 109);
+}
+
+.list-hover li:last-child:hover{
+  text-decoration: underline;
+}
+
+.content-button:hover{
+  background-color: #3a5856;
+}
+
+.content-button:active{
+  background-color: #818181;
+}
+
+.textinput6{
+  margin: 122px 0 0 44px;
+  width: 294px;
+  height: 52px;
+  padding: 0 15px;
+  border: 1px solid #b0b0b0;
+}
+
+.textinput6:focus{
+  border: 1px solid #7fbed5;
+  box-shadow: 0px 0px 20px -1px rgba(127, 190, 213, 0.93);
+}
