@@ -214,9 +214,12 @@ opacity: 0.3;
 
 .content-button span {
   padding: 0 30px 0 0;
-  background: url('../img/icons/arrow.svg') right no-repeat;
+  
 }
 
+.content-button span::after{
+  content: url('../img/icons/arrow.svg');
+}
 
 .content-button-two {
   display: inline-block;
@@ -316,8 +319,15 @@ background: url('../img/check-icon.png') left no-repeat;
 
 .list-hover li {
   margin: 0 0 17px 0;
-  padding: 0 0 0 34px;
-  background: url('../img/check-icon.png') left no-repeat;
+}
+
+.list-hover li:before{
+  content: url('../img/check-icon.png');
+  margin: 0 5px 0 0;
+}
+
+.list-hover li:nth-child(2):hover:before{
+  background-color: red;
 }
 
 .list-hover li:first-child:hover{
@@ -355,4 +365,25 @@ text-decoration: line-through;
 .textinput6:focus{
   border: 1px solid #7fbed5;
   box-shadow: 0px 0px 20px -1px rgba(127, 190, 213, 0.93);
+}
+
+.contente-lesson7{
+  margin: 50px 0 0 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  line-height: 28px;
+  color: #000000;
+}
+
+.contente-lesson7 p{
+  margin: 0 0 46px 42px;
+}
+
+.contente-lesson7:first-line{
+  color: #ff0000;
+}
+
+.contente-lesson7 p:last-child::first-letter {
+  font-size: 25px;
+  color: red;
 }

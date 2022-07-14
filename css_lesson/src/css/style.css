@@ -43,8 +43,13 @@ input,button,textarea{font-family: inherit;}
 убираются лишние отступы для кнопок в firefox,
 чистятся стили маркиованных списков и т д*/
 input::-ms-clear{display: none;}
+/* убирает крестик в окне input в IE!!! */
+
 button{cursor: pointer;}
+
 button::-moz-focus-inner {padding:0; border:0;}
+/* уб лишние отступы и пробелы в кнопках в Firefox */
+
 a,a:visited{text-decoration: none;}
 a:hover{text-decoration: none;}
 ul,li{list-style: none;}
@@ -575,8 +580,6 @@ padding: 0 0 0 25px;
   background: rgb(218, 218, 223);
 }
 
-
-
 .block5 p {
   font-style: 18px;
   line-height: 24px;
@@ -588,8 +591,6 @@ padding: 0 0 0 25px;
 }
 /* если после последнего эл добавить еще какой-то эл напр
 <div class="block">text</div> то last-child перстанет дей-ть!! */
-
-
 
 .link5 {
   color: red;
@@ -645,9 +646,6 @@ padding: 0 0 0 25px;
   background-color: #eee;
 }
 
-
-.list5 {}
-
 .list5 li {
   font-style: 18px;
   margin: 0 0 15px 0;
@@ -675,3 +673,51 @@ text-transform: uppercase;
   text-decoration: line-through;
 }
 /* ко ксем четным эл */
+
+
+
+/* lesson7 */
+
+.lesson7 {
+  padding: 30px;
+}
+
+.text7 {
+  font-style: 24px;
+  line-height: 33px;
+  margin: 0 0 30px 0 ;
+}
+
+.text7:first-line{
+  color: rgb(117, 236, 117);
+}
+
+.text7::first-letter {
+  color: rgb(243, 171, 16);
+  font-size: 50px;
+}
+
+.list7 li{
+  font-style: 24px;
+  margin: 0 0 20px 0 ;
+
+}
+
+.list7 li:before{
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: red;
+  display: inline-block;
+  margin:  0 5px 0 0;
+}
+
+.list7 li:after {
+  content: url('../img/icons/li.svg');
+  margin: 0 0 0 5px;
+}
+
+.list7 li:hover:before{
+  background-color: yellow;
+}
