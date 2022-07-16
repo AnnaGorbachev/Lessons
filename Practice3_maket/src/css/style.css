@@ -219,6 +219,9 @@ opacity: 0.3;
 
 .content-button span::after{
   content: url('../img/icons/arrow.svg');
+  position: relative;
+  top: 2px;
+  left: 10px;
 }
 
 .content-button-two {
@@ -250,21 +253,16 @@ opacity: 0.3;
   box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.5);
 }
 
-
 .content-button-two span {
   padding: 0 30px 0 0;
   background: url('../img/icons/arrow.svg') right no-repeat;
 }
 
-
-
-
-
 button {
   width: 199px;
   height: 44px;
   box-shadow: 0px 5px 24px -10px #273d46;
-  background: #80b7b3 url('../img/icons/arrow.svg') right no-repeat;
+  background: #80b7b3 url('../img/icons/arrow.svg') 163px 15px  no-repeat;
   margin: 58px 0 0 42px;
   border-radius: 23px;
   font-family: Arial;
