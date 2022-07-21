@@ -177,11 +177,13 @@ a {
   color: #ffffff;
 }
 
-div .banner-img {
+.banner-img {
   display: inline-block;
+  float: left;
+  margin: 68px 0px 0px 120px;
 }
 
-div .banner-text {
+.banner-text {
   display: inline-block;
 }
 
@@ -192,9 +194,11 @@ img {
 
 .banner-text h1 {
   font-family: "Segoe UI Light";
+  font-weight: 600;
   font-size: 64.7px;
   line-height: 1.2;
   color: #ffffff;
+  padding: 123px 0px 0px 75px;
 }
 
 .banner-text h2 {
@@ -203,6 +207,28 @@ img {
   font-weight: 300;
   line-height: 1.2;
   color: #ffffff;
+  padding: 0px 0px 0px 74px;
+}
+
+.banner-button {
+  width: 146px;
+  height: 46px;
+  margin: 27px 0px 0px 74px;
+  background-color: #2b7551;
+  border: 4px solid #181d19;
+}
+.banner-button .button {
+  font-family: "Segoe UI Light";
+  font-size: 22.7px;
+  line-height: 32px;
+  font-weight: 300;
+  color: #ffffff;
+}
+.banner-button span {
+  padding: 10px 0px 10px 19px;
+}
+.banner-button a:hover {
+  color: #8c9095;
 }
 
 .content {
