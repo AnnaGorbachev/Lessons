@@ -150,12 +150,12 @@ header {
   color: #8c9095;
 }
 
-li {
+.menu li {
   display: inline-block;
   width: 123px;
 }
 
-a {
+.menu a {
   font-family: "Segoe UI Light";
   font-size: 22.7px;
   line-height: 1.2;
@@ -178,29 +178,25 @@ a {
 }
 
 .banner-img {
-  display: inline-block;
   float: left;
   margin: 68px 0px 0px 120px;
+}
+.banner-img img {
+  border-radius: 59px;
+  overflow: hidden;
 }
 
 .banner-text {
   display: inline-block;
 }
-
-img {
-  border-radius: 59px;
-  overflow: hidden;
-}
-
 .banner-text h1 {
   font-family: "Segoe UI Light";
   font-weight: 600;
   font-size: 64.7px;
   line-height: 1.2;
   color: #ffffff;
-  padding: 123px 0px 0px 75px;
+  padding: 100px 0px 0px 75px;
 }
-
 .banner-text h2 {
   font-family: "Segoe UI Light";
   font-size: 44.7px;
@@ -234,4 +230,105 @@ img {
 .content {
   max-width: 1024px;
   margin: 0 auto;
+}
+
+.items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 100px 0px 0px 0px;
+  font-family: "Segoe UI Light";
+  font-weight: 300;
+  color: #5c5b5b;
+}
+.items li {
+  position: relative;
+  width: 200px;
+  height: 158px;
+}
+.items h2 {
+  font-size: 26.7px;
+  padding: 167px 0px 0px 0px;
+  text-align: center;
+}
+.items p {
+  font-size: 22.7px;
+  line-height: 1.2;
+  text-align: center;
+}
+.items .phone:before {
+  content: "";
+  position: absolute;
+  width: 136px;
+  height: 158px;
+  background-image: url("../img/icon_blue.png");
+  background-repeat: no-repeat;
+  left: 32px;
+}
+.items .basket:before {
+  content: "";
+  position: absolute;
+  width: 136px;
+  height: 158px;
+  background-image: url("../img/icon_yellow.png");
+  background-repeat: no-repeat;
+  left: 32px;
+}
+.items .planet:before {
+  content: "";
+  position: absolute;
+  width: 136px;
+  height: 158px;
+  background-image: url("../img/icon_green.png");
+  background-repeat: no-repeat;
+  left: 32px;
+}
+.items .magnifier:before {
+  content: "";
+  position: absolute;
+  width: 136px;
+  height: 158px;
+  background-image: url("../img/icon_orange.png");
+  background-repeat: no-repeat;
+  left: 32px;
+}
+.items .phone:after {
+  content: "";
+  position: absolute;
+  background-image: url("../img/phone.png");
+  background-repeat: no-repeat;
+  width: 103px;
+  height: 95px;
+  bottom: 25px;
+  left: 72px;
+}
+.items .basket:after {
+  content: "";
+  position: absolute;
+  background-image: url("../img/basket.png");
+  background-repeat: no-repeat;
+  width: 103px;
+  height: 95px;
+  bottom: 17px;
+  left: 72px;
+}
+.items .planet:after {
+  content: "";
+  position: absolute;
+  background-image: url("../img/planet.png");
+  background-repeat: no-repeat;
+  width: 103px;
+  height: 95px;
+  bottom: 27px;
+  left: 57px;
+}
+.items .magnifier:after {
+  content: "";
+  position: absolute;
+  background-image: url("../img/magnifier.png");
+  background-repeat: no-repeat;
+  width: 103px;
+  height: 95px;
+  bottom: 19px;
+  left: 62px;
 }
