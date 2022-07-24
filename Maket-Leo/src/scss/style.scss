@@ -154,7 +154,7 @@ header {
 .items {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
   margin: 100px 0px 0px 0px;
   font-family: 'Segoe UI Light';
   font-weight: 300;
@@ -162,12 +162,17 @@ header {
 
   li {
     position: relative;
-    width: 200px;
-    height: 158px;
-    }
+    width: 256px;
+    border: 1px solid #dedede;
+    box-shadow: 0 0 3px #dedede;
+    border-bottom: none;
+    padding: 28px 0px 0px 0px;
+    
+  }
 
   h2 {
-    font-size: 26.7px;
+    display: block;
+    font-size: 26px;
     padding: 167px 0px 0px 0px;
     text-align: center;
   }
@@ -185,7 +190,7 @@ header {
     height: 158px;
     background-image: url('../img/icon_blue.png');
     background-repeat: no-repeat;
-    left: 32px;
+    left: 60px;
   }
 
   .basket:before {
@@ -195,7 +200,7 @@ header {
     height: 158px;
     background-image: url('../img/icon_yellow.png');
     background-repeat: no-repeat;
-    left: 32px; 
+    left: 60px;
   }
 
   .planet:before {
@@ -205,7 +210,7 @@ header {
     height: 158px;
     background-image: url('../img/icon_green.png');
     background-repeat: no-repeat;
-    left: 32px;
+    left: 60px;
   }
 
   .magnifier:before {
@@ -215,7 +220,7 @@ header {
     height: 158px;
     background-image: url('../img/icon_orange.png');
     background-repeat: no-repeat;
-    left: 32px;
+    left: 60px;
   }
 
   .phone:after {
@@ -225,8 +230,8 @@ header {
     background-repeat: no-repeat;
     width: 103px;
     height: 95px;
-    bottom: 25px;
-    left: 72px;
+    bottom: 85px;
+    left: 100px;
   }
 
   .basket:after {
@@ -236,30 +241,30 @@ header {
     background-repeat: no-repeat;
     width: 103px;
     height: 95px;
-    bottom: 17px;
-    left: 72px;
+    bottom: 77px;
+    left: 100px;
 }
 
-.planet:after {
-  content: '';
-  position: absolute;
-  background-image: url('../img/planet.png');
-  background-repeat: no-repeat;
-  width: 103px;
-  height: 95px;
-  bottom: 27px;
-  left: 57px;
-}
+  .planet:after {
+    content: '';
+    position: absolute;
+    background-image: url('../img/planet.png');
+    background-repeat: no-repeat;
+    width: 103px;
+    height: 95px;
+    bottom: 89px;
+    left: 85px;
+  }
 
-.magnifier:after {
-  content: '';
-  position: absolute;
-  background-image: url('../img/magnifier.png');
-  background-repeat: no-repeat;
-  width: 103px;
-  height: 95px;
-  bottom: 19px;
-  left: 62px;
-}
+  .magnifier:after {
+    content: '';
+    position: absolute;
+    background-image: url('../img/magnifier.png');
+    background-repeat: no-repeat;
+    width: 103px;
+    height: 95px;
+    bottom: 79px;
+    left: 96px;
+  }
 
 }
