@@ -30,7 +30,7 @@
 }
 
 @font-face {
-  font-family: 'univers_ce_45_lightregular';
+  font-family: 'Univers CE';
   src: url('univers_ce_45_light-webfont.woff2') format('woff2'),
     url('univers_ce_45_light-webfont.woff') format('woff');
   font-weight: normal;
@@ -155,7 +155,7 @@ header {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  margin: 100px 0px 0px 0px;
+  margin: 80px 0px 0px 0px;
   font-family: 'Segoe UI Light';
   font-weight: 300;
   color: #5c5b5b;
@@ -163,11 +163,18 @@ header {
   li {
     position: relative;
     width: 256px;
-    border: 1px solid #dedede;
-    box-shadow: 0 0 3px #dedede;
-    border-bottom: none;
     padding: 28px 0px 0px 0px;
     
+    &.active {
+      background: white;
+      border: 1px solid #dedede;
+      box-shadow: -2px -1px 2px rgba(0, 0, 0, 0.15),2px -1px 2px rgba(0, 0, 0, 0.15);
+      border-bottom: none;
+    }
+
+    &.basket {
+      
+    }
   }
 
   h2 {
@@ -178,6 +185,7 @@ header {
   }
 
   p {
+    margin: 0px 0px 45px 0px;
     font-size: 22.7px;
     line-height: 1.2;
     text-align: center;
@@ -230,7 +238,7 @@ header {
     background-repeat: no-repeat;
     width: 103px;
     height: 95px;
-    bottom: 85px;
+    bottom: 132px;
     left: 100px;
   }
 
@@ -241,7 +249,7 @@ header {
     background-repeat: no-repeat;
     width: 103px;
     height: 95px;
-    bottom: 77px;
+    bottom: 124px;
     left: 100px;
 }
 
@@ -252,7 +260,7 @@ header {
     background-repeat: no-repeat;
     width: 103px;
     height: 95px;
-    bottom: 89px;
+    bottom: 136px;
     left: 85px;
   }
 
@@ -263,8 +271,121 @@ header {
     background-repeat: no-repeat;
     width: 103px;
     height: 95px;
-    bottom: 79px;
+    bottom: 126px;
     left: 96px;
   }
-
 }
+
+.tab {
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+  padding: 60px 0px 0px 0px;
+  border: 1px solid #dedede;
+  box-shadow: 0 0 3px #dedede;
+  bottom: 2px;
+  z-index: -1;
+  position: relative;
+
+  img {
+    display: block;
+    margin: 0 auto;
+  }
+
+  .text {
+    padding: 0px 65px 30px 56px;
+
+    h2 {
+    font-family: 'Segoe UI Light';
+    font-size: 38.7px;
+    font-weight: 300;
+    padding: 20px 0px 24px 0px;
+    
+    color: #4f4f4f;
+  }
+
+    p {
+      font-family: 'Univers CE';
+      line-height: 24px;
+      font-weight: 300;
+      margin: 0px 0px 30px 0px;
+      color: #818181;
+    }
+  }
+}
+
+.browser {
+  margin: 30px 0px 0px 0px;
+
+  .window {
+    float: left;
+    width: 448px;
+    height: 314px;
+    box-shadow: 0 0 10px #c3c9d8;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .list {
+    display: inline-block;
+    padding: 0px 0px 0px 54px;
+    
+    h2 {
+      font-family: 'Segoe UI Light';
+      font-size: 32.7px;
+      font-weight: 300;
+      padding: 23px 0px 23px 0px;
+      
+      color: #4f4f4f;
+    }
+
+    .choice {
+
+      li {
+        font-family: 'Univers CE';
+        font-size: 16px;
+        font-weight: 300;
+        margin: 0 0 18px 0;
+        color: #8a8888; 
+      }
+    }
+  }
+}
+
+.choice li:before {
+  content: url('../img/list.png');
+  margin: 0px 5px 0px 0px;
+}
+
+.registration {
+  margin: 73px 0px 0px 0px;
+  border-top: 1px solid #dedede;
+  
+  .login__email {
+    width: 1024px;
+    margin: 0 auto;
+
+    .login {
+      display: inline-block;
+      width: 469px;
+      height: 110px;
+      margin: 25px 25px 30px 0px;
+      background-color: #e67624;
+      border-radius: 5px;
+  }
+
+    .email {
+      display: inline-block;
+      width: 469px;
+      height: 110px;
+      margin: 25px 0px 30px 25px;
+      background-color: #01d4f3;
+      border-radius: 5px;
+    }
+  }
+}
+
+
+
+
+
