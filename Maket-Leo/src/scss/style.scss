@@ -31,8 +31,8 @@
 
 @font-face {
   font-family: 'Univers CE';
-  src: url('univers_ce_45_light-webfont.woff2') format('woff2'),
-    url('univers_ce_45_light-webfont.woff') format('woff');
+  src: url('../fonts/univers_ce_45_light-webfont.woff2') format('woff2'),
+    url('../fonts/univers_ce_45_light-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -168,12 +168,8 @@ header {
     &.active {
       background: white;
       border: 1px solid #dedede;
-      box-shadow: -2px -1px 2px rgba(0, 0, 0, 0.15),2px -1px 2px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 -3px 4px -4px #dedede, -3px 0 4px -4px #dedede, 3px 0 4px -4px #dedede;
       border-bottom: none;
-    }
-
-    &.basket {
-      
     }
   }
 
@@ -283,7 +279,7 @@ header {
   padding: 60px 0px 0px 0px;
   border: 1px solid #dedede;
   box-shadow: 0 0 3px #dedede;
-  bottom: 2px;
+  bottom: 1px;
   z-index: -1;
   position: relative;
 
@@ -300,7 +296,6 @@ header {
     font-size: 38.7px;
     font-weight: 300;
     padding: 20px 0px 24px 0px;
-    
     color: #4f4f4f;
   }
 
@@ -315,10 +310,10 @@ header {
 }
 
 .browser {
+  display: flex;
   margin: 30px 0px 0px 0px;
 
   .window {
-    float: left;
     width: 448px;
     height: 314px;
     box-shadow: 0 0 10px #c3c9d8;
@@ -327,14 +322,13 @@ header {
   }
 
   .list {
-    display: inline-block;
-    padding: 0px 0px 0px 54px;
+    padding: 0px 0px 0px 58px;
     
     h2 {
       font-family: 'Segoe UI Light';
       font-size: 32.7px;
       font-weight: 300;
-      padding: 23px 0px 23px 0px;
+      padding: 17px 0px 23px 0px;
       
       color: #4f4f4f;
     }
@@ -362,30 +356,269 @@ header {
   border-top: 1px solid #dedede;
   
   .login__email {
+    display: flex;
     width: 1024px;
     margin: 0 auto;
 
     .login {
-      display: inline-block;
       width: 469px;
       height: 110px;
       margin: 25px 25px 30px 0px;
       background-color: #e67624;
       border-radius: 5px;
+
+      h2 {
+        font-family: 'Segoe UI Light';
+        font-size: 28px;
+        font-weight: 300;
+        color: #ffffff;
+        margin: 14px 0px 14px 0px;
+        padding: 0px 0px 0px 25px;
+        
+      }
   }
 
     .email {
-      display: inline-block;
       width: 469px;
       height: 110px;
       margin: 25px 0px 30px 25px;
       background-color: #01d4f3;
       border-radius: 5px;
+
+      h2 {
+        font-family: 'Segoe UI Light';
+        font-size: 28px;
+        font-weight: 300;
+        color: #ffffff;
+        margin: 14px 0px 14px 0px;
+        padding: 0px 0px 0px 25px;
+      }
     }
   }
 }
 
+.login__form {
+  display: flex;
+  align-items: baseline;
+  padding: 0px 0px 0px 25px;
 
+  .name {
+    display: block;
+    width: 156px;
+    height: 27px;
+    margin: 0px 14px 0px 0px;
+    font-family: 'Segoe UI Light';
+    font-size: 16px;
+    font-weight: 300;
+    padding: 0px 12px 0px 12px;
+    background-color: #e8e8e8;
+  }
+
+  .pass {
+    display: block;
+    width: 151px;
+    height: 27px;
+    margin: 0px 12px 0px 0px;
+    font-family: 'Segoe UI Light';
+    font-size: 16px;
+    font-weight: 300;
+    color: #4f4f4f;
+    padding: 0px 12px 0px 12px;
+    background-color: #e8e8e8;
+  }
+
+  .submit__login {
+    display: block;
+    width: 94px;
+    height: 30px;
+    background-color: #444444;
+    font-family: 'Segoe UI Light';
+    font-size: 16px;
+    line-height: 30px;
+    font-weight: 300;
+    color: #ffffff;
+  }
+}
+
+.name {
+  color: black;
+}
+
+.name::placeholder {
+  color: #bfc8d0;
+}
+
+.pass {
+  color: black;
+}
+
+.pass::placeholder {
+  color: #bfc8d0;
+}
+
+.email__form {
+  display: flex;
+  align-items: baseline;
+  padding: 0px 0px 0px 25px;
+
+  .adress {
+    display: block;
+    width: 264px;
+    height: 27px;
+    margin: 0px 50px 0px 0px;
+    font-family: 'Segoe UI Light';
+    font-size: 16px;
+    font-weight: 300;
+    color: #4f4f4f;
+    padding: 0px 12px 0px 12px;
+    background-color: #e8e8e8;
+  }
+
+  .submit__email {
+    display: block;
+    width: 111px;
+    height: 30px;
+    background-color: #444444;
+    font-family: 'Segoe UI Light';
+    font-size: 16px;
+    line-height: 30px;
+    font-weight: 300;
+    color: #ffffff;
+  } 
+}
+
+.adress {
+  color: black;
+}
+
+.adress::placeholder {
+  color: #bfc8d0;
+}
+
+footer {
+  background-color: #2c2e2d;
+  height: 242px;
+}
+
+.footer-content {
+  display: flex;
+  width: 1024px;
+  margin: 0 auto;
+  padding: 35px 0px 0px 42px;
+  
+}
+
+.about {
+    flex-basis: 190px;
+  h3 {
+    font-family: 'Segoe UI Light';
+    font-size: 22px;
+    font-weight: 300;
+    color: #ffffff;
+    padding: 0px 0px 15px 0px;
+  }
+
+  li {
+    opacity: 0.5;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    line-height: 22px;
+    font-weight: 400;
+    color: #ffffff;
+    padding: 0px 0px 0px 3px;
+  }
+}
+
+.about_us {
+    flex-basis: 190px;
+  h3 {
+    font-family: 'Segoe UI Light';
+    font-size: 22px;
+    font-weight: 300;
+    color: #ffffff;
+    padding: 0px 0px 15px 0px;
+    }
+
+  li {
+    opacity: 0.5;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    line-height: 22px;
+    font-weight: 400;
+    color: #ffffff;
+    padding: 0px 0px 0px 3px;
+  }
+}
+
+.testim {
+  width: 350px;
+
+  h3 {
+    font-family: 'Segoe UI Light';
+    font-size: 22px;
+    font-weight: 300;
+    color: #ffffff;
+    padding: 0px 0px 15px 0px;
+    position: relative;
+  }
+  
+  .footer-text {
+    opacity: 0.5;
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    line-height: 22px;
+    color: #ffffff;
+  }
+
+  .footer-text-two {
+    opacity: 0.65;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    line-height: 22px;
+    font-weight: 700;
+    color: #ffffff;
+  }
+}
+
+.testim h3::before {
+  content: url('/src/img/layer1.png');
+  position: absolute;
+  left: 188px;
+  width: 20px;
+  height: 20px;
+}
+
+.testim h3::after {
+  content: url('/src/img/layer2.png');
+  position: absolute;
+  left: 212px;
+  width: 20px;
+  height: 20px;
+}
+
+.footer-contact {
+    flex-basis: 245px;
+
+  .footer-logo {
+    padding: 10px 0px 0px 0px;
+    
+    .f-logo {
+      opacity: 0.21;
+      font-family: 'MrsEaves';
+      font-size: 118.6px;
+      font-style: italic;
+      color: #ffffff;
+    }
+
+    .author {
+      opacity: 0.8;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 13px;
+      color: #ffffff;
+    }
+  }
+}
 
 
 
