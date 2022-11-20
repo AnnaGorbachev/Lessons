@@ -920,7 +920,7 @@
 
 // // Универс метод-часто исп-ся
 // // Рез-т поискабудет собран в коллекцию
-// // Поиск по селектору класса
+// // Поиск по селектору классаr
 // const elemsOne = document.querySelectorAll('.lesson_list');
 
 // // Поиск по cелектору тега
@@ -941,8 +941,8 @@
 // // Поиск по ID
 // const elemsSeven = document.querySelectorAll('#listItem');
 
-// // Поиск по атрибуту
-// const elemsEight = document.querySelectorAll('[data-item]');
+// // Поиск по атрибутуr
+// const elemsEight = document.querySelectorAll('[data-item]');r
 
 // // Поиск по атрибуту со значением
 // const elemsNine = document.querySelectorAll('[data-item ="85"]');
@@ -1158,7 +1158,7 @@
 // // ---ПОЛНАЯ ПЕРЕЗАПИСЬ СТИЛЕЙ---style.cssText--минус--перезаписывает все св-ва в style
 // const еlement = document.querySelector('.lesson_item_list_red');//Получаем элемент
 // еlement.style.cssText = `
-//   margin-bottom: 30px;
+//   rmargin-bottom: 30px;
 //   color:red;
 // `;
 
@@ -1187,4 +1187,122 @@
 
 
 // Стандартные Атрибуты и св-ва DOM-эл-в---
-console.dir(Link);//-список доступных св-в
+// console.dir(Link);//-список доступных св-в
+
+
+
+
+// ---СОБЫТИЯ---------
+// ----Назначение событию обработчика----
+// ----Исп-е атрибута HTML
+//<button onclick= "console.log('Клик!')"
+
+// _----Исп-е DOM---
+// ----НО тут невозм повесить неск обр-в на одно событие
+const button = document.querySelector('.button');
+button.onclick = function () {
+    console.log('Клик!');
+}
+//или
+function showConsole() {
+    console.log('Клик!');
+};
+button.onclick = showConsole;
+
+//--Обр-к с-й  element.addEventListener/removeEventListener(event,handler[, options])
+const button = document.querySelector('.button');
+
+button.addEventListener("click", showConsole, options);//или
+button.addEventListener("click", showConsole, { "capture": false });
+button.removeEventListener("click", showConsole);
+// опции addEventListener
+const options = {
+    "capture": false,//-фаза на кот д ср-ть обр-к
+    "once": false,// true-обр-к б удален после вып-я т.е вместо removeEventListener
+    "passive": false,//true-ук-ет что обр-к никогда не вызовет preventDefault()
+}
+
+//  Обьект события--
+
+const button = document.querySelector('.button');
+
+function showConsole(event) {
+
+    console.log(event.type);// тип события
+    console.log(event.target);// обьект на кот сработал обр-к
+    console.log(event.currentTarget);// об к кот назн-н обр-к
+    console.log(event.clientX);//полож курсора по осиX
+    console.log(event.clientY);//полож курсора по осиY......есть и другие
+
+    console.log(event);//все детали события
+};
+
+button.removeEventListener("click", showConsole);
+button.removeEventListener("mouseenter", showConsole);
+
+//-ВСПЛЫТИЕ И ПОГРУЖЕНИЕ
+//Чтобы остановыть всплытие
+event.stopPropagation()
+
+"capture": false,//-фаза на кот д ср-ть обр-к--чт отловить погружение
+
+//Делигирование событий
+//Напр есть много кнопок-при наж на каж -console.log('vdfv');
+const button = document.querySelector('.button');
+
+function showConsole() {
+    console.log('vdfv');
+}
+button.forEach(buttonItem => {
+    buttonItem.addEventListener("click", showConsole)
+})
+//Другой подход
+//Назначим обр-к для их родителя
+
+const lesson = document.querySelector('.lesson');
+
+function showConsole() {
+    console.log('vdfv');
+}
+lesson.addEventListener("click", function (event) {
+    if (event.target.closest('.lesson')) {//проверяем кнопка ли это
+        showConsole();
+    }
+})
+
+// Действия бр-ра по ум и их отмена
+
+const link = document.querySelector('.link');
+
+link.addEventListener("click", function (event) {
+    console.log('Наши действия');
+    event.preventDefault();//отменяем д-е бр-ра-(тут--переход по ссылке)
+})
+//если мы исп-ем onclik тогда
+link.onclick = function () {
+    console.log('Наши действия');
+    return false//отменяем д-е бр-ра-(тут--переход по ссылке)
+}
+
+// ----СОБЫТИЯ МЫШИ----
+//Типы событий мыши--простые и комплексные
+//--простые
+//mousedoun / mouseup-Кн мыши нажата-отпущ над эл-м
+//mouseover / mouseout-Курсор мыши появл над эл-м/уходит с него
+//mousesome-Каждое движ мыши генер-ет это событие
+//contextmenu-Вызывается при попытк откр-я контекс-го меню
+
+//--комплексные
+//click--выз-ся при mousedoun а затем mouseup над одним и тем же эл-м,если исп-сь основная кн мыши
+//dblclick--двойной клик на эл-те
+// event.which = 1-нажата осн-я кн(левая)
+// event.which = 2-средняя
+// event.which = 3-неосновная(правая)
+//???
+const button = document.querySelector('.button');
+
+button.addEventListener("mousedoun", function (event) {
+    console.log(`Нажата кнопка ${event.which}`);
+})
+//Движения мыши
+//mousemove-дв-е мыши над опр-м эл-м
