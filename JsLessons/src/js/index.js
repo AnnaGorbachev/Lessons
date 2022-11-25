@@ -918,277 +918,276 @@
 
 // --ПОИСК ПРОИЗВОЛЬНОГО ЭЛ_ТА
 
-// // Универс метод-часто исп-ся
-// // Рез-т поискабудет собран в коллекцию
-// // Поиск по селектору классаr
-// const elemsOne = document.querySelectorAll('.lesson_list');
+// Универс метод-часто исп-ся
+// Рез-т поиска будет собран в коллекцию
+// Поиск по селектору класса
 
-// // Поиск по cелектору тега
-// const elemsTwo = document.querySelectorAll('.li');
+const elemsOne = document.querySelectorAll('.lesson_list');
 
-// // Поиск по смешанному селектору тега и класса
-// const elemsThree = document.querySelectorAll('.li.lesson_item-list');
+// Поиск по cелектору тега
+const elemsTwo = document.querySelectorAll('.li');
 
-// // Поиск по тегу первого уровня влож-ти
-// const elemsFour = document.querySelectorAll('.lesson_list>li');
+// Поиск по смешанному селектору тега и класса
+const elemsThree = document.querySelectorAll('.li.lesson_item-list');
 
-// // Поиск по нескольким классам
-// const elemsFive = document.querySelectorAll('.lesson_list, .lesson_text');
+// Поиск по тегу первого уровня влож-ти
+const elemsFour = document.querySelectorAll('.lesson_list>li');
 
-// // Поиск по вложенным классам
-// const elemsSix = document.querySelectorAll('.lesson_list .lesson_text');
+// Поиск по нескольким классам
+const elemsFive = document.querySelectorAll('.lesson_list, .lesson_text');
 
-// // Поиск по ID
-// const elemsSeven = document.querySelectorAll('#listItem');
+// Поиск по вложенным классам
+const elemsSix = document.querySelectorAll('.lesson_list .lesson_text');
 
-// // Поиск по атрибутуr
-// const elemsEight = document.querySelectorAll('[data-item]');r
+// Поиск по ID
+const elemsSeven = document.querySelectorAll('#listItem');
 
-// // Поиск по атрибуту со значением
-// const elemsNine = document.querySelectorAll('[data-item ="85"]');
+// Поиск по атрибутуr
+const elemsEight = document.querySelectorAll('[data-item]'); r
 
-// // --ПОЛУЧЕНИЕ КОНКРЕТНОГО ЭЛ_ТА
-// // 1cп
-// const elems = document.querySelectorAll('.li');// получаем все li
-// console.log(elems[2]);// выводим конкретный(третий эл-т)
+// Поиск по атрибуту со значением
+const elemsNine = document.querySelectorAll('[data-item ="85"]');
 
-// // Далее можно перебрать кол-ю li
-// for (const item of elems) {
-//   console.log(item);
-// }
-// // или так
-// elems.forEach(item => {
-//   console.log(item);
-// })
+// --ПОЛУЧЕНИЕ КОНКРЕТНОГО ЭЛ_ТА
+// 1cп
+const elems = document.querySelectorAll('.li');// получаем все li
+console.log(elems[2]);// выводим конкретный(третий эл-т)
 
-// // Искать можно не только в document
-// const sublist = document.querySelectorAll('.lesson_sub-list');
-// const subItems = sublist[0].querySelectorAll('li');
-// console.log(subItems);
+// Далее можно перебрать кол-ю li
+for (const item of elems) {
+    console.log(item);
+}
+// или так
+elems.forEach(item => {
+    console.log(item);
+})
 
-// // 2cп--ищет первый попавшийся обьект
-// const lessonList = document.querySelector('.lesson_list');
-// console.log(lessonList);//-тут будет один обьект
+// Искать можно не только в document
+const sublist = document.querySelectorAll('.lesson_sub-list');
+const subItems = sublist[0].querySelectorAll('li');
+console.log(subItems);
 
-// // По ID
-// const elemId = document.getElementById('listItem');
-// // По тегу -возвр-ет кол-ю.Можно искать не только в document
-// // Передав '*' вместо тега-получим всехпотомков
-// const elemTag = document.getElementsByTagName('li');
-// // По классу
-// const elemKlass = document.getElementsByClassName('lesson_item-list');
-// // По name-редко
-// const elemName = document.getElementsByName('list');
+// 2cп--ищет первый попавшийся обьект
+const lessonList = document.querySelector('.lesson_list');
+console.log(lessonList);//-тут будет один обьект
 
-// // elem.closest(css)-ищет ближайшего предка по css.-поднимается вверх от эл-та
-// const elem = document.querySelector('.lesson_item-sub-list');
-// const parentList = elem.closest('.lesson_list');
-// console.log(parentList);
+// По ID
+const elemId = document.getElementById('listItem');
+// По тегу -возвр-ет кол-ю.Можно искать не только в document
+// Передав '*' вместо тега-получим всехпотомков
+const elemTag = document.getElementsByTagName('li');
+// По классу
+const elemKlass = document.getElementsByClassName('lesson_item-list');
+// По name-редко
+const elemName = document.getElementsByName('list');
 
-// //Проверка matches-не ищет а проверяет уд-ет ли эл-т css -true  false
-// const elemM = document.querySelectorAll('.lesson_item-list');
-// for (let elem of elemM) {
-//     if (elem.matches('[class$="item-red"]')) {
-//         console.log('red');
-//     } else if (elem.matches('[class$="item-blue"]')) {
-//         console.log('blue');
-//     }
-// };
+// elem.closest(css)-ищет ближайшего предка по css.-поднимается вверх от эл-та
+const elem = document.querySelector('.lesson_item-sub-list');
+const parentList = elem.closest('.lesson_list');
+console.log(parentList);
 
-// // Получив обьект мы можем применять св-ва навигации
-// const text = document.querySelector('.lesson_text');
-// const list = text.nextElementSibling;
-// console.log(list);
+//Проверка matches-не ищет а проверяет уд-ет ли эл-т css -true  false
+const elemM = document.querySelectorAll('.lesson_item-list');
+for (let elem of elemM) {
+    if (elem.matches('[class$="item-red"]')) {
+        console.log('red');
+    } else if (elem.matches('[class$="item-blue"]')) {
+        console.log('blue');
+    }
+};
+
+// Получив обьект мы можем применять св-ва навигации
+const text = document.querySelector('.lesson_text');
+const list = text.nextElementSibling;
+console.log(list);
 
 
 
 // -----------------ИЗМЕНЕНИЕ ДОКУМЕНТА--------------
 
-// // Содержимое эл-та innerHTML
+// Содержимое эл-та innerHTML
 
-// const textElement = document.querySelector('.lesson_text');//Получаем обьект
-
-
-// //Получаем содержимое обьекта вместе с HTML
-// const textElementContent = textElement.innerHTML;
-// //Перезаписываем содержимое обьекта
-// textElement.innerHTML = 'jkhhhkgjhgkdj';
-// //Можно дописать содержимое
-// textElement.innerHTML = `<p>${textElementContent}</p> <p>'jhgjhgjhgm'</p>`;
-
-// //outerHTML-кроме содержимого получаем и сам обьект
+const textElement = document.querySelector('.lesson_text');//Получаем обьект
 
 
-// //Управление текстом эл-та с пом textContent-получаем только текст без тегов
-// // или с тегами если они есть в самлм тексте
-// const textElementContent2 = textElement.textContent;
-// console.log(textElementContent2);
+//Получаем содержимое обьекта вместе с HTML
+const textElementContent = textElement.innerHTML;
+//Перезаписываем содержимое обьекта
+textElement.innerHTML = 'jkhhhkgjhgkdj';
+//Можно дописать содержимое
+textElement.innerHTML = `<p>${textElementContent}</p> <p>'jhgjhgjhgm'</p>`;
 
-// // data  Содержимое текст узла, комментария
-// const textElement = document.querySelector('.lesson_text');//Получаем обьект
-// const getComment = textElement.nextSibling;
-// console.log(getComment);
-// console.log(getComment.data);// получаем сам текст комментария
+//outerHTML-кроме содержимого получаем и сам обьект
 
-// // Изменение текста узла, комментария
-// getComment.data = 'bjhjhlhjn';
-// console.log(getComment.data);
 
-//-----------СОЗДАНИЕ ЭЛ-В И УЗЛОВ---------
-//----------Создание нового эл-та--тега------
-// const newElement = document.createElement('div');
-// console.log(newElement);
-// // Наполняем новый эл-тghg
-// newElement.innerHTML = 'gsjg <span class="yellow">hgvjgmhh</span>fdfsdfgsf';
-// console.log(newElement);
+//Управление текстом эл-та с пом textContent-получаем только текст без тегов
+// или с тегами если они есть в самлм тексте
+const textElementContent2 = textElement.textContent;
+console.log(textElementContent2);
 
-// // Создание нового узла
-// const newText = document.createTextNode('Hello!');
-// console.log(newText);
-// // Созд-е об-ты нах-ся в константах но не явл частью документа
-// // ---Вставляем новый элемент----
-// // Строки вст-ся безоп способом как это делает textContent.
+// data  Содержимое текст узла, комментария
+const textElement = document.querySelector('.lesson_text');//Получаем обьект
+const getComment = textElement.nextSibling;
+console.log(getComment);
+console.log(getComment.data);// получаем сам текст комментария
 
-// const textElement = document.querySelector('.lesson_text');//Получаем обьект
-// const newElement = document.createElement('div');
-// newElement.innerHTML = 'gsjg <span class="yellow">hgvjgmhh</span>fdfsdfgsf';
-// //  перед обьектом
-// textElement.before(newElement);
-// // после обьекта
-// textElement.after(newElement);
-// // внутрь и в начало обьекта
-// textElement.prepend(newElement);
-// // внутрь и в конец обьекта
-// textElement.append(newElement);
+// Изменение текста узла, комментария
+getComment.data = 'bjhjhlhjn';
+console.log(getComment.data);
 
-// // Вставка нескольких обьектов сразу
-// textElement.append(newElement, 'gjhgjhmg');
-// // Можно вставлять строку
-// textElement.append('gjhgjчап<span class="yellow">hgvjgmhh</span>птhmg');
+// -----------СОЗДАНИЕ ЭЛ-В И УЗЛОВ---------
+// ----------Создание нового эл-та--тега------
+const newElement = document.createElement('div');
+console.log(newElement);
+// Наполняем новый эл-т
+newElement.innerHTML = 'gsjg <span class="yellow">hgvjgmhh</span>fdfsdfgsf';
+console.log(newElement);
 
-// // Если надо вставить HTML с тегми и прочим как это делает innerHTML----insertAdjacentHTML
+// Создание нового узла
+const newText = document.createTextNode('Hello!');
+console.log(newText);
+// Созд-е об-ты нах-ся в константах но не явл частью документа
+// ---Вставляем новый элемент----
+// Строки вст-ся безоп способом как это делает textContent.
 
-// const textElement = document.querySelector('.lesson_text');//Получаем обьект
+const textElement = document.querySelector('.lesson_text');//Получаем обьект
+const newElement = document.createElement('div');
+newElement.innerHTML = 'gsjg <span class="yellow">hgvjgmhh</span>fdfsdfgsf';
+//  перед обьектом
+textElement.before(newElement);
+// после обьекта
+textElement.after(newElement);
+// внутрь и в начало обьекта
+textElement.prepend(newElement);
+// внутрь и в конец обьекта
+textElement.append(newElement);
 
-// // Вставляем текст,HTML, элемент
-// textElement.insertAdjacentHTML(
-//     "afterend",//-куда вставляем
-//     '<span class="yellow">hgvjgmhh</span>'
-// )
-// // "beforebegin"--вставить html непоср-но перед textElement
-// // "afterbegin"--в начало
-// // "beforeend"---в конец
-// // "afterend"---непоср-но после textElement
+// Вставка нескольких обьектов сразу
+textElement.append(newElement, 'gjhgjhmg');
+// Можно вставлять строку
+textElement.append('gjhgjчап<span class="yellow">hgvjgmhh</span>птhmg');
 
-// // Есть еще методы insertAdjacentHTML    insertAdjacentHTML
-// textElement.insertAdjacentText(
-//     "beforeend",//-куда вставляем
-//     '<span class="yellow">hgvjgmhh</span>'
-// )
-// textElement.insertAdjacentElement(
-//     "beforeend",//-куда вставляем
-//     newElement
-// )
+// Если надо вставить HTML с тегми и прочим как это делает innerHTML----insertAdjacentHTML
+
+const textElement = document.querySelector('.lesson_text');//Получаем обьект
+
+// Вставляем текст,HTML, элемент
+textElement.insertAdjacentHTML(
+    "afterend",//-куда вставляем
+    '<span class="yellow">hgvjgmhh</span>'
+)
+// "beforebegin"--вставить html непоср-но перед textElement
+// "afterbegin"--в начало
+// "beforeend"---в конец
+// "afterend"---непоср-но после textElement
+
+// Есть еще методы insertAdjacentHTML    insertAdjacentHTML
+textElement.insertAdjacentText(
+    "beforeend",//-куда вставляем
+    '<span class="yellow">hgvjgmhh</span>'
+)
+textElement.insertAdjacentElement(
+    "beforeend",//-куда вставляем
+    newElement
+)
 
 // -----ПЕРЕНОС ЭЛЕМЕНТА
 
-// const lessonBlock = document.querySelector('.lesson');//Получаем обьект
-// const title = document.querySelector('h3')//Получаем обьект
-// // Переосим title в конец блока lessonBlock
-// lessonBlock.append(title);
+const lessonBlock = document.querySelector('.lesson');//Получаем обьект
+const title = document.querySelector('h3')//Получаем обьект
+// Переосим title в конец блока lessonBlock
+lessonBlock.append(title);
 
-// // ----КОПИЯ ОБЬЕКТА__
+// ----КОПИЯ ОБЬЕКТА__
 
-// const textElement = document.querySelector('.lesson_text');//Получаем обьект
+const textElement = document.querySelector('.lesson_text');//Получаем обьект
 
-// // Клонирование без дочерних эл-в
-// const cloneTextElement = textElement.cloneNode();// если(true) то это кл-е с содержимым
-// // Клонир-е вместе с содержимым
-// const lessonBlock = document.querySelector('.lesson');
-// lessonBlock.append(cloneTextElement);;
+// Клонирование без дочерних эл-в
+const cloneTextElement = textElement.cloneNode();// если(true) то это кл-е с содержимым
+// Клонир-е вместе с содержимым
+const lessonBlock = document.querySelector('.lesson');
+lessonBlock.append(cloneTextElement);;
 
-// // ----УДАЛЕНИЕ ОБЬЕКТА----------------
-// textElement.remove();
+// ----УДАЛЕНИЕ ОБЬЕКТА----------------
+textElement.remove();
 
 // ---СТИЛИ И КЛАССЫ-------------
 // ---УПРАВЛЕНИЕ КЛАССАМИ------
 // ----className---
 
-// const еlement = document.querySelector('.lesson_item_list_red');//Получаем обьект
-// // Получаем имена классов
-// const elementClassNames = еlement.className;
-// // Перезаписываем имя класса-перезап-ся все эл-ты с таким классом
-// еlement.className = "red";
+const еlement = document.querySelector('.lesson_item_list_red');//Получаем обьект
+// Получаем имена классов
+const elementClassNames = еlement.className;
+// Перезаписываем имя класса-перезап-ся все эл-ты с таким классом
+еlement.className = "red";
 
-// -----ClassList---спец обьект с методами для добавл или удаления оного класса--
+// - ClassList- спец обьект с методами для доб/удал оного класса--
 
-// const еlement = document.querySelector('.lesson_item_list_red');//Получаем элемент
-// // Добавить класс
-// еlement.classList.add('active');
-// // Удалить класс
-// еlement.classList.remove('active');
-// //  Добавить класс если его нет   а если есть-удалить
-// еlement.classList.toggle('active');
-// // Проверка наличия класса true false
-// c.contains('active');
+const еlement = document.querySelector('.lesson_item_list_red');//П-ем эл-т
+// Добавить класс
+еlement.classList.add('active');
+// Удалить класс
+еlement.classList.remove('active');
+//  Добавить класс если его нет   а если есть-удалить
+еlement.classList.toggle('active');
+// Проверка наличия класса true false
+c.contains('active');
 
-// // --ClassList-перебираемый
-// // Можно перечислить все классы
-// for (let className of еlement.classList) {
-//   console.log(className);
-// }
+// --ClassList-перебираемый
+// Можно перечислить все классы
+for (let className of еlement.classList) {
+    console.log(className);
+}
 
 // ------УПРАВЛЕНИЕ СТИЛЯМИ------
 // --element.style---
 
-// const еlement = document.querySelector('.lesson_item_list_red');//Получаем элемент
-// // Задаем стиль с пом Css свойства
-// element.style.color = 'red';
-// // Для св-в из нескольких св-в исп-ся camelCase
-// element.style.marginBottom = '30px';
-// element.style.zIndez = '10';
+const еlement = document.querySelector('.lesson_item_list_red');
+// Задаем стиль с пом Css свойства
+element.style.color = 'red';
+// Для св-в из нескольких св-в исп-ся camelCase
+element.style.marginBottom = '30px';
+element.style.zIndez = '10';
 
-// // Чт получит зн того или иного св-ва  можно просто к нему обратиться
-// // только если оно записано в style
-// console.log(element.style.marginBottom);
+// Чт получит зн того или иного св-ва  можно просто к нему обратиться
+// только если оно записано в style
+console.log(element.style.marginBottom);
 
-// // Сбров стиля
-// element.style.marginBottom = "";
+// Сброс стиля
+element.style.marginBottom = "";
 
-// // ---ПОЛНАЯ ПЕРЕЗАПИСЬ СТИЛЕЙ---style.cssText--минус--перезаписывает все св-ва в style
-// const еlement = document.querySelector('.lesson_item_list_red');//Получаем элемент
-// еlement.style.cssText = `
-//   rmargin-bottom: 30px;
-//   color:red;
-// `;
+// ---ПОЛНАЯ ПЕРЕЗАПИСЬ СТИЛЕЙ---style.cssText--минус--перезаписывает все св-ва в style
+const еlement = document.querySelector('.lesson_item_list_red');//Получаем элемент
+еlement.style.cssText = `
+  margin-bottom: 30px;
+  color:red;
+`;
 
-// // Вычисленные стили  getComputedStyle(element, [pseudo])--только для чтения
+// Вычисленные стили  getComputedStyle(element, [pseudo])--только для чтения
 
-// const еlement = document.querySelector('.lesson_item_list_red');//Получаем элемент
+const еlement = document.querySelector('.lesson_item_list_red');//Получаем элемент
 
-// // Получение значения св-ва
-// // только если оно записано в style
-// console.log(element.style.fontSize);
+// Получение значения св-ва
+// только если оно записано в style
+console.log(element.style.fontSize);
 
-// // Стиль эл-та
-// const elementStyle = getComputedStyle(element);
-// console.log(elementStyle.fontSize);
+// Стиль эл-та
+const elementStyle = getComputedStyle(element);
+console.log(elementStyle.fontSize);
 
-// // Стиль псевдоэл-та
-// const elementBeforeStyle = getComputedStyle(element, "::before");
-// console.log(elementBeforeStyle.backgroundColor);
+// Стиль псевдоэл-та
+const elementBeforeStyle = getComputedStyle(element, "::before");
+console.log(elementBeforeStyle.backgroundColor);
 
-// // Лайфхак
-// console.log(elementStyle.paddingLeft);
-// // Получаем число
-// const paddingLeft = parseInt(elementStyle.paddingLeft);
-// console.log(paddingLeft);
+// Лайфхак
+console.log(elementStyle.paddingLeft);
+// Получаем число
+const paddingLeft = parseInt(elementStyle.paddingLeft);
+console.log(paddingLeft);
 
-
-
-// Стандартные Атрибуты и св-ва DOM-эл-в---
-// console.dir(Link);//-список доступных св-в
-
+//Стандартные Атрибуты и св-ва DOM-эл - в---
+console.dir(Link);//-список всех 
+доступных св - в
 
 
 
@@ -1306,3 +1305,70 @@ button.addEventListener("mousedoun", function (event) {
 })
 //Движения мыши
 //mousemove-дв-е мыши над опр-м эл-м
+
+
+
+
+
+
+
+// ------Hex to Rgb------
+
+// function hexToRgb(hex) {
+//   let result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+//   return result ? {
+//     r: parseInt(result[1], 16),
+//     g: parseInt(result[2], 16),
+//     b: parseInt(result[3], 16)
+//   } : null;
+// }
+
+// console.log(hexToRgb("#0033ff").g); // "51";
+
+// --------Rgb to Hex-----
+// function componentToHex(c) {
+//     let hex = c.toString(16);
+//     return hex.length == 1 ? "0" + hex : hex;
+// };
+
+// function rgbToHex(r, g, b) {
+//     return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
+// };
+
+
+// ---Табица-------------
+// ---http://htmlbook.ru/content/maket-iz-dvukh-kolonok--
+function generateTable() {
+    // creates a <table> element and a <tbody> element
+    const tbl = document.createElement("table");
+    const tblBody = document.createElement("tbody");
+    // creating all cells
+    for (let i = 0; i < 2; i++) {
+        // creates a table row
+        const row = document.createElement("tr");
+        for (let j = 0; j < 2; j++) {
+            // Create a <td> element and a text node, make the text
+            // node the contents of the <td>, and put the <td> at
+            // the end of the table row
+            const cell = document.createElement("td");
+            const cellText = document.createTextNode(`cell in row ${i}, column ${j}`);
+            cell.appendChild(cellText);
+            row.appendChild(cell);
+        }
+        // add the row to the end of the table body
+        tblBody.appendChild(row);
+    }
+    // put the <tbody> in the <table>
+    tbl.appendChild(tblBody);
+    // appends <table> into <body>
+    document.body.appendChild(tbl);
+    // sets the border attribute of tbl to '2'
+    tbl.setAttribute("border", "2");
+}
+generateTable();
+
+
+
+
+
+
