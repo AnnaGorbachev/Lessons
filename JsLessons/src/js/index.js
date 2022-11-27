@@ -955,11 +955,11 @@ console.log(elems[2]);// выводим конкретный(третий эл-�
 
 // Далее можно перебрать кол-ю li
 for (const item of elems) {
-    console.log(item);
+  console.log(item);
 }
 // или так
 elems.forEach(item => {
-    console.log(item);
+  console.log(item);
 })
 
 // Искать можно не только в document
@@ -989,11 +989,11 @@ console.log(parentList);
 //Проверка matches-не ищет а проверяет уд-ет ли эл-т css -true  false
 const elemM = document.querySelectorAll('.lesson_item-list');
 for (let elem of elemM) {
-    if (elem.matches('[class$="item-red"]')) {
-        console.log('red');
-    } else if (elem.matches('[class$="item-blue"]')) {
-        console.log('blue');
-    }
+  if (elem.matches('[class$="item-red"]')) {
+    console.log('red');
+  } else if (elem.matches('[class$="item-blue"]')) {
+    console.log('blue');
+  }
 };
 
 // Получив обьект мы можем применять св-ва навигации
@@ -1073,8 +1073,8 @@ const textElement = document.querySelector('.lesson_text');//Получаем о
 
 // Вставляем текст,HTML, элемент
 textElement.insertAdjacentHTML(
-    "afterend",//-куда вставляем
-    '<span class="yellow">hgvjgmhh</span>'
+  "afterend",//-куда вставляем
+  '<span class="yellow">hgvjgmhh</span>'
 )
 // "beforebegin"--вставить html непоср-но перед textElement
 // "afterbegin"--в начало
@@ -1083,12 +1083,12 @@ textElement.insertAdjacentHTML(
 
 // Есть еще методы insertAdjacentHTML    insertAdjacentHTML
 textElement.insertAdjacentText(
-    "beforeend",//-куда вставляем
-    '<span class="yellow">hgvjgmhh</span>'
+  "beforeend",//-куда вставляем
+  '<span class="yellow">hgvjgmhh</span>'
 )
 textElement.insertAdjacentElement(
-    "beforeend",//-куда вставляем
-    newElement
+  "beforeend",//-куда вставляем
+  newElement
 )
 
 // -----ПЕРЕНОС ЭЛЕМЕНТА
@@ -1136,7 +1136,7 @@ c.contains('active');
 // --ClassList-перебираемый
 // Можно перечислить все классы
 for (let className of еlement.classList) {
-    console.log(className);
+  console.log(className);
 }
 
 // ------УПРАВЛЕНИЕ СТИЛЯМИ------
@@ -1200,11 +1200,11 @@ console.dir(Link);//-список всех
 // ----НО тут невозм повесить неск обр-в на одно событие
 const button = document.querySelector('.button');
 button.onclick = function () {
-    console.log('Клик!');
+  console.log('Клик!');
 }
 //или
 function showConsole() {
-    console.log('Клик!');
+  console.log('Клик!');
 };
 button.onclick = showConsole;
 
@@ -1216,9 +1216,9 @@ button.addEventListener("click", showConsole, { "capture": false });
 button.removeEventListener("click", showConsole);
 // опции addEventListener
 const options = {
-    "capture": false,//-фаза на кот д ср-ть обр-к
-    "once": false,// true-обр-к б удален после вып-я т.е вместо removeEventListener
-    "passive": false,//true-ук-ет что обр-к никогда не вызовет preventDefault()
+  "capture": false,//-фаза на кот д ср-ть обр-к
+  "once": false,// true-обр-к б удален после вып-я т.е вместо removeEventListener
+  "passive": false,//true-ук-ет что обр-к никогда не вызовет preventDefault()
 }
 
 //  Обьект события--
@@ -1227,13 +1227,13 @@ const button = document.querySelector('.button');
 
 function showConsole(event) {
 
-    console.log(event.type);// тип события
-    console.log(event.target);// обьект на кот сработал обр-к
-    console.log(event.currentTarget);// об к кот назн-н обр-к
-    console.log(event.clientX);//полож курсора по осиX
-    console.log(event.clientY);//полож курсора по осиY......есть и другие
+  console.log(event.type);// тип события
+  console.log(event.target);// обьект на кот сработал обр-к
+  console.log(event.currentTarget);// об к кот назн-н обр-к
+  console.log(event.clientX);//полож курсора по осиX
+  console.log(event.clientY);//полож курсора по осиY......есть и другие
 
-    console.log(event);//все детали события
+  console.log(event);//все детали события
 };
 
 button.removeEventListener("click", showConsole);
@@ -1250,10 +1250,10 @@ event.stopPropagation()
 const button = document.querySelector('.button');
 
 function showConsole() {
-    console.log('vdfv');
+  console.log('vdfv');
 }
 button.forEach(buttonItem => {
-    buttonItem.addEventListener("click", showConsole)
+  buttonItem.addEventListener("click", showConsole)
 })
 //Другой подход
 //Назначим обр-к для их родителя
@@ -1261,12 +1261,12 @@ button.forEach(buttonItem => {
 const lesson = document.querySelector('.lesson');
 
 function showConsole() {
-    console.log('vdfv');
+  console.log('vdfv');
 }
 lesson.addEventListener("click", function (event) {
-    if (event.target.closest('.lesson')) {//проверяем кнопка ли это
-        showConsole();
-    }
+  if (event.target.closest('.lesson')) {//проверяем кнопка ли это
+    showConsole();
+  }
 })
 
 // Действия бр-ра по ум и их отмена
@@ -1274,13 +1274,13 @@ lesson.addEventListener("click", function (event) {
 const link = document.querySelector('.link');
 
 link.addEventListener("click", function (event) {
-    console.log('Наши действия');
-    event.preventDefault();//отменяем д-е бр-ра-(тут--переход по ссылке)
+  console.log('Наши действия');
+  event.preventDefault();//отменяем д-е бр-ра-(тут--переход по ссылке)
 })
 //если мы исп-ем onclik тогда
 link.onclick = function () {
-    console.log('Наши действия');
-    return false//отменяем д-е бр-ра-(тут--переход по ссылке)
+  console.log('Наши действия');
+  return false//отменяем д-е бр-ра-(тут--переход по ссылке)
 }
 
 // ----СОБЫТИЯ МЫШИ----
@@ -1297,14 +1297,202 @@ link.onclick = function () {
 // event.which = 1-нажата осн-я кн(левая)
 // event.which = 2-средняя
 // event.which = 3-неосновная(правая)
-//???
+
 const button = document.querySelector('.button');
 
 button.addEventListener("mousedoun", function (event) {
-    console.log(`Нажата кнопка ${event.which}`);
+  console.log(`Нажата кнопка ${event.which}`);
 })
-//Движения мыши
-//mousemove-дв-е мыши над опр-м эл-м
+
+//Движения мыши-----mousemove-дв-е мыши над опр-м эл-м
+//--Коорд курсора относит окна бр-ра--clientX/Y---
+const blockForMouse = document.querySelector('.block-for-mouse');
+blockForMouse.addEventListener("mousemove", function (event) {
+  blockForMouse.innerHTML =
+    `clientX - ${event.clientX} <br> clientY - ${event.clientY}`;//-строка с записью координат
+})
+
+//----------Наведение мыши-----
+// --------mouseover / mouseout--------relatedTarget----недостаток-всплытие
+//--mouseover-момент когда курсор оказ над эл-м
+// --mouseout-курсор уходит с эл-та
+// --relatedTarget--когда мыши перех с одн об на другой-один из них будет target,др-relatedTarget
+// для mouseover---event.target-эл на кот курсор перешел---relatedTarget--с которого ушел
+// для mouseout-----наоборот
+
+// --------mouseenter / mouseleave---не всплывают-+++--не можем прим дилегирование-минус
+// --это ниже не будет работать с   mouseenter / mouseleave
+// -Пример делегирования наведения мыши----
+const blockForMouse = document.querySelector('.block-for-mouse');
+blockForMouse.addEventListener("mouseover", function (event) {
+  let target = event.target.closest('span');
+  //переход не на span-игнорировать
+  if (!target) return;
+  target.style.cssText = `backgroundColor: #343434;`;
+})
+blockForMouse.addEventListener("mouseout", function (event) {
+  let target = event.target.closest('span');
+  //переход не на <span>-игнорировать
+  if (!target) return;
+  target.style.cssText = '';
+})
+
+// Клавиатура
+// keydown – происходит при нажатии клавиши
+// keyup – при отпускании клавиши
+
+// event.code и event.key
+
+/*
+document.addEventListener("keydown", function (event) {
+  console.log(`Нажата клавиша ${event.code} (${event.key})`);
+});//--выведет-Нажата клавиша KeyG (g)
+document.addEventListener("keyup", function (event) {
+  console.log(`Отжата клавиша ${event.code} (${event.key})`);
+});//--выведет-Отжата клавиша KeyG (g)
+*/
+/*
+Если пользователь работает с разными языками, то при переключении
+на другой язык символ изменится с "G" на совершенно другой.
+Получившееся станет новым значением event.key,
+тогда как event.code останется тем же: "KeyG".
+*/
+// ниже проверяется что зажата клавиша Z на любом яз  
+// и  что зажата кл Ctrl(или metaKey для appl)
+/*
+document.addEventListener('keydown', function (event) {
+    if (event.code == 'KeyZ' && (event.ctrlKey || event.metaKey)) {
+        console.log('Отмена действия!');
+    }
+});
+*/
+
+/*
+-------Автоповтор----------
+При долгом нажатии клавиши возникает автоповтор: keydown срабатывает
+снова и снова, и когда клавишу отпускают, то отрабатывает keyup.
+Так что ситуация, когда много keydown и один keyup, абсолютно нормальна.
+Для событий, вызванных автоповтором, у объекта события
+свойство event.repeat равно true.
+*/
+/*
+document.addEventListener("keydown", function (event) {
+    console.log(`Нажата клавиша ${event.code} (${event.key})`);
+    console.log(event.repeat);
+});
+*/
+
+// Прокрутка (скролл)
+/*
+window.addEventListener('scroll', function (event) {
+  //кол-во прокрученных пикселей по вертикали
+  // scrollY или pageYOffset (устарел)
+  // кол-во прокрученных пикселей по горизонтали
+  // scrollX или pageXOffset (устарел)
+
+  console.log(`${scrollY}px`);
+});
+*/
+/*
+Нельзя предотвратить прокрутку, используя event.preventDefault()
+в обработчике scroll,  потому что он срабатывает после того,
+как прокрутка уже произошла.
+
+Но можно предотвратить прокрутку, используя event.preventDefault()
+на событии, которое вызывает прокрутку, например,
+на событии keydown для клавиш pageUp и pageDown.
+
+Способов инициировать прокрутку много, более надёжный
+способ – использовать CSS, свойство overflow: hidden;.
+*/
+
+/*
+Использование
+
+Событие прокрутки scroll позволяет реагировать на прокрутку страницы
+или элемента. Есть много хороших вещей, которые при этом можно сделать.
+
+- Показать / скрыть дополнительные элементы управления или информацию,
+основываясь на том, в какой части документа находится пользователь.
+Например анимация при скроле или ленивая подгрузка
+- Подгрузить данные, когда пользователь прокручивает страницу вниз
+до конца. Бесконечный скрол.
+
+По ссылкам в описании есть видео с примерами реализации этого
+функционала с помощью события scroll. Но, более интересным решением
+данных задач будет использование IntersectionObserver, который позволяет
+веб-приложениям асинхронно следить за изменением пересечения
+элемента с его родителем или областью видимости документа.
+
+Подробно об IntersectionObserver я расскажу в отдельном видео
+
+*/
+
+// События загрузки страницы
+/*
+1) DOMContentLoaded – браузер полностью загрузил HTML,
+  было построено DOM - дерево, но внешние ресурсы,
+  такие как картинки <img> и стили, могут быть ещё не загружены.
+2) load – браузер загрузил HTML и внешние ресурсы (картинки, стили и т.д.)
+3) beforeunload / unload – пользователь покидает страницу.
+*/
+
+
+document.readyState - состояние загрузки
+
+// Есть три возможных значения:
+// "loading" – документ загружается.
+// "interactive" – документ был полностью прочитан.
+// "complete" – документ был полностью прочитан
+// и все ресурсы(такие как изображения) были тоже загружены.
+
+
+
+// Событие DOMContentLoaded срабатывает на объекте document!!!!
+document.addEventListener("DOMContentLoaded", readyDom);
+
+// Событие load срабатывает на объекте window!!!
+window.addEventListener("load", readyLoad);
+
+function readyDom() {
+  const image = document.querySelector('.image');
+  console.log(document.readyState);
+  console.log('DOM загружен!');
+  console.log(image.offsetWidth);
+}
+function readyLoad() {
+  console.log(document.readyState);
+  const image = document.querySelector('.image');
+  console.log('Страница загружена!');
+  console.log(image.offsetWidth);
+}
+
+
+
+// Событие в момент когда польз-ль собирается покинуть страницу
+
+
+// ---beforeunload----
+// Событие beforeunload срабатывает на объекте window
+window.addEventListener("beforeunload", beforeUnLoad);
+
+function beforeUnLoad(event) {
+  // Отмените событие, как указано в стандарте.
+  event.preventDefault();
+  // Chrome требует установки возвратного значения.
+  event.returnValue = '';
+}
+
+// ------unload-----
+// Событие unload срабатывает на объекте window
+window.addEventListener("unload", function (e) {
+  // Отправка статистики в фоновом режиме и т.д.
+  // navigator.sendBeacon(url, data)
+  // https://w3c.github.io/beacon/.
+});
+
+
+
 
 
 
@@ -1336,37 +1524,177 @@ button.addEventListener("mousedoun", function (event) {
 // };
 
 
-// ---Табица-------------
+// ---Таблица-------------
 // ---http://htmlbook.ru/content/maket-iz-dvukh-kolonok--
 function generateTable() {
-    // creates a <table> element and a <tbody> element
-    const tbl = document.createElement("table");
-    const tblBody = document.createElement("tbody");
-    // creating all cells
-    for (let i = 0; i < 2; i++) {
-        // creates a table row
-        const row = document.createElement("tr");
-        for (let j = 0; j < 2; j++) {
-            // Create a <td> element and a text node, make the text
-            // node the contents of the <td>, and put the <td> at
-            // the end of the table row
-            const cell = document.createElement("td");
-            const cellText = document.createTextNode(`cell in row ${i}, column ${j}`);
-            cell.appendChild(cellText);
-            row.appendChild(cell);
-        }
-        // add the row to the end of the table body
-        tblBody.appendChild(row);
+  // creates a <table> element and a <tbody> element
+  const tbl = document.createElement("table");
+  const tblBody = document.createElement("tbody");
+  // creating all cells
+  for (let i = 0; i < 2; i++) {
+    // creates a table row
+    const row = document.createElement("tr");
+    for (let j = 0; j < 2; j++) {
+      // Create a <td> element and a text node, make the text
+      // node the contents of the <td>, and put the <td> at
+      // the end of the table row
+      const cell = document.createElement("td");
+      const cellText = document.createTextNode(`cell in row ${i}, column ${j}`);
+      cell.appendChild(cellText);
+      row.appendChild(cell);
     }
-    // put the <tbody> in the <table>
-    tbl.appendChild(tblBody);
-    // appends <table> into <body>
-    document.body.appendChild(tbl);
-    // sets the border attribute of tbl to '2'
-    tbl.setAttribute("border", "2");
+    // add the row to the end of the table body
+    tblBody.appendChild(row);
+  }
+  // put the <tbody> in the <table>
+  tbl.appendChild(tblBody);
+  // appends <table> into <body>
+  document.body.appendChild(tbl);
+  // sets the border attribute of tbl to '2'
+  tbl.setAttribute("border", "2");
 }
 generateTable();
 
+
+// Пример с меню-----
+/*
+const menuBody = document.querySelector('.menu');
+
+document.addEventListener("click", menu);
+
+function menu(event) {
+  if (event.target.closest('.menu__button')) {
+    menuBody.classList.toggle('_active');
+  }
+  if (!event.target.closest('.menu')) {
+    menuBody.classList.remove('_active');
+  }
+}
+*/
+/*
+document.addEventListener('keyup', function (event) {
+  if (event.code === 'Escape') {
+    menuBody.classList.remove('_active');
+  }  //--если нажимаем Esc то отбираем класс _active--меню закрывается
+});
+*/
+
+
+
+
+
+// Перетаскивание Drag`n`Drop
+/*
+const gragField = document.querySelector('.drag-field');
+const gragItem = document.querySelector('.drag-field__item');
+
+gragItem.addEventListener("mousedown", function (event) {
+
+    let coordsItemX = event.clientX - gragItem.getBoundingClientRect().left;
+    let coordsItemY = event.clientY - gragItem.getBoundingClientRect().top;
+
+    let gragItemSizes = {
+        width: gragItem.offsetWidth,
+        height: gragItem.offsetHeight
+    }
+    let gragFieldSizes = {
+        left: gragField.getBoundingClientRect().left + scrollX,
+        top: gragField.getBoundingClientRect().top + scrollY,
+        right: gragField.getBoundingClientRect().left + scrollX + gragField.offsetWidth,
+        bottom: gragField.getBoundingClientRect().top + scrollY + gragField.offsetHeight
+    }
+
+    gragItem.style.position = 'absolute';
+    gragItem.style.zIndex = 1000;
+    document.body.append(gragItem);
+
+    moveItem(event.pageX, event.pageY);
+
+    function moveItem(pageX, pageY) {
+        let currentX = pageX - coordsItemX;
+        let currentY = pageY - coordsItemY;
+
+        if (
+            currentX + gragItemSizes.width <= gragFieldSizes.right &&
+            currentX >= gragFieldSizes.left
+        ) {
+            gragItem.style.left = `${currentX}px`;
+        } else {
+            if (currentX + gragItemSizes.width > gragFieldSizes.right) {
+                gragItem.style.left = `${gragFieldSizes.right - gragItemSizes.width}px`;
+            }
+            if (currentX < gragFieldSizes.left) {
+                gragItem.style.left = `${gragFieldSizes.left}px`;
+            }
+        }
+        if (
+            currentY + gragItemSizes.height <= gragFieldSizes.bottom &&
+            currentY >= gragFieldSizes.top
+        ) {
+            gragItem.style.top = `${currentY}px`;
+        } else {
+            if (currentY + gragItemSizes.height > gragFieldSizes.bottom) {
+                gragItem.style.top = `${gragFieldSizes.bottom - gragItemSizes.height}px`;
+            }
+            if (currentY < gragFieldSizes.top) {
+                gragItem.style.top = `${gragFieldSizes.top}px`;
+            }
+        }
+    }
+
+    let currentDroppable = null;
+
+    function onDragItem(event) {
+        moveItem(event.pageX, event.pageY);
+
+        gragItem.hidden = true;
+        let elemBelow = document.elementFromPoint(event.clientX, event.clientY);
+        gragItem.hidden = false;
+
+        if (!elemBelow) return;
+        let droppableBelow = elemBelow.closest('.drag-field__point');
+
+        if (currentDroppable !== droppableBelow) {
+            if (currentDroppable) {
+                currentDroppable.classList.remove('_active');
+                gragItem.classList.remove('_active');
+            }
+            currentDroppable = droppableBelow;
+            if (currentDroppable) {
+                currentDroppable.classList.add('_active');
+                gragItem.classList.add('_active');
+            }
+        }
+    }
+    document.addEventListener('mousemove', onDragItem);
+
+    document.addEventListener("mouseup", function (event) {
+        document.removeEventListener('mousemove', onDragItem);
+    }, { "once": true });
+});
+gragItem.addEventListener("dragstart", function (event) {
+    event.preventDefault();
+});
+*/
+
+// ----Textarea  со счетчиком ск осталось символов ввести---
+/*
+const txtItem = document.querySelector('.textarea__item');
+const txtItemLimit = txtItem.getAttribute('maxlength');
+const txtCounter = document.querySelector('.textarea__counter span');
+txtCounter.innerHTML = txtItemLimit;
+
+txtItem.addEventListener("keyup", txtSetCounter);
+
+txtItem.addEventListener("keydown", function (event) {
+  if (event.repeat) txtSetCounter();
+});   //если есть автоповтор то вып-ся эта ф-я
+
+function txtSetCounter() {
+  const txtCounterResult = txtItemLimit - txtItem.value.length;
+  txtCounter.innerHTML = txtCounterResult;
+}
+*/
 
 
 
