@@ -1081,7 +1081,7 @@ textElement.insertAdjacentHTML(
 // "beforeend"---в конец
 // "afterend"---непоср-но после textElement
 
-// Есть еще методы insertAdjacentHTML    insertAdjacentHTML
+// Есть еще методы insertAdjacentText    insertAdjacentElement
 textElement.insertAdjacentText(
   "beforeend",//-куда вставляем
   '<span class="yellow">hgvjgmhh</span>'
@@ -1090,6 +1090,12 @@ textElement.insertAdjacentElement(
   "beforeend",//-куда вставляем
   newElement
 )
+
+// Добавляет новый атрибут или изменяет значение существующего атрибута
+element.setAttribute(name, value);
+// getAttribute   hasAttribute  removeAttribute
+// name - имя атрибута(строка).
+// value - значение атрибута.
 
 // -----ПЕРЕНОС ЭЛЕМЕНТА
 
@@ -1437,7 +1443,6 @@ window.addEventListener('scroll', function (event) {
 3) beforeunload / unload – пользователь покидает страницу.
 */
 
-
 document.readyState - состояние загрузки
 
 // Есть три возможных значения:
@@ -1491,37 +1496,6 @@ window.addEventListener("unload", function (e) {
   // https://w3c.github.io/beacon/.
 });
 
-
-
-
-
-
-
-
-
-
-// ------Hex to Rgb------
-
-// function hexToRgb(hex) {
-//   let result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-//   return result ? {
-//     r: parseInt(result[1], 16),
-//     g: parseInt(result[2], 16),
-//     b: parseInt(result[3], 16)
-//   } : null;
-// }
-
-// console.log(hexToRgb("#0033ff").g); // "51";
-
-// --------Rgb to Hex-----
-// function componentToHex(c) {
-//     let hex = c.toString(16);
-//     return hex.length == 1 ? "0" + hex : hex;
-// };
-
-// function rgbToHex(r, g, b) {
-//     return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
-// };
 
 
 // ---Таблица-------------
