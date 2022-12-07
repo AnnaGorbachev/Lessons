@@ -1,4 +1,14 @@
+// $(document).ready(function () {
+
+// });
+
+
+
 // Генератор случайного кода цвета.???????????/
+// https://prog-time.ru/generator-sluchajnogo-koda-tsveta-javascript-generator-randomnogo-tsveta/
+
+
+
 
 function randColor(elem) {
   /*СОЗДАЕМ ПЕРЕМЕННЫЕ
@@ -17,3 +27,4 @@ function randColor(elem) {
   element.style.background = color;
   code_color.innerText = color;
 }
+

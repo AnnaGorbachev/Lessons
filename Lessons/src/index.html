@@ -5,6 +5,7 @@
   <title>Html теги Часть 1,2</title>
   <meta http-equiv="Contente-type" content="text/html;charset-UTF-B" />
   <link rel="stylesheet" href="css/style.css">
+
 </head>
 
 <body>
@@ -143,24 +144,36 @@
 
 
 
+  <!-- Input type=number -->
+  <div class="button-number">
+    <div class="number">
+      <div class="button-label"><label for="qtg">Quantity</label></div>
+      <input type="number" class="link" id="qtg" name="number" max="20" min="3" value="2" />
+
+    </div>
 
 
-  <!-- КНОПКА С ВОЛНАМИ -->
-  <!-- Оболочка для демонстрации -->
-  <div class="button-with-waves">
-    <!-- Контент -->
-    <a href="" class="wave-btn">
-      <span class="wave-btn__text">Кнопка</span>
-      <span class="wave-btn__waves"></span>
-    </a>
-  </div>
-
-  <!-- Генератор случайного кода цвета.  ????-->
-  <div class="code_color">#ffffff</div>
-  <button onclick="randColor('.example')">Нажми</button>
 
 
-  <script src="js/index.js"></script>
+    <!-- КНОПКА С ВОЛНАМИ -->
+    <!-- Оболочка для демонстрации -->
+    <div class="button-with-waves">
+      <!-- Контент -->
+      <a href="" class="wave-btn">
+        <span class="wave-btn__text">Кнопка</span>
+        <span class="wave-btn__waves"></span>
+      </a>
+    </div>
+
+    <!-- Генератор случайного кода цвета.  ????-->
+    <div class="code_color">#ffffff</div>
+    <button class="button-code_color" onclick="randColor('.example')">Нажми</button>
+
+
+
+
+
+    <script src="js/index.js"></script>
 
 </body>
 

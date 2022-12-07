@@ -100,12 +100,38 @@ h6 {
   font-weight: 400;
 }
 
+.button-label {
+  width: 250px;
+  text-align: center;
+  font-size: 30px;
+  color: #4f4949;
+  margin: 0px 0px 17px 0px;
+}
+
+.link {
+  width: 250px;
+  height: 50px;
+  border: 1px solid #4f483c;
+  border-radius: 7px;
+}
+
+input[type=number] {
+  color: #4f483c;
+  font-size: 24px;
+  padding-left: 10px;
+  line-height: 55px;
+  background-color: rgb(241, 241, 241);
+}
+
+.buttons input:focus {
+  border: 2px solid rgb(195, 73, 152);
+}
+
 /*Стили для демонстрации*/
 .button-with-waves {
   background-color: #000;
   width: 100%;
-  min-height: 100%;
-  height: 500px;
+  height: 100px;
   overflow: hidden;
   display: -moz-flex;
   display: -ms-flex;
@@ -246,7 +272,7 @@ h6 {
   align-items: center;
 }
 
-button {
+.button-code_color {
   background: #1e1e1e;
   border: none;
   color: #fafafa;
