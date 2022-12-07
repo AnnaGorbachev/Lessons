@@ -75,6 +75,9 @@
 
 
 
+
+
+
 // function combu(str) {
 //   let arr = [];
 //   let res = [];
@@ -955,11 +958,11 @@ console.log(elems[2]);// выводим конкретный(третий эл-�
 
 // Далее можно перебрать кол-ю li
 for (const item of elems) {
-  console.log(item);
+    console.log(item);
 }
 // или так
 elems.forEach(item => {
-  console.log(item);
+    console.log(item);
 })
 
 // Искать можно не только в document
@@ -989,11 +992,11 @@ console.log(parentList);
 //Проверка matches-не ищет а проверяет уд-ет ли эл-т css -true  false
 const elemM = document.querySelectorAll('.lesson_item-list');
 for (let elem of elemM) {
-  if (elem.matches('[class$="item-red"]')) {
-    console.log('red');
-  } else if (elem.matches('[class$="item-blue"]')) {
-    console.log('blue');
-  }
+    if (elem.matches('[class$="item-red"]')) {
+        console.log('red');
+    } else if (elem.matches('[class$="item-blue"]')) {
+        console.log('blue');
+    }
 };
 
 // Получив обьект мы можем применять св-ва навигации
@@ -1073,8 +1076,8 @@ const textElement = document.querySelector('.lesson_text');//Получаем о
 
 // Вставляем текст,HTML, элемент
 textElement.insertAdjacentHTML(
-  "afterend",//-куда вставляем
-  '<span class="yellow">hgvjgmhh</span>'
+    "afterend",//-куда вставляем
+    '<span class="yellow">hgvjgmhh</span>'
 )
 // "beforebegin"--вставить html непоср-но перед textElement
 // "afterbegin"--в начало
@@ -1083,12 +1086,12 @@ textElement.insertAdjacentHTML(
 
 // Есть еще методы insertAdjacentText    insertAdjacentElement
 textElement.insertAdjacentText(
-  "beforeend",//-куда вставляем
-  '<span class="yellow">hgvjgmhh</span>'
+    "beforeend",//-куда вставляем
+    '<span class="yellow">hgvjgmhh</span>'
 )
 textElement.insertAdjacentElement(
-  "beforeend",//-куда вставляем
-  newElement
+    "beforeend",//-куда вставляем
+    newElement
 )
 
 // Добавляет новый атрибут или изменяет значение существующего атрибута
@@ -1142,7 +1145,7 @@ c.contains('active');
 // --ClassList-перебираемый
 // Можно перечислить все классы
 for (let className of еlement.classList) {
-  console.log(className);
+    console.log(className);
 }
 
 // ------УПРАВЛЕНИЕ СТИЛЯМИ------
@@ -1206,11 +1209,11 @@ console.dir(Link);//-список всех
 // ----НО тут невозм повесить неск обр-в на одно событие
 const button = document.querySelector('.button');
 button.onclick = function () {
-  console.log('Клик!');
+    console.log('Клик!');
 }
 //или
 function showConsole() {
-  console.log('Клик!');
+    console.log('Клик!');
 };
 button.onclick = showConsole;
 
@@ -1222,9 +1225,9 @@ button.addEventListener("click", showConsole, { "capture": false });
 button.removeEventListener("click", showConsole);
 // опции addEventListener
 const options = {
-  "capture": false,//-фаза на кот д ср-ть обр-к
-  "once": false,// true-обр-к б удален после вып-я т.е вместо removeEventListener
-  "passive": false,//true-ук-ет что обр-к никогда не вызовет preventDefault()
+    "capture": false,//-фаза на кот д ср-ть обр-к
+    "once": false,// true-обр-к б удален после вып-я т.е вместо removeEventListener
+    "passive": false,//true-ук-ет что обр-к никогда не вызовет preventDefault()
 }
 
 //  Обьект события--
@@ -1233,13 +1236,13 @@ const button = document.querySelector('.button');
 
 function showConsole(event) {
 
-  console.log(event.type);// тип события
-  console.log(event.target);// обьект на кот сработал обр-к
-  console.log(event.currentTarget);// об к кот назн-н обр-к
-  console.log(event.clientX);//полож курсора по осиX
-  console.log(event.clientY);//полож курсора по осиY......есть и другие
+    console.log(event.type);// тип события
+    console.log(event.target);// обьект на кот сработал обр-к
+    console.log(event.currentTarget);// об к кот назн-н обр-к
+    console.log(event.clientX);//полож курсора по осиX
+    console.log(event.clientY);//полож курсора по осиY......есть и другие
 
-  console.log(event);//все детали события
+    console.log(event);//все детали события
 };
 
 button.removeEventListener("click", showConsole);
@@ -1256,10 +1259,10 @@ event.stopPropagation()
 const button = document.querySelector('.button');
 
 function showConsole() {
-  console.log('vdfv');
+    console.log('vdfv');
 }
 button.forEach(buttonItem => {
-  buttonItem.addEventListener("click", showConsole)
+    buttonItem.addEventListener("click", showConsole)
 })
 //Другой подход
 //Назначим обр-к для их родителя
@@ -1267,12 +1270,12 @@ button.forEach(buttonItem => {
 const lesson = document.querySelector('.lesson');
 
 function showConsole() {
-  console.log('vdfv');
+    console.log('vdfv');
 }
 lesson.addEventListener("click", function (event) {
-  if (event.target.closest('.lesson')) {//проверяем кнопка ли это
-    showConsole();
-  }
+    if (event.target.closest('.lesson')) {//проверяем кнопка ли это
+        showConsole();
+    }
 })
 
 // Действия бр-ра по ум и их отмена
@@ -1280,13 +1283,13 @@ lesson.addEventListener("click", function (event) {
 const link = document.querySelector('.link');
 
 link.addEventListener("click", function (event) {
-  console.log('Наши действия');
-  event.preventDefault();//отменяем д-е бр-ра-(тут--переход по ссылке)
+    console.log('Наши действия');
+    event.preventDefault();//отменяем д-е бр-ра-(тут--переход по ссылке)
 })
 //если мы исп-ем onclik тогда
 link.onclick = function () {
-  console.log('Наши действия');
-  return false//отменяем д-е бр-ра-(тут--переход по ссылке)
+    console.log('Наши действия');
+    return false//отменяем д-е бр-ра-(тут--переход по ссылке)
 }
 
 // ----СОБЫТИЯ МЫШИ----
@@ -1307,15 +1310,15 @@ link.onclick = function () {
 const button = document.querySelector('.button');
 
 button.addEventListener("mousedoun", function (event) {
-  console.log(`Нажата кнопка ${event.which}`);
+    console.log(`Нажата кнопка ${event.which}`);
 })
 
 //Движения мыши-----mousemove-дв-е мыши над опр-м эл-м
 //--Коорд курсора относит окна бр-ра--clientX/Y---
 const blockForMouse = document.querySelector('.block-for-mouse');
 blockForMouse.addEventListener("mousemove", function (event) {
-  blockForMouse.innerHTML =
-    `clientX - ${event.clientX} <br> clientY - ${event.clientY}`;//-строка с записью координат
+    blockForMouse.innerHTML =
+        `clientX - ${event.clientX} <br> clientY - ${event.clientY}`;//-строка с записью координат
 })
 
 //----------Наведение мыши-----
@@ -1331,16 +1334,16 @@ blockForMouse.addEventListener("mousemove", function (event) {
 // -Пример делегирования наведения мыши----
 const blockForMouse = document.querySelector('.block-for-mouse');
 blockForMouse.addEventListener("mouseover", function (event) {
-  let target = event.target.closest('span');
-  //переход не на span-игнорировать
-  if (!target) return;
-  target.style.cssText = `backgroundColor: #343434;`;
+    let target = event.target.closest('span');
+    //переход не на span-игнорировать
+    if (!target) return;
+    target.style.cssText = `backgroundColor: #343434;`;
 })
 blockForMouse.addEventListener("mouseout", function (event) {
-  let target = event.target.closest('span');
-  //переход не на <span>-игнорировать
-  if (!target) return;
-  target.style.cssText = '';
+    let target = event.target.closest('span');
+    //переход не на <span>-игнорировать
+    if (!target) return;
+    target.style.cssText = '';
 })
 
 // Клавиатура
@@ -1374,7 +1377,7 @@ document.addEventListener('keydown', function (event) {
 */
 
 /*
--------Автоповтор----------
+-------Автоповтор-----
 При долгом нажатии клавиши возникает автоповтор: keydown срабатывает
 снова и снова, и когда клавишу отпускают, то отрабатывает keyup.
 Так что ситуация, когда много keydown и один keyup, абсолютно нормальна.
@@ -1460,16 +1463,16 @@ document.addEventListener("DOMContentLoaded", readyDom);
 window.addEventListener("load", readyLoad);
 
 function readyDom() {
-  const image = document.querySelector('.image');
-  console.log(document.readyState);
-  console.log('DOM загружен!');
-  console.log(image.offsetWidth);
+    const image = document.querySelector('.image');
+    console.log(document.readyState);
+    console.log('DOM загружен!');
+    console.log(image.offsetWidth);
 }
 function readyLoad() {
-  console.log(document.readyState);
-  const image = document.querySelector('.image');
-  console.log('Страница загружена!');
-  console.log(image.offsetWidth);
+    console.log(document.readyState);
+    const image = document.querySelector('.image');
+    console.log('Страница загружена!');
+    console.log(image.offsetWidth);
 }
 
 
@@ -1482,50 +1485,54 @@ function readyLoad() {
 window.addEventListener("beforeunload", beforeUnLoad);
 
 function beforeUnLoad(event) {
-  // Отмените событие, как указано в стандарте.
-  event.preventDefault();
-  // Chrome требует установки возвратного значения.
-  event.returnValue = '';
+    // Отмените событие, как указано в стандарте.
+    event.preventDefault();
+    // Chrome требует установки возвратного значения.
+    event.returnValue = '';
 }
 
 // ------unload-----
 // Событие unload срабатывает на объекте window
 window.addEventListener("unload", function (e) {
-  // Отправка статистики в фоновом режиме и т.д.
-  // navigator.sendBeacon(url, data)
-  // https://w3c.github.io/beacon/.
+    // Отправка статистики в фоновом режиме и т.д.
+    // navigator.sendBeacon(url, data)
+    // https://w3c.github.io/beacon/.
 });
+
+
+
+
 
 
 
 // ---Таблица-------------
 // ---http://htmlbook.ru/content/maket-iz-dvukh-kolonok--
 function generateTable() {
-  // creates a <table> element and a <tbody> element
-  const tbl = document.createElement("table");
-  const tblBody = document.createElement("tbody");
-  // creating all cells
-  for (let i = 0; i < 2; i++) {
-    // creates a table row
-    const row = document.createElement("tr");
-    for (let j = 0; j < 2; j++) {
-      // Create a <td> element and a text node, make the text
-      // node the contents of the <td>, and put the <td> at
-      // the end of the table row
-      const cell = document.createElement("td");
-      const cellText = document.createTextNode(`cell in row ${i}, column ${j}`);
-      cell.appendChild(cellText);
-      row.appendChild(cell);
+    // creates a <table> element and a <tbody> element
+    const tbl = document.createElement("table");
+    const tblBody = document.createElement("tbody");
+    // creating all cells
+    for (let i = 0; i < 2; i++) {
+        // creates a table row
+        const row = document.createElement("tr");
+        for (let j = 0; j < 2; j++) {
+            // Create a <td> element and a text node, make the text
+            // node the contents of the <td>, and put the <td> at
+            // the end of the table row
+            const cell = document.createElement("td");
+            const cellText = document.createTextNode(`cell in row ${i}, column ${j}`);
+            cell.appendChild(cellText);
+            row.appendChild(cell);
+        }
+        // add the row to the end of the table body
+        tblBody.appendChild(row);
     }
-    // add the row to the end of the table body
-    tblBody.appendChild(row);
-  }
-  // put the <tbody> in the <table>
-  tbl.appendChild(tblBody);
-  // appends <table> into <body>
-  document.body.appendChild(tbl);
-  // sets the border attribute of tbl to '2'
-  tbl.setAttribute("border", "2");
+    // put the <tbody> in the <table>
+    tbl.appendChild(tblBody);
+    // appends <table> into <body>
+    document.body.appendChild(tbl);
+    // sets the border attribute of tbl to '2'
+    tbl.setAttribute("border", "2");
 }
 generateTable();
 
@@ -1650,6 +1657,10 @@ gragItem.addEventListener("dragstart", function (event) {
     event.preventDefault();
 });
 */
+
+
+
+
 
 // ----Textarea  со счетчиком ск осталось символов ввести---
 /*
