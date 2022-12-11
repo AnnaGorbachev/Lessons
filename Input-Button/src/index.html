@@ -2,7 +2,7 @@
 <html lang="ru">
 
 <head>
-  <title>Html теги Часть 1,2</title>
+  <title>Inputs and buttons</title>
   <meta http-equiv="Contente-type" content="text/html;charset-UTF-B" />
   <link rel="stylesheet" href="css/style.css">
 
@@ -49,8 +49,6 @@
     <li>Lorem ipsum dolor sit amet consectetur</li>
   </ol>
 
-
-  <!-- lesson2 -->
 
   <!-- обязат настройка тега  form! -->
   <!--Блочный.action-адрес сервера(#-заглушка)-->
@@ -132,7 +130,51 @@
 
 
 
-  <!-- Input type=number -->
+
+
+  <!-- Стилизация чекбоксов и радиокнопок на CSS HTML jQuery -->
+  <div class="wrapper__checkbox-radio">
+    <form action="#" class="block-form">
+      <div class="block-form__title">Стилизация чекбоксов и радиокнопок на CSS HTML jQuery</div>
+      <div class="block-form__input">
+        <div class="checkbox">
+          Выключатель №1
+          <input type="checkbox" checked name="namecheckbox_1">
+        </div>
+      </div>
+      <div class="block-form__input">
+        <div class="checkbox">
+          Выключатель №2
+          <input type="checkbox" name="namecheckbox_2">
+        </div>
+      </div>
+      <div class="block-form__input">
+        <div class="radiobuttons">
+          <div class="radiobuttons__item">
+            Вариант №1
+            <input type="radio" checked value="1" name="nameradio">
+          </div>
+          <div class="radiobuttons__item">
+            Вариант №2
+            <input type="radio" value="2" name="nameradio">
+          </div>
+          <div class="radiobuttons__item">
+            Вариант №3
+            <input type="radio" value="3" name="nameradio">
+          </div>
+        </div>
+      </div>
+      <button class="button" type="submit"><span>Отправить форму</span></button>
+
+
+    </form>
+  </div>
+
+
+
+
+
+  <!-- Input type=number   Quantity-->
   <div class="button-number">
     <div class="number">
       <div class="button-label"><label for="qtg">Quantity</label></div>
@@ -160,7 +202,7 @@
 
 
 
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="js/index.js"></script>
 
 </body>

@@ -4,7 +4,177 @@ body {
   
 }
 
-// Input type=number-----
+// Стилизация чекбоксов и радиокнопок на CSS HTML jQuery
+.wrapper__checkbox-radio {
+  width: 100%;
+  min-height: 100%;
+  height: 100%;
+  overflow: hidden;
+  padding: 40px 70px;
+  background-color: #eee;
+}
+
+.block-form {}
+
+.block-form__title {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+.block-form__input {
+  margin-bottom: 15px;
+}
+
+.checkbox {
+  font-size: 16px;
+  line-height: 20px;
+  padding: 0px 0px 0px 70px;
+  position: relative;
+  cursor: pointer;
+}
+
+.checkbox.active {
+  color: #000;
+}
+
+.checkbox.active::before {
+  background-color: rgb(106, 221, 135);
+}
+
+.checkbox.active::after {
+  background-color: rgb(106, 221, 135);
+  left: 25px;
+}
+
+// сам переключатель
+.checkbox::before {
+  content: '';
+  width: 50px;
+  height: 20px;
+  border-radius: 20px;
+  background-color: rgb(231, 225, 225);
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+// бегунок круглый
+.checkbox::after {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: -5px;
+  left: 0;
+  background-color: rgb(231, 225, 225);
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease 0s;
+}
+
+.checkbox input {
+  display: none;
+}
+// RADIO BUTTONS
+.radiobuttons {}
+
+.radiobuttons__item {
+  position: relative;
+  padding: 0px 0px 0px 45px;
+  font-size: 16px;
+  line-height: 30px;
+  color: #b2b2b2;
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+
+.radiobuttons__item.active {
+  color: #000;
+}
+
+.radiobuttons__item.active::after {
+  transform: scale(1);
+
+}
+
+// серая круглая
+.radiobuttons__item::before {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 0;
+  left: 0;
+  background-color: #bfc0c4;
+  border-radius: 50%;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+}
+// зеленая внутри
+.radiobuttons__item::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  left: 5px;
+  top: 5px;
+  background-color: rgb(26, 205, 70);
+  border-radius: 50%;
+  transition: all 0.3s ease 0s;
+  transform: scale(0);
+}
+
+.radiobuttons__item input {
+  display: none;
+}
+
+.button {
+  line-height: 60px;
+  display: inline-block;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 8px;
+  padding: 0 30px;
+  font-size: 18px;
+  border-radius: 25px;
+  background-color: rgb(213, 209, 209);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease 0s;
+}
+
+.button span {
+  position: relative;
+  z-index: 2;
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  border-radius: 25px;
+  background-color: rgb(106, 221, 135);
+  transition: all 0.3s ease 0s;
+  transform: scale(0);
+}
+
+.button:hover {
+ color: #fff;
+}
+
+.button:hover::before {
+  transform: scale(1);
+}
+
+
+
+
+
+// Input type=number--Quantity---
 .button-label {
   width: 250px;
   text-align: center;
