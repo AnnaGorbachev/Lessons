@@ -103,3 +103,86 @@ h6 {
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.wrapper {
+  min-height: 100%;
+}
+
+.page {
+  padding: 90px 0px 30px 0px;
+}
+
+.page__section {
+  padding: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.page__section-1 {
+  background-color: rgb(209, 176, 176);
+}
+
+.page__section-2 {
+  background-color: rgb(184, 142, 174);
+}
+
+.page__section-3 {
+  background-color: rgb(140, 182, 152);
+}
+
+.page__title {
+  font-size: 40px;
+  margin: 0px 0px 20px 0px;
+}
+
+.page__text {
+  font-size: 16px;
+  line-height: 150%;
+}
+
+.page__text p {
+  margin: 0px 0px 20px 0px;
+}
+
+.page__sub-title {
+  font-size: 30px;
+  margin: 0px 0px 20px 0px;
+}
+
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background-color: rgb(223, 237, 230);
+}
+
+.header__container {
+  max-width: 1200px;
+  margin: 0px auto;
+  display: flex;
+  padding: 0px 30px;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 70px;
+}
+
+.header__logo {
+  border-radius: 50%;
+  background-color: #fff;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  z-index: 5;
+}
+
+@media (min-width: 767px) {
+  .menu__list {
+    display: flex;
+    justify-content: center;
+  }
+  .menu__list > li {
+    padding: 10px 0;
+  }
+}
