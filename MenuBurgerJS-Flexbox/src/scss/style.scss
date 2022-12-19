@@ -93,19 +93,106 @@ body {
 
 .menu__list {}
 
-.menu__link {}
+.menu__list>li {
+  position: relative;// т к меню 2го ур мы будем абсол позиц-ть отн li
+  margin: 0px 0px 0px 20px;
+}
 
-.sub-list {}
+.menu__link {
+  color: #fff;
+  font-size: 18px;
+}
 
-.menu__sub-link {}
+.menu__link:hover {
+  text-decoration: underline;
+}
 
+.menu__sub-list {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: rgb(21, 20, 20);
+  padding: 15px;
+  min-width: 200px;
+
+}
+
+.menu__sub-list li {
+  margin: 0px 0px 10px 0px;
+}
+
+.menu__sub-list li:last-child {
+  margin: 0;
+}
+
+.menu__sub-link {
+  color: #fff;
+}
+
+.menu__sub-link:hover {
+  text-decoration: underline;
+}
+
+.menu__arrow {
+  display: none; //скрываем стрелку
+}
+
+// -------------------------------------
+
+body._pc .menu__list > li:hover .menu__sub-list {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(0px, 0px);
+  pointer-events: all;
+}
+
+body._touch .menu__list > li {
+  display: flex;
+  align-items: center;
+}
+
+body._touch .menu__link  {
+  flex: 1 1 auto;
+}
+
+body._touch .menu__arrow {
+  display: block;
+  width: 0;
+  height: 0;
+  margin: 0px 0px 0px 5px;
+  transition: transform 0.3s ease 0s;//чт стрелка поворач плавно
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 10px solid #fff;
+}
+
+body._touch .menu__list>li._active .menu__sub-list {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(0px, 0px);
+  pointer-events: all;
+}
+
+body._touch .menu__list>li._active .menu__arrow {//анимируем стрелку-поворот на 180
+  transform: rotate(-180deg);
+}
+
+// -------------------------------------
 @media (min-width:767px) {
     .menu__list {
       display: flex;
-      justify-content: center;
+      align-items: center;
     }
     .menu__list > li {
-      padding: 10px 0;
+      padding: 10px 0;//отступ между меню и подменю
+    }
+    .menu__sub-list {
+      // margin: px px px px;-нельзя исп-ть для отступа-будет закрываться подменю при наведении
+      transform: translate(0px, 10%);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;//чтобы подменю не выскак при навед мыши на его место
+      transition: all 0.3s ease 0s;
     }
 }
 
