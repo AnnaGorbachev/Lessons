@@ -689,241 +689,82 @@
 // -------------------------Pete--------------------
 // ===============================================================
 
-// console.log(new Date());
-// console.log(new Date(0));
-// console.log(new Date(24 * 60 * 60 * 1000));
-// console.log(new Date(-24 * 60 * 60 * 1000));
-// console.log(new Date('2022-10-27'));
-// console.log(new Date(2011, 2, 1, 0, 0, 0, 0));
-// console.log(new Date(2011, 2, 1));//(year, month, date, hours, minutes, seconds, ms)
-
-// console.log(new Date().getFullYear());
-// console.log(new Date().getMonth());
-// console.log(new Date().getDate());
-// console.log(new Date().getHours(),);
-// console.log(new Date().getMinutes());
-// console.log(new Date().getSeconds(),);
-// console.log(new Date().getMilliseconds());
-// console.log(new Date().getDay());
-
-// console.log(new Date().getUTCHours());// UTS-0
-
-
-// console.log(new Date().getTime());// кол-во ms с 1 1 1970г
-// console.log(Date.now());
-
-
-// console.log(new Date().getTimezoneOffset());// разн в ms между UTS и местным
-
-// console.log(new Date().setDate(0));
-
-
-// let date = new Date(2016, 1, 28);
-// date.setDate(date.getDate() + 2);
-// console.log(date);
-
-// let date = new Date();
-// date.setSeconds(date.getSeconds() + 70);
-// console.log(date);
-
-// let ms = new Date(Date.parse('2012-01-26T13:51:50.417-07:00'));
-// console.log(ms);
-// --------------------------------------------------------
-
-// function getWeekDay(date) {
-
-//     let arrWeek = ['ВС', 'ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ'];
-//     let day = date.getDay();
-
-//     return arrWeek[day];
-// }
-// let date = new Date(2014, 0, 3);
-// console.log(getWeekDay(date));
-
-// -------------------------------ПТ--------------------------------
-// let date = new Date(2012, 0, 3);
-
-// function getLocalDay(date) {
-
-//     let day = date.getDay();
-//     if (day == 0) {
-//         day = 7;
-//     }
-
-//     return day;
-
-// }
-
-// console.log(getLocalDay(date));
-
-// ---------------------европ день недели---------------------------------
-
-// function getDateAgo(date, days) {
-
-//     let dateCopy = new Date(date);
-
-//     dateCopy.setDate(date.getDate() - days);
-//     return dateCopy.getDate();
-// };
-
-// let date = new Date(2015, 0, 2);
-
-// console.log(getDateAgo(date, 1));
-// console.log(getDateAgo(date, 2));
-// console.log(getDateAgo(date, 365));
-// ---1---31----2-------------------------------------
-
-// function getLastDayOfMonth(year, month) {
-
-//     let date = new Date(year, month + 1, 0);
-//     return date.getDate();
-// };
-
-// console.log(getLastDayOfMonth(2013, 1));
-// ------------------------28-------------------------
-
-// let now = new Date();
-// console.log(now);
-
-// let today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-// console.log(today);
-
-// let diff = now - today;
-// console.log(diff);
-
-// let seconds = Math.round(diff / 1000); // получаем секунды
-// console.log(seconds);
-
-// // -------------
-// function getSecondsToday() {
-//     let d = new Date();
-//     return d.getHours() * 3600 + d.getMinutes() * 60 + d.getSeconds();
-// };
-// console.log(getSecondsToday());
-// -------------------------------------------------
-
-// function getSecondsToTomorrow() {
-
-//     let now = new Date();
-//     let tomorrow = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
-//     let diff = (tomorrow - now);
-
-//     return Math.round(diff / 1000);
-// }
-
-// console.log(getSecondsToTomorrow());
-// --------------------------------------------------
-
-// function formatDate(date) {
-
-
-//     let diff = (new Date() - date);
-//     if (diff < 1000) {
-//         return 'Прямо сейчас';
-//     }
-
-//     let sec = Math.floor(diff / 1000);
-//     if (sec < 60) {
-//         return sec + ' сек. назад';
-//     }
-
-//     let min = Math.floor(diff / 60000);
-//     if (min < 60) {
-//         return min + ' мин. назад'
-//     } else {
-
-//         let dayOfMonth = date.getDate();
-//         let month = date.getMonth() + 1;
-//         let year = date.getFullYear();
-//         let hour = date.getHours();
-//         let minutes = date.getMinutes();
-
-//         return `${dayOfMonth}.${month}.${year} ${hour}:${minutes}`;
-
-//     }
-// }
-
-// console.log(formatDate(new Date(new Date() - 1)));
-// console.log(formatDate(new Date(new Date() - 30 * 1000)));
-// console.log(formatDate(new Date(new Date() - 5 * 60 * 1000)));
-// console.log(formatDate(new Date(new Date() - 86400 * 1000)));
-// ----------------------------------------
 // -------------------------DOM----------------
 
-//------НАВИГАЦИЯ ПО ДОКУМЕНТУ-----------------
+//------------------НАВИГАЦИЯ ПО ДОКУМЕНТУ-----------------
 
-// //-----Самые верхние элементы дерева доступны как св-ва обьекта document
-// const htmlElement = document.documentElement;
-// const headElement = document.head;
-// const bodyElement = document.body;
-// console.log(htmlElement);
-// console.log(headElement);
-// console.log(bodyElement);
+//-----Самые верхние элементы дерева доступны как св-ва обьекта document
+const htmlElement = document.documentElement;
+const headElement = document.head;
+const bodyElement = document.body;
+console.log(htmlElement);
+console.log(headElement);
+console.log(bodyElement);
 
-// //------Первый и последний дочерние элементы------
-// const firstChildNode = bodyElement.firstChild;
-// const lastChildNode = bodyElement.lastChild;
-// console.log(firstChildNode);
-// console.log(lastChildNode);
+//------Первый и последний дочерние элементы------
+const firstChildNode = bodyElement.firstChild;
+const lastChildNode = bodyElement.lastChild;
+console.log(firstChildNode);
+console.log(lastChildNode);
 
-// //-----Коллекция childNodes -это список всех детей 
-// // включая текс узлы  комментарии и т д
-// const childNodes = bodyElement.childNodes;
-// console.log(childNodes);
+//-----Коллекция childNodes -это список всех детей 
+// включая текст узлы  комментарии и т д
+const childNodes = bodyElement.childNodes;
+console.log(childNodes);
 
-// //---Для проверки наличия дочерних узлов hasChildNodes()---
-// console.log(bodyElement.hasChildNodes());
+//---Для проверки наличия дочерних узлов hasChildNodes()---
+console.log(bodyElement.hasChildNodes());
 
-// //--- Перебор коллекции
-// for (let node of childNodes) {
-//   console.log(node);
-// }
+//--- Перебор коллекции
+for (let node of childNodes) {
+  console.log(node);
+}
 
-// // Предыдущий  следующий узлы  и непоср родитель
-// const previousSiblingNode = bodyElement.previousSibling;
-// const nextSiblingNode = bodyElement.nextSibling;
-// const parentNode = bodyElement.parentNode;
-// console.log(previousSiblingNode);
-// console.log(nextSiblingNode);
-// console.log(parentNode);
+// Предыдущий  следующий узлы  и непоср родитель
+const previousSiblingNode = bodyElement.previousSibling;
+const nextSiblingNode = bodyElement.nextSibling;
+const parentNode = bodyElement.parentNode;
+console.log(previousSiblingNode);
+console.log(nextSiblingNode);
+console.log(parentNode);
 
-// Если нам хочется использовать именно методы массива, 
-// то мы можем создать настоящий массив из коллекции, используя Array.from:
+//Если нам хочется использовать именно методы массива, 
+//то мы можем создать настоящий массив из коллекции, используя Array.from:
 
-// alert(Array.from(document.body.childNodes).filter); // сделали массив
+alert(Array.from(document.body.childNodes).filter); // сделали массив
 
-// ----НАВИГАЦИЯ ТОЛЬКО ПО ЭЛЕМЕНТАМ----
+//----------НАВИГАЦИЯ ТОЛЬКО ПО ЭЛЕМЕНТАМ-------------
 
-// const bodyElement = document.body;//получаем обьект body
+const bodyElement = document.body;//получаем обьект body
 
-// // Получ-е кол-ции всех дочерних эл-в
-// // как childNodes но только эл-в(тегов)
-// const bodyChildren = bodyElement.children;
-// const bodyChildren1 = bodyElement.children[1];//-напр второйэл
-// console.log(bodyChildren);
-// console.log(bodyChildren1);
+// Получ-е кол-ции всех дочерних эл-в
+// как childNodes но только эл-в(тегов)
+const bodyChildren = bodyElement.children;
+const bodyChildren1 = bodyElement.children[1];//-напр второй эл
+console.log(bodyChildren);
+console.log(bodyChildren1);
 
-// // -----Первый и последний дочерние элементы
+// -----Первый и последний дочерние элементы
 
-// const firstChild = bodyElement.firstElementChild;
-// const lastChild = bodyElement.lastElementChild;
-// console.log(firstChild);
-// console.log(lastChild);
+const firstChild = bodyElement.firstElementChild;
+const lastChild = bodyElement.lastElementChild;
+console.log(firstChild);
+console.log(lastChild);
 
-// // Предыдущий  следующий узлы  и непоср родитель
+// Предыдущий  следующий узлы  и непоср родитель
 
-// const previousSibling = bodyElement.previousElementSibling;
-// const nextSibling = bodyElement.nextElementSibling;
-// const parentElement = bodyElement.parentElement;
-// console.log(previousSibling);
-// console.log(nextSibling);
-// console.log(parentElement);
+const previousSibling = bodyElement.previousElementSibling;
+const nextSibling = bodyElement.nextElementSibling;
+const parentElement = bodyElement.parentElement;
+console.log(previousSibling);
+console.log(nextSibling);
+console.log(parentElement);
 
-// --ПОИСК ПРОИЗВОЛЬНОГО ЭЛ_ТА
+//-----------ПОИСК ПРОИЗВОЛЬНОГО ЭЛ_ТА-------------
 
-// Универс метод-часто исп-ся
-// Рез-т поиска будет собран в коллекцию
-// Поиск по селектору класса
+//Универс метод - часто исп - ся
+//Рез - т поиска будет собран в коллекцию
+//Поиск по селектору класса
 
 const elemsOne = document.querySelectorAll('.lesson_list');
 
@@ -946,13 +787,13 @@ const elemsSix = document.querySelectorAll('.lesson_list .lesson_text');
 const elemsSeven = document.querySelectorAll('#listItem');
 
 // Поиск по атрибутуr
-const elemsEight = document.querySelectorAll('[data-item]'); r
+const elemsEight = document.querySelectorAll('[data-item]');
 
 // Поиск по атрибуту со значением
 const elemsNine = document.querySelectorAll('[data-item ="85"]');
 
-// --ПОЛУЧЕНИЕ КОНКРЕТНОГО ЭЛ_ТА
-// 1cп
+// --------------ПОЛУЧЕНИЕ КОНКРЕТНОГО ЭЛ_ТА----------
+// -----1cп
 const elems = document.querySelectorAll('.li');// получаем все li
 console.log(elems[2]);// выводим конкретный(третий эл-т)
 
@@ -1012,7 +853,6 @@ console.log(list);
 
 const textElement = document.querySelector('.lesson_text');//Получаем обьект
 
-
 //Получаем содержимое обьекта вместе с HTML
 const textElementContent = textElement.innerHTML;
 //Перезаписываем содержимое обьекта
@@ -1040,6 +880,7 @@ console.log(getComment.data);
 
 // -----------СОЗДАНИЕ ЭЛ-В И УЗЛОВ---------
 // ----------Создание нового эл-та--тега------
+
 const newElement = document.createElement('div');
 console.log(newElement);
 // Наполняем новый эл-т
@@ -1050,11 +891,13 @@ console.log(newElement);
 const newText = document.createTextNode('Hello!');
 console.log(newText);
 // Созд-е об-ты нах-ся в константах но не явл частью документа
-// ---Вставляем новый элемент----
+
+// --------Вставляем новый элемент----
 // Строки вст-ся безоп способом как это делает textContent.
 
 const textElement = document.querySelector('.lesson_text');//Получаем обьект
 const newElement = document.createElement('div');
+newElement.textContent = '<h1>vxfvfx</h1>';
 newElement.innerHTML = 'gsjg <span class="yellow">hgvjgmhh</span>fdfsdfgsf';
 //  перед обьектом
 textElement.before(newElement);
@@ -1100,14 +943,14 @@ element.setAttribute(name, value);
 // name - имя атрибута(строка).
 // value - значение атрибута.
 
-// -----ПЕРЕНОС ЭЛЕМЕНТА
+// ------------ПЕРЕНОС ЭЛЕМЕНТА
 
 const lessonBlock = document.querySelector('.lesson');//Получаем обьект
 const title = document.querySelector('h3')//Получаем обьект
 // Переосим title в конец блока lessonBlock
 lessonBlock.append(title);
 
-// ----КОПИЯ ОБЬЕКТА__
+// -------------КОПИЯ ОБЬЕКТА__
 
 const textElement = document.querySelector('.lesson_text');//Получаем обьект
 
@@ -1196,8 +1039,7 @@ console.log(paddingLeft);
 
 //Стандартные Атрибуты и св-ва DOM-эл - в---
 console.dir(Link);//-список всех 
-доступных св - в
-
+//доступных св - в
 
 
 // ---СОБЫТИЯ---------
