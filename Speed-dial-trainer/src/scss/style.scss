@@ -1,0 +1,99 @@
+@import 'nullstyle.scss';
+
+body {
+  background-color: #8c8c8d;
+}
+
+header {
+ 
+}
+
+.container {
+  background-color: #f6f1f4;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.words {
+  display: flex;
+  justify-content: space-around;
+}
+
+#words__text {
+  resize: none;
+  padding: 10px 0px 10px 15px;
+  width: 340px;
+  min-height: 60px;
+  font-size: 20px;
+  border-radius: 5px;
+  border: 2px solid rgb(138, 133, 133);
+  box-shadow: 1px 1px 1px #999;
+}
+
+.words__title {
+  text-align: center;
+  font-size: 30px;
+}
+
+.words__input {
+  margin: 50px 0px 0px 0px;
+}
+
+.words__output {
+  margin: 50px 0px 0px 0px;
+}
+
+#output {
+  border: 2px solid rgb(138, 133, 133);
+  width: 340px;
+  min-height: 60px;
+  font-size: 20px;
+  padding: 10px 0px 10px 15px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px #999;
+  background-color: #fff;
+}
+
+.training {
+  margin: 70px 0px 0px 0px;
+}
+
+.training__button {
+
+}
+
+.training__input {
+  margin: 70px 0px 0px 0px;
+}
+
+.start {
+  display: block;
+  margin: 0 auto;
+  border: 2px solid rgb(138, 133, 133);
+  width: 150px;
+  height: 50px;
+  border-radius: 23px;
+  box-shadow: 1px 1px 1px #999;
+  background-color: #fff;
+}
+
+.start span {
+  font-size: 25px;
+}
+
+#start__text {
+  display: block;
+  margin: 0 auto;
+  resize: none;
+  padding: 10px;
+  width: 940px;
+  min-height: 60px;
+  font-size: 20px;
+  border-radius: 5px;
+  border: 2px solid rgb(138, 133, 133);
+  box-shadow: 1px 1px 1px #999;
+}
+
+footer {
+  min-height: 50px;
+}
