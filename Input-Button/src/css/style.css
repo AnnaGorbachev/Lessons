@@ -100,6 +100,27 @@ h6 {
   font-weight: 400;
 }
 
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.background {
+  background: url("../img/1641317373_1-abrakadabra-fun-p-klyaksa-kraski-png-2.jpg");
+}
+
+header h2 {
+  color: #FFF;
+  mix-blend-mode: difference;
+  font: 900 120px/120px Arial;
+  text-align: center;
+}
+
+header h2 span {
+  display: block;
+  font-size: 80px;
+}
+
 .wrapper__checkbox-radio {
   width: 100%;
   overflow: hidden;

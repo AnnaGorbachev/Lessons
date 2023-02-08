@@ -1,0 +1,157 @@
+@import 'nullstyle.scss';
+
+body {
+  font-size: 25px;
+  line-height: 1.2;
+}
+
+header {}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.calendar__container {
+  // box-shadow: 1px 1px 1px #999;
+}
+
+// table {
+//   // border-collapse: collapse;
+//   background: rgb(146, 141, 141);
+// }
+
+// td,
+// th {
+//   border: 1px solid black;
+//   padding: 4px;
+//   text-align: center;
+//   background: rgb(250, 240, 240);
+// }
+
+// th {
+//   font-weight: bold;
+//   background-color: #E6E6E6;
+// }
+
+
+body {
+  font-size: 100%;
+  line-height: 1.5;
+  font-family: sans-serif;
+  background: #3e403d;
+  color: #444;
+}
+
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: baseline;
+}
+
+.calendar-wrapper {
+  width: 380px;
+  margin: 35px auto;
+  padding: 25px;
+  border: 1px solid #dcdcff;
+  border-radius: 10px;
+  background: #fff;
+}
+
+table {
+  clear: both;
+  width: 100%;
+  border: 1px solid #dcdcff;
+  // border-radius: 3px;
+  border-collapse: collapse;
+  color: #444;
+  background: rgb(249, 246, 246);
+}
+
+td {
+  height: 48px;
+  text-align: center;
+  vertical-align: middle;
+  border-right: 1px solid #dcdcff;
+  border-top: 1px solid #dcdcff;
+  width: 14.28571429%;
+}
+
+td.not-current {
+  color: #cfcbcb;
+}
+
+td.today {
+  font-weight: 700;
+  color: #3333f0;
+  font-size: 25px;
+  background-color: #eeeff4
+}
+
+thead td {
+  border: none;
+  color: #28283b;
+  text-transform: uppercase;
+  font-size: 1.5em;
+}
+
+#btnPrev {
+  float: left;
+  margin-bottom: 20px;
+}
+
+#btnPrev:before {
+  content: '\f104';
+  font-family: FontAwesome;
+  padding-right: 11px;
+}
+
+#btnNext {
+  float: right;
+  margin-bottom: 20px;
+}
+
+#btnNext:after {
+  content: '\f105';
+  font-family: FontAwesome;
+  padding-left: 11px;
+}
+
+#btnPrev,
+#btnNext {
+  background: transparent;
+  font-size: 1em;
+  color: #c0c0c0;
+  cursor: pointer;
+  font-family: sans-serif;
+  transition: all 0.3s ease;
+}
+
+#btnPrev:hover,
+#btnNext:hover {
+  color: #28283b;
+  font-weight: bold;
+}
+
+.data__container {
+  display: flex;
+  justify-content: center;
+}
+
+.data__wrapper {
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+#data {
+  text-align: center;
+  padding: 0px 50px 0px 50px;
+  line-height: 1.7;
+  font-size: 25px;
+}

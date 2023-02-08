@@ -3,6 +3,33 @@
 body {
   
 }
+// Anna  learn  the javascript
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.background {
+  background: url('../img/1641317373_1-abrakadabra-fun-p-klyaksa-kraski-png-2.jpg');
+}
+
+header h2 {
+  color: #FFF;
+  mix-blend-mode: difference;
+  font: 900 120px/120px Arial;
+  text-align: center
+}
+
+header h2 span {
+  display: block;
+  font-size: 80px
+}
+
+// h2 {
+//   filter: invert(1) grayscale(1) contrast(9)
+// }
+
+
 
 // Стилизация чекбоксов и радиокнопок на CSS HTML jQuery
 .wrapper__checkbox-radio {
