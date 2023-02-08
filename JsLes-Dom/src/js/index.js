@@ -697,36 +697,30 @@
 const htmlElement = document.documentElement;
 const headElement = document.head;
 const bodyElement = document.body;
-console.log(htmlElement);
-console.log(headElement);
-console.log(bodyElement);
 
 //------Первый и последний дочерние элементы------
 const firstChildNode = bodyElement.firstChild;
 const lastChildNode = bodyElement.lastChild;
-console.log(firstChildNode);
-console.log(lastChildNode);
 
-//-----Коллекция childNodes -это список всех детей 
+//-----КОЛЛЕКЦИЯ childNodes -это список всех детей 
 // включая текст узлы  комментарии и т д
 const childNodes = bodyElement.childNodes;
-console.log(childNodes);
+//--- Перебор коллекции childNodes
+for (let node of document.body.childNodes) {
+  // без проверки выведет все узлы вместе с текстовыми
+  if (node.nodeName == "#text") { //отбрасываем узлы text,выводим только элементы
+    continue;
+  }
+  console.log(node);
+}
 
 //---Для проверки наличия дочерних узлов hasChildNodes()---
 console.log(bodyElement.hasChildNodes());
-
-//--- Перебор коллекции
-for (let node of childNodes) {
-  console.log(node);
-}
 
 // Предыдущий  следующий узлы  и непоср родитель
 const previousSiblingNode = bodyElement.previousSibling;
 const nextSiblingNode = bodyElement.nextSibling;
 const parentNode = bodyElement.parentNode;
-console.log(previousSiblingNode);
-console.log(nextSiblingNode);
-console.log(parentNode);
 
 //Если нам хочется использовать именно методы массива, 
 //то мы можем создать настоящий массив из коллекции, используя Array.from:
