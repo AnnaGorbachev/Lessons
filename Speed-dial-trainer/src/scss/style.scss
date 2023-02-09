@@ -1,6 +1,7 @@
 @import 'nullstyle.scss';
 
 body {
+  font-family: sans-serif; 
   background-color: #8c8c8d;
 }
 
@@ -27,7 +28,7 @@ header {
   font-size: 20px;
   border-radius: 5px;
   border: 2px solid rgb(138, 133, 133);
-  box-shadow: 1px 1px 1px #999;
+  box-shadow: 4px 4px 10px #cbc3c3;
 }
 
 .words__title {
@@ -50,7 +51,7 @@ header {
   font-size: 20px;
   padding: 10px 0px 10px 15px;
   border-radius: 5px;
-  box-shadow: 1px 1px 1px #999;
+  box-shadow: 4px 4px 10px #cbc3c3;
   background-color: #fff;
 }
 
@@ -59,29 +60,39 @@ header {
 }
 
 .training__button {
-
+  margin: 0px 0px 30px 0px;
 }
 
-.training__input {
-  margin: 70px 0px 0px 0px;
-}
-
-.start {
+#start {
   display: block;
   margin: 0 auto;
   border: 2px solid rgb(138, 133, 133);
   width: 150px;
   height: 50px;
   border-radius: 23px;
-  box-shadow: 1px 1px 1px #999;
+  box-shadow: 4px 4px 10px #cbc3c3;
   background-color: #fff;
 }
 
-.start span {
+#start span {
   font-size: 25px;
 }
 
-#start__text {
+#training__text {
+  height: 50px;
+  font-size: 30px;
+  line-height: 43px;
+  color: #727275;
+  background-color: #fff;
+  width: 940px;
+  margin: 0 auto;
+}
+
+.training__input {
+  margin: 10px 0px 0px 0px;
+}
+
+#input__text {
   display: block;
   margin: 0 auto;
   resize: none;
@@ -91,7 +102,7 @@ header {
   font-size: 20px;
   border-radius: 5px;
   border: 2px solid rgb(138, 133, 133);
-  box-shadow: 1px 1px 1px #999;
+  box-shadow: 4px 4px 10px #cbc3c3;
 }
 
 footer {

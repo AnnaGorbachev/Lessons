@@ -1,11 +1,15 @@
 
 "use strict";
 
-let wordByInput = document.getElementById('words__text');
-let wordToOutput = document.getElementById('output');
-let arrWords = [];
+const wordByInput = document.getElementById('words__text');
+const wordToOutput = document.getElementById('output');
+const buttonStart = document.getElementById('start');
+const trainingText = document.getElementById('training__text');
 
 wordByInput.addEventListener('keydown', setWords);
+buttonStart.addEventListener('click', setArrOfWords);
+
+let arrWords = [];
 
 function setWords() {
   if (event.code == 'Enter') {
@@ -16,14 +20,20 @@ function setWords() {
     wordByInput.value = '';
   }
 }
-console.log(arrWords);
 
-function randomElement(arr) {
+function setArrOfWords() {
+  let result = [];
+  for (let i = 0; i < 3; i++) {
+    let randomElement = getrandomElement(arrWords);
+    result.push(randomElement);
+  }
+  trainingText.innerHTML = result;
+}
+
+function getrandomElement(arr) {
   return arr[Math.floor(Math.random() * arr.length)];
 }
 
-
-// console.log(randomElement(arrWords));
 
 
 
