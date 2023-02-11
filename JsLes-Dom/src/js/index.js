@@ -811,8 +811,12 @@ const elemName = document.getElementsByName('list');
 const elem = document.querySelector('.lesson_item-sub-list');
 const parentList = elem.closest('.lesson_list');
 
-//Проверка matches-не ищет а проверяет уд-ет ли эл-т css -true  false
+//Метод matches--проверяет есть ли эл-т css -true  false 
 const elemM = document.querySelectorAll('.lesson_item-list');
+elemM.forEach(el => {
+  if (elem.matches('[class$="item-red"]')) console.log('red');
+})
+// или
 for (let elem of elemM) {
   if (elem.matches('[class$="item-red"]')) {
     console.log('red');
@@ -820,6 +824,10 @@ for (let elem of elemM) {
     console.log('blue');
   }
 };
+// closest -ищет указ-й селектор по цепочке родителей если нет-null
+elemM[0].closest('.wrapper');
+
+
 
 // Получив обьект мы можем применять св-ва навигации
 const text = document.querySelector('.lesson_text');
