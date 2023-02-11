@@ -724,7 +724,6 @@ const parentNode = bodyElement.parentNode;
 
 //Если нам хочется использовать именно методы массива, 
 //то мы можем создать настоящий массив из коллекции, используя Array.from:
-
 alert(Array.from(document.body.childNodes).filter); // сделали массив
 
 //----------НАВИГАЦИЯ ТОЛЬКО ПО ЭЛЕМЕНТАМ-------------
@@ -735,31 +734,21 @@ const bodyElement = document.body;//получаем обьект body
 // как childNodes но только эл-в(тегов)
 const bodyChildren = bodyElement.children;
 const bodyChildren1 = bodyElement.children[1];//-напр второй эл
-console.log(bodyChildren);
-console.log(bodyChildren1);
 
 // -----Первый и последний дочерние элементы
-
 const firstChild = bodyElement.firstElementChild;
 const lastChild = bodyElement.lastElementChild;
-console.log(firstChild);
-console.log(lastChild);
 
 // Предыдущий  следующий узлы  и непоср родитель
-
 const previousSibling = bodyElement.previousElementSibling;
 const nextSibling = bodyElement.nextElementSibling;
 const parentElement = bodyElement.parentElement;
-console.log(previousSibling);
-console.log(nextSibling);
-console.log(parentElement);
 
 //-----------ПОИСК ПРОИЗВОЛЬНОГО ЭЛ_ТА-------------
 
 //Универс метод - часто исп - ся
 //Рез - т поиска будет собран в коллекцию
 //Поиск по селектору класса
-
 const elemsOne = document.querySelectorAll('.lesson_list');
 
 // Поиск по cелектору тега
@@ -803,7 +792,6 @@ elems.forEach(item => {
 // Искать можно не только в document
 const sublist = document.querySelectorAll('.lesson_sub-list');
 const subItems = sublist[0].querySelectorAll('li');
-console.log(subItems);
 
 // 2cп--ищет первый попавшийся обьект
 const lessonList = document.querySelector('.lesson_list');
@@ -822,7 +810,6 @@ const elemName = document.getElementsByName('list');
 // elem.closest(css)-ищет ближайшего предка по css.-поднимается вверх от эл-та
 const elem = document.querySelector('.lesson_item-sub-list');
 const parentList = elem.closest('.lesson_list');
-console.log(parentList);
 
 //Проверка matches-не ищет а проверяет уд-ет ли эл-т css -true  false
 const elemM = document.querySelectorAll('.lesson_item-list');
@@ -839,12 +826,9 @@ const text = document.querySelector('.lesson_text');
 const list = text.nextElementSibling;
 console.log(list);
 
-
-
 // -----------------ИЗМЕНЕНИЕ ДОКУМЕНТА--------------
 
 // Содержимое эл-та innerHTML
-
 const textElement = document.querySelector('.lesson_text');//Получаем обьект
 
 //Получаем содержимое обьекта вместе с HTML
@@ -1335,7 +1319,47 @@ window.addEventListener("unload", function (e) {
   // https://w3c.github.io/beacon/.
 });
 
+//-----События на моб устройствах---
+// touchstart
+// touchmove
+// touchhend
+// touchenter
+// touchleave
+// touchcancel
 
+window.addEventListener('DOMContentLoaded', () => {
+
+  const box = document.querySelector('.box');
+  box.addEventListener('touchstart', (e) => {
+    e.preventDefault()//рек-ся чт отменить станд повед браузера
+
+    let t = e.targetTouches[0].pageX;// координаты пальца
+
+    console.log(t);
+  });
+
+
+})
+
+  // свойства
+  // touches -все пальцы на странице
+  // targetTouches  -пальцы кот взаим-ют имно с этим эл
+  // changedTouches  -список пальцев кот уч-ют в текущем событии
+
+
+
+
+
+  < script defer src = "js/script.js" ></script >
+    <script async src="js/script.js" ></script>//для скр кот не зав от других или DOM
+
+window.addEventListener('DOMContentLoaded', () => { }
+
+// поместить скрипт на страницу
+const script = document.createElement('script');
+script.src = "js/script.js";
+script.async = false;
+document.body.append(script);
 
 
 
