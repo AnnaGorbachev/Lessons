@@ -339,15 +339,13 @@
 // console.log(person1.speshiality);
 
 // ------------------
-// let cat = {
-//   legs: 4,
-//   name: "Гармония",
-//   color: "Черепаховый"
-// };
 
-// let kitten = Object.create(cat);
+// const user = {
+//   1: 5000,
+//   alex: 4000,
+// }
 
-// console.log(kitten.legs);
+// console.log(typeof (Object.keys(user)[0]));
 // ------------
 
 // let testObj = {
@@ -811,6 +809,10 @@ const elemName = document.getElementsByName('list');
 const elem = document.querySelector('.lesson_item-sub-list');
 const parentList = elem.closest('.lesson_list');
 
+// closest -ищет указ-й селектор по цепочке родителей если нет-null
+elemM[0].closest('.wrapper');
+
+
 //Метод matches--проверяет есть ли эл-т css -true  false 
 const elemM = document.querySelectorAll('.lesson_item-list');
 elemM.forEach(el => {
@@ -824,10 +826,6 @@ for (let elem of elemM) {
     console.log('blue');
   }
 };
-// closest -ищет указ-й селектор по цепочке родителей если нет-null
-elemM[0].closest('.wrapper');
-
-
 
 // Получив обьект мы можем применять св-ва навигации
 const text = document.querySelector('.lesson_text');
@@ -959,23 +957,39 @@ const elementClassNames = еlement.className;
 // Перезаписываем имя класса-перезап-ся все эл-ты с таким классом
 еlement.className = "red";
 
-// - ClassList- спец обьект с методами для доб/удал оного класса--
+// - -----------ClassList- спец обьект ------
+//методы ClassList
 
+// item() получ-е класса кот распол-ся под опр-м индексом
+const btns = document.querySelectorAll('buttons');
+console.log(btns[0].classList.item(0));// blue
+
+//сколько классов есть у первой кнопки
+console.log(btns[0].classList.length);//2
+
+// Добавить класс можно несколько
 const еlement = document.querySelector('.lesson_item_list_red');//П-ем эл-т
-// Добавить класс
-еlement.classList.add('active');
-// Удалить класс
-еlement.classList.remove('active');
+еlement.classList.add('active', 'bgfbfgb');
+// Удалить класс можно несколько
+еlement.classList.remove('active', 'fg');
 //  Добавить класс если его нет   а если есть-удалить
 еlement.classList.toggle('active');
 // Проверка наличия класса true false
-c.contains('active');
-
+if (btns[1].classList.contains('active')) { }
+// например  -получ типа toggle вручную
+btns[0].addEventListener('click', () => {
+  if (!btns[1].classList.contains('red')) {
+    btns[1].classList.add('red');
+  } else {
+    btns[1].classList.remove('red');
+  }
+})
 // --ClassList-перебираемый
 // Можно перечислить все классы
-for (let className of еlement.classList) {
-  console.log(className);
+for (let clName of еlement.classList) {
+  console.log(clName);
 }
+// ClassName -устаревшее-выводит классы в виде строки
 
 // ------УПРАВЛЕНИЕ СТИЛЯМИ------
 // --element.style---
@@ -1084,27 +1098,28 @@ event.stopPropagation()
 
 //Делигирование событий
 //Напр есть много кнопок-при наж на каж -console.log('vdfv');
-const button = document.querySelector('.button');
+//Циклом:неправ.тк если появ еще одна кн после этого цикла, на ней не будет срабат
+const buttons = document.querySelectorAll('.button');
 
-function showConsole() {
-  console.log('vdfv');
-}
-button.forEach(buttonItem => {
-  buttonItem.addEventListener("click", showConsole)
+buttons.forEach(buttonItem => {
+  buttonItem.addEventListener("click", () => {.......})
 })
-//Другой подход
+//Правильный подход
 //Назначим обр-к для их родителя
 
-const lesson = document.querySelector('.lesson');
+const btns = document.querySelectorAll('button'),
+  wrapper = document.querySelector('.btn__block');
 
-function showConsole() {
-  console.log('vdfv');
-}
-lesson.addEventListener("click", function (event) {
-  if (event.target.closest('.lesson')) {//проверяем кнопка ли это
-    showConsole();
-  }
+
+
+wrapper.addEventListener('click', (event) => {
+  if (event.target && event.target.tagName == "BUTTON") { console.log('hello'); }
+  //или так
+  if (event.target && event.target.classList.closest('blue')) { console.log('hello'); }
+  //matches()  -какой-то эл совпадает с чем-то
+  if (event.target && event.target.matches('button.red')) { console.log('hello'); }
 })
+
 
 // Действия бр-ра по ум и их отмена
 
@@ -1328,6 +1343,9 @@ window.addEventListener("unload", function (e) {
 });
 
 //-----События на моб устройствах---
+// http://youon.ru/%D0%90%D0%BD%D0%B4%D1%80%D0%BE%D0%B8%D0%B4/%D0%A0%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%BA%D0%B0/touch-sobytiya-na-javascript-multitach-realizatsiya
+// https://habr.com/ru/company/sibirix/blog/227175/
+
 // touchstart
 // touchmove
 // touchhend
@@ -1373,6 +1391,7 @@ document.body.append(script);
 
 
 
+
 // --------------Таблица- Dom--------------
 // ---http://htmlbook.ru/content/maket-iz-dvukh-kolonok--
 function generateTable() {
@@ -1403,6 +1422,8 @@ function generateTable() {
   tbl.setAttribute("border", "2");
 }
 generateTable();
+
+
 
 
 // Пример с меню-----
