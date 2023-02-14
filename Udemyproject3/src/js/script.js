@@ -3,6 +3,7 @@
 
 window.addEventListener('DOMContentLoaded', () => {
 
+  // --------------Tabs-----------------
   const tabs = document.querySelectorAll('.tabheader__item');
   const tabsContent = document.querySelectorAll('.tabcontent');
   const tabsParent = document.querySelector('.tabheader__items');
@@ -44,6 +45,24 @@ window.addEventListener('DOMContentLoaded', () => {
       })
     }
   })
+
+  // ---------------таймер-------------------------
+  // 1. ф-я опр-я разницу между временем польз-ля и временем акции,получение дней,часов,и тд-getTimeRemaining
+
+  // 1. ф-я кот б получать цифры таймера и что-то с ними делать
+  // 2. и вывод
+  // 3. ф-я обновления таймера
+
+  const deadline = '2020-05-11';//сюда данные м прих из input
+
+  function getTimeRemaining(endtime) {
+    //кол-во мллсек в конечном времени - время сейчас:
+    const t = Date.parse(endtime) - Date.parse(new Date());
+    //разница в млсек / кол-во млсек в 1 дне(1000 * 60 * 60 * 24) и округляем
+    const days = Math.floor(t / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((t / (1000 * 60 * 60));
+
+  }
 
 
 
