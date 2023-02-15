@@ -2,12 +2,13 @@
 <html lang="en">
 
 <head>
+  <title>Calendar</title>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/style.css">
   <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css'>
-  <title>Calendar</title>
+  <script defer src="js/index.js"></script>
 </head>
 
 <body>
@@ -27,9 +28,15 @@
           <button id="btnNext" type="button">Next</button>
           <div id="divCal"></div>
         </div>
-        <div class="data__container">
+        <div class="data__now-container">
           <div class="data__wrapper">
             <div id="data"></div>
+          </div>
+        </div>
+
+        <div class="data__deadline-container">
+          <div class="data__wrapper">
+            <div id="deadline"></div>
           </div>
         </div>
 
@@ -39,6 +46,6 @@
 
 </body>
 
-<script src="js/index.js"></script>
+
 
 </html>

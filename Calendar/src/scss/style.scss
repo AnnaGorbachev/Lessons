@@ -139,9 +139,16 @@ thead td {
   font-weight: bold;
 }
 
-.data__container {
+.data__now-container{
   display: flex;
   justify-content: center;
+  margin: 0px 0px 35px 0px;
+}
+
+.data__deadline-container {
+  display: flex;
+  justify-content: center;
+  margin: 0px 0px 35px 0px;
 }
 
 .data__wrapper {
@@ -150,6 +157,13 @@ thead td {
 }
 
 #data {
+  text-align: center;
+  padding: 0px 50px 0px 50px;
+  line-height: 1.7;
+  font-size: 25px;
+}
+
+#deadline {
   text-align: center;
   padding: 0px 50px 0px 50px;
   line-height: 1.7;

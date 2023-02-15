@@ -201,32 +201,50 @@ window.onload = function () {
     c.previousMonth();
   };
 }
+// ------Текущее время-----------
 
-// Получить элемент по id
-function getId(id) {
-  return document.getElementById(id);
-}
-
-
-function zero_first_format(value) {
+function zeroFirstFormat(value) {
   if (value < 10) {
     value = '0' + value;
   }
   return value;
 }
 
-function date_time() {
-  let current_datetime = new Date();
-  let day = zero_first_format(current_datetime.getDate());
-  let month = zero_first_format(current_datetime.getMonth() + 1);
-  let year = current_datetime.getFullYear();
-  let hours = zero_first_format(current_datetime.getHours());
-  let minutes = zero_first_format(current_datetime.getMinutes());
-  let seconds = zero_first_format(current_datetime.getSeconds());
+function getTimeNow() {
+  const t = new Date();
+  const day = zeroFirstFormat(t.getDate());
+  const month = zeroFirstFormat(t.getMonth() + 1);
+  const year = t.getFullYear();
+  const hours = zeroFirstFormat(t.getHours());
+  const minutes = zeroFirstFormat(t.getMinutes());
+  const seconds = zeroFirstFormat(t.getSeconds());
 
-  return day + "." + month + "." + year + " " + hours + ":" + minutes + ":" + seconds;
+  return `сегодня ${day}.${month}.${year}. ${hours}.${minutes}.${seconds}`;
 }
 
 setInterval(function () {
-  document.getElementById('data').innerHTML = date_time();
+  document.getElementById('data').innerHTML = getTimeNow();
 }, 1000);
+
+
+//-------Оставшееся время-------------
+
+const deadline = '2023-05-11';
+
+function getTimeRemaining(endtime) {
+  //кол-во мллсек в конечном времени - время сейчас:
+  const t = Date.parse(endtime) - Date.parse(new Date());
+  //разница в млсек 
+  const days = Math.floor(t / (1000 * 60 * 60 * 24));
+  // const hours = Math.floor((t / (1000 * 60 * 60) % 24));
+  // const minutes = Math.floor((t / 1000 / 60) % 60);
+  // const seconds = Math.floor((t / 1000) % 60);
+
+  return `До оплаты осталось ${days} дня.`;
+  // return `осталось ${days} дня ${hours} часов ${minutes} минут ${seconds} секунд`;
+}
+
+setInterval(function () {
+  document.getElementById('deadline').innerHTML = getTimeRemaining(deadline);
+}, 1000);
+
