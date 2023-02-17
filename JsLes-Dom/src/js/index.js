@@ -812,7 +812,6 @@ const parentList = elem.closest('.lesson_list');
 // closest -ищет указ-й селектор по цепочке родителей если нет-null
 elemM[0].closest('.wrapper');
 
-
 //Метод matches--проверяет есть ли эл-т css -true  false 
 const elemM = document.querySelectorAll('.lesson_item-list');
 elemM.forEach(el => {
@@ -1318,10 +1317,7 @@ function readyLoad() {
   console.log(image.offsetWidth);
 }
 
-
-
 // Событие в момент когда польз-ль собирается покинуть страницу
-
 
 // ---beforeunload----
 // Событие beforeunload срабатывает на объекте window
@@ -1387,10 +1383,45 @@ script.src = "js/script.js";
 script.async = false;
 document.body.append(script);
 
+//Параметры документa
+//К элементу
+//box-sizing:border-box;
+const box = document.querySelector('.box');
+const btn = document.querySelector('.btn');
+const width = box.clientWidth;//вместе с padding без скролла
+const height = box.clientHeight;//только для чтения
 
+const offsetWidth = box.offsetWidth;// вместе со скроллом-совпад с css
+const offsetHeight = box.clientHeight;//только для чтения
 
+const scrollWidth = box.scrollWidth;//только для чтения
+const scrollHeight = box.scrollHeight;// вся полная высота эл-та
 
+//Практика-при наж на кнопку док-т раскрыв полностью
+btn.addEventListener('click', () => {
+  box.style.height = box.scrollHeight + 'px';
+})
 
+//сколько есть контента скрытого вверху
+btn.addEventListener('click', () => {..
+  console.log(box.scrollTop);//можно модифицировать
+})
+//координ эл-та на стр начин с левого верх угла
+console.log(box.getBoundingClientRect());//-получ всех координат в виде обьекта
+console.log(box.getBoundingClientRect().top);
+
+//получение стилей кот были примен в css
+const stylePsevd = window.getComputedStyle(box);//-получ всех стилей в виде обьекта
+style.display//получ конкретного стиля
+//можно получить стили псевдоэл-в
+const stylePsevd = window.getComputedStyle(box, псевдоэл - т)
+console.log(stylePsevd.color);
+
+//Для глобальных обьектов-document,window
+console.log(document.documentElement.clientWidth);//кол-во px кот отлистал польз на стр
+console.log(document.documentElement.scrollTop);
+scrollBy(x, y)//-скроллит стр относит текущего полож 
+scrollTo(x, y)//-относит всей стр
 
 // --------------Таблица- Dom--------------
 // ---http://htmlbook.ru/content/maket-iz-dvukh-kolonok--
