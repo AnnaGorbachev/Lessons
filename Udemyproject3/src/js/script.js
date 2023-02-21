@@ -115,8 +115,50 @@ window.addEventListener('DOMContentLoaded', () => {
   setClock('.timer', deadline);
 
 
+  // Modal
 
+  const modalTrigger = document.querySelectorAll('[data-modal]');
+  const modal = document.querySelector('.modal');
+  const modalClosedBtn = document.querySelector('[data-close]');
 
+  modalTrigger.forEach(btn => {
+    btn.addEventListener('click', () => {
+      modal.classList.add('show');
+      modal.classList.remove('hide');
+      // modal.classList.toggle('show');//c toggle
+      document.body.style.overflow = 'hidden';//чт стр не прокруч при открытом modal
+    });
+  });
+
+  function closeModal() {
+    modal.classList.add('hide');
+    modal.classList.remove('show');
+    // modal.classList.toggle('show');//
+    document.body.style.overflow = '';//восстан-ем скролл страницы
+  }
+
+  modalClosedBtn.addEventListener('click', closeModal);
+
+  //чт закрыв при наж на вне мод окна
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      closeModal();
+    }
+  })
+
+  document.addEventListener('keydown', (e) => {// чт закрывалось при Esc
+    if (e.code === 'Escape' && modal.classList.contains('show')) {//если наж Esc и открыто мод окно
+      closeModal();
+    }
+  });
 
 
 });
+
+
+
+
+
+
+
+

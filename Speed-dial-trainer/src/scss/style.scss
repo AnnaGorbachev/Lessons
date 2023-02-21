@@ -9,6 +9,20 @@ header {
  
 }
 
+// &:hover {
+  .delete {
+    content: '';
+    display: block;
+    // position: absolute;
+    right: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background: url('../img/trash.png') center (center / cover) no-repeat;
+    cursor: pointer;
+  }
+
 .container {
   background-color: #f6f1f4;
   max-width: 1200px;

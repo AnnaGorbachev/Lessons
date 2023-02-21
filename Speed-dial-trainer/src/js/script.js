@@ -1,10 +1,10 @@
 
 "use strict";
 
-const wordByInput = document.getElementById('words__text');
-const wordToOutput = document.getElementById('output');
-const buttonStart = document.getElementById('start');
-const trainingText = document.getElementById('training__text');
+const wordByInput = document.querySelector('#words__text');
+const wordToOutput = document.querySelector('#output');
+const buttonStart = document.querySelector('#start');
+const trainingText = document.querySelector('#training__text');
 
 wordByInput.addEventListener('keydown', setWords);
 buttonStart.addEventListener('click', setArrOfWords);
@@ -15,8 +15,16 @@ function setWords() {
   if (event.code == 'Enter') {
 
     let val = wordByInput.value;
-    wordToOutput.innerHTML += `${val}<br>`;
-    arrWords.push(val);
+    if (val) {
+      wordToOutput.innerHTML += `${val}<div class="delete"></div><br>`;
+      arrWords.push(val);
+    }
+
+
+    // const trash = document.createElement('div');
+    // trash.classList.add('delete');
+
+
     wordByInput.value = '';
   }
 }
