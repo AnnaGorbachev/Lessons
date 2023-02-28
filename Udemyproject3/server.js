@@ -2,6 +2,7 @@
 const http = require('http');
 const { parse } = require('url');
 
+const PORT = 8080;
 const server = http.createServer((req, res) => {
   const headers = {
     "Access-Control-Allow-Origin": "*",
@@ -31,4 +32,4 @@ const server = http.createServer((req, res) => {
   });
 });
 
-server.listen(8080);
+server.listen(PORT, () => console.log(`Server started on port ${PORT}`));
