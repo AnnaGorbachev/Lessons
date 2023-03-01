@@ -5,7 +5,8 @@
     "build": "rimraf ./src/css && npm run sass",
     "sass": "node-sass -r ./src/scss -o ./src/css --output-style compressed --source-map true",
     "serve": "live-server --port=5000 --ignore='./src/scss/' --no-browser ./src/",
-    "dev": "npm run build && concurrently -k 'npm run sass -- -w' 'npm run serve'",
+    "json-server": "json-server --watch ./db/db.json",
+    "dev": "npm run build && concurrently -k 'npm run sass -- -w' 'npm run serve' 'npm run json-server'",
     "lint": "eslint . --ext .js"
   },
   "engines": {
@@ -19,6 +20,7 @@
     "eslint": "8.31.0",
     "eslint-config-airbnb-base": "15.0.0",
     "eslint-plugin-import": "2.26.0",
+    "json-server": "0.17.2",
     "live-server": "1.2.2",
     "node-sass": "6.0.1",
     "rimraf": "3.0.2"

@@ -217,123 +217,60 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  new MenuCard(
-    "img/tabs/vegy.jpg",
-    "vegy",
-    'Меню "Фитнес"',
-    'Меню "Фитнес" - это новый подход к приготовлению блюд: больше свежих овощей и фруктов. Продукт активных и здоровых людей. Это абсолютно новый продукт с оптимальной ценой и высоким качеством!',
-    9,
-    ".menu .container"
-  ).render();
+  const getResource = async (url) => {
+    const res = await fetch(url);
 
-  new MenuCard(
-    "img/tabs/post.jpg",
-    "post",
-    'Меню "Постное"',
-    'Меню “Постное” - это тщательный подбор ингредиентов: полное отсутствие продуктов животного происхождения, молоко из миндаля, овса, кокоса или гречки, правильное количество белков за счет тофу и импортных вегетарианских стейков.',
-    14,
-    ".menu .container"
-  ).render();
+    if (!res.ok) {
+      throw new Error(`Could not fetch ${url}, status: ${res.status}`);
+    };
 
-  new MenuCard(
-    "img/tabs/elite.jpg",
-    "elite",
-    'Меню “Премиум”',
-    'В меню “Премиум” мы используем не только красивый дизайн упаковки, но и качественное исполнение блюд. Красная рыба, морепродукты, фрукты - ресторанное меню без похода в ресторан!',
-    21,
-    ".menu .container"
-  ).render();
+    return await res.json();
+  };
 
 
-  //Forms
+  // getResource('http://localhost:3000/menu')
+  //   .then(data => {
+  // data.forEach(({ img, altimg, title, descr, price }) => {
+  //   new MenuCard(img, altimg, title, descr, price, '.menu .container').render();
+  // })
+  //   });
 
-  // const forms = document.querySelectorAll('form');
-  // const message = {
-  //   loading: 'Загрузка...',
-  //   success: 'Спасибо! Скоро мы с вами свяжемся',
-  //   failure: 'Что-то пошло не так...'
-  // };
 
-  // forms.forEach(item => {
-  //   postData(item);
-  // });
+  axios.get('http://localhost:3000/menu')
+    .then(data => {
+      data.data.forEach(({ img, altimg, title, descr, price }) => {
+        new MenuCard(img, altimg, title, descr, price, '.menu .container').render();
+      })
+    });
 
-  // function postData(form) {
-  //   form.addEventListener('submit', (e) => {
-  //     e.preventDefault();// в ajax запросах это должно идти первым-обнуление бр-ра
 
-  //     //Создадим блок куда будем выводить сообщение-так часто делают
+  //2способ-без классов-т е формирование на лету
 
-  //     let statusMessage = document.createElement('div');
-  //     statusMessage.classList.add('status');        //доб-ем какие-то классы
-  //     statusMessage.textContent = message.loading;  //скажем польз-лю что 'Загрузка'
-  //     form.appendChild(statusMessage);              //выводим в form
+  // getResource('http://localhost:3000/menu')
+  //   .then(data => createCard(data));
 
-  //     const request = new XMLHttpRequest();
-  //     request.open('POST', 'http://localhost:8080');//всегда чт настроить этот запрос
+  // function createCard(data) {
+  //   data.forEach(({ img, altimg, title, descr, price }) => {
+  //     const element = document.createElement('div');
+  //     //price * на курс доллара т к мы получили цену в долларе
+  //     element.classList.add("menu__item");
 
-  //     //когда! исп-м связку XMLHttpRequest()+form-data --заголовок устан не надо(уст-ся автом-ки!)
-  //     // request.setRequestHeader('Content-type', 'multipart/form-data'); //тип контента
-  //     // request.setRequestHeader('X-ECHO-HEADER', 'Access-Control-Allow-Origin:  *')
-
-  //     //request.setRequestHeader('Content-type', 'application/json; charset=utf-8');
-  //     const formData = new FormData(form);//формируем сразу все данные для запроса
-  //     // в HTML обязат!!! д.б прописаны name!!!
-
-  //     const object = {};
-  //     formData.forEach(function (value, key) {
-  //       object[key] = value;
-  //     });
-
-  //     const json = JSON.stringify(object);
-
-  //     request.send(json);
-
-  //     request.addEventListener('load', () => {
-  //       if (request.status === 200) {                //если успешно-
-  //         console.log(request.response);
-  //         showThanksModal(message.success);
-
-  //         form.reset();                               //очищаем форму
-  //         statusMessage.remove();                   //уд-ем блок со стр
-  //       } else {
-  //         showThanksModal(message.failure);//или 'Что-то пошло не так...'
-  //       }
-  //     });
+  //     element.innerHTML = `
+  //               <img src=${img} alt=${altimg}>
+  //               <h3 class="menu__item-subtitle">${title}</h3>
+  //               <div class="menu__item-descr">${descr}</div>
+  //               <div class="menu__item-divider"></div>
+  //               <div class="menu__item-price">
+  //                   <div class="menu__item-cost">Цена:</div>
+  //                   <div class="menu__item-total"><span>${price}</span> грн/день</div>
+  //               </div>
+  //           `;
+  //     document.querySelector(".menu .container").append(element);
   //   });
   // }
 
 
-  // function showThanksModal(message) {
-  //   const prevModalDialog = document.querySelector('.modal__dialog');
-  //   //скрываем(не уд-ем!) эл-т перед тем как показать мод окно
-  //   prevModalDialog.classList.add('hide');
-  //   //откр-ем мод окно
-  //   openModal();
-
-  //   //   //создаем новый контент
-  //   const thanksModal = document.createElement('div');
-  //   thanksModal.classList.add('modal__dialog') //назн-ем такой же класс чт стили были одинак
-  //   thanksModal.innerHTML = `
-  //           <div class="modal__content">
-  //               <div class="modal__close" data-close>×</div>
-  //               <div class="modal__title">${message}</div>
-  //           </div>
-  //       `;
-  //   //доб-ем эл-т на страницу
-  //   document.querySelector('.modal').append(thanksModal);
-  //   //чтобы через время снова появлялось старое окно
-  //   setTimeout(() => {
-  //     thanksModal.remove();                   //удаление
-  //     prevModalDialog.classList.add('show');  //показ предыдущего
-  //     prevModalDialog.classList.remove('hide');
-  //     closeModal();
-  //   }, 4000)
-  // }
-
-
-
-
+  //Forms
 
   const forms = document.querySelectorAll('form');
   const message = {
@@ -343,10 +280,25 @@ window.addEventListener('DOMContentLoaded', () => {
   };
 
   forms.forEach(item => {
-    postData(item);
+    bindPostData(item);
   });
 
-  function postData(form) {
+
+
+  const postData = async (url, data) => {
+    let res = await fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json'
+      },
+      body: data
+    });
+    return await res.json();
+  };
+
+
+
+  function bindPostData(form) {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
 
@@ -358,22 +310,15 @@ window.addEventListener('DOMContentLoaded', () => {
             `;
       form.insertAdjacentElement('afterend', statusMessage);
 
-      const formData = new FormData(form);
+      const formData = new FormData(form);//собрала все данные с формы
+      // превращ в массив массивов(formData.entries()),потом в обьект(Object.fromEntries), и в json
 
-      const object = {};
-      formData.forEach(function (value, key) {
-        object[key] = value;
-      });
+      const json = JSON.stringify(Object.fromEntries(formData.entries()));
 
 
-      fetch('http://localhost:8080', {
-        method: 'POST',
-        // headers: {
-        //   'Content-type': 'application/json'
-        // },
-        body: JSON.stringify(object)
-      })
-        .then(data => data.text)
+
+      postData('http://localhost:3000/requests', json)
+
         .then(data => {
           console.log(data);
           showThanksModal(message.success);
@@ -384,16 +329,6 @@ window.addEventListener('DOMContentLoaded', () => {
           form.reset();
         });
 
-      // request.addEventListener('load', () => {
-      //   if (request.status === 200) {
-      //     console.log(request.response);
-      //     showThanksModal(message.success);
-      //     statusMessage.remove();
-      //     form.reset();
-      //   } else {
-      //     showThanksModal(message.failure);
-      //   }
-      // });
     });
   }
 
@@ -419,21 +354,6 @@ window.addEventListener('DOMContentLoaded', () => {
       closeModal();
     }, 4000);
   }
-
-
-
-  // fetch('https://jsonplaceholder.typicode.com/posts', {
-  //   method: 'POST',
-  //   body: JSON.stringify({ name: 'Alex' }),
-  //   headers: {
-  //     'Content-type': 'application/json'
-  //   }
-  // })
-  //   .then(response => response.json())
-  //   .then(json => console.log(json));
-
-
-
 
 
 
