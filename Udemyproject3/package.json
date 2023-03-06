@@ -7,7 +7,8 @@
     "serve": "live-server --port=5000 --ignore='./src/scss/' --no-browser ./src/",
     "json-server": "json-server --watch ./db/db.json",
     "dev": "npm run build && concurrently -k 'npm run sass -- -w' 'npm run serve' 'npm run json-server'",
-    "lint": "eslint . --ext .js"
+    "lint": "eslint . --ext .js",
+    "webpack": "webpack"
   },
   "engines": {
     "node": ">=16.14.2"
