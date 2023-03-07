@@ -1,10 +1,8 @@
-function timer() {
-  // ---------------таймер-------------------------
+function timer(id, deadline) {
+
   // 1. ф-я опр-я разницу между временем польз-ля и временем акции,получение дней,часов,и тд-getTimeRemaining
   // 2. ф-я устан-я таймер на стр
   // 3. ф-я обновления таймера
-
-  const deadline = '2023-05-11';//сюда данные м прих из input
 
   function getTimeRemaining(endtime) {
     let days, hours, minutes, seconds;
@@ -65,8 +63,8 @@ function timer() {
     }
   }
 
-  setClock('.timer', deadline);
+  setClock(id, deadline);
 
 }
 
-module.exports = timer;
+export default timer;

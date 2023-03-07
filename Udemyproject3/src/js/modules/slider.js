@@ -1,6 +1,5 @@
-function slider() {
+function slider({ container, slide, nextArrow, prevArrow, totalCounter, currentCounter, wrapper, field }) {
 
-  //---Slider---------------
   // offer__slider-inner--обернули слайдер в этот блок чт это было окошко через кот б.видеть текущий слайд
 
   //---------Точки для слайдера
@@ -13,15 +12,15 @@ function slider() {
   //6.сделать класс активности для активной точки
   //7.сделать чтобы класс активности менялся на точках при передв слайдера
 
-  const slides = document.querySelectorAll('.offer__slide'),
-    slider = document.querySelector('.offer__slider'),//1.точки
-    prev = document.querySelector('.offer__slider-prev'),
-    next = document.querySelector('.offer__slider-next'),
-    total = document.querySelector('#total'),//общее кол-во
-    current = document.querySelector('#current'),
-    slidesWrapper = document.querySelector('.offer__slider-wrapper'),
+  const slides = document.querySelectorAll(slide),
+    slider = document.querySelector(container), //1.точки
+    next = document.querySelector(nextArrow),
+    prev = document.querySelector(prevArrow),
+    total = document.querySelector(totalCounter),//общее кол-во
+    current = document.querySelector(currentCounter),
+    slidesWrapper = document.querySelector(wrapper),
     width = window.getComputedStyle(slidesWrapper).width,//получаем ширину враппера
-    slidesField = document.querySelector('.offer__slider-inner');//строка для всей карусели
+    slidesField = document.querySelector(field);//строка для всей карусели
 
   let slideIndex = 1;
   let offset = 0;//отступ
@@ -306,4 +305,4 @@ function slider() {
 
 }
 
-module.exports = slider;
+export default slider;
