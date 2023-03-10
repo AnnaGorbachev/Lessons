@@ -105,6 +105,886 @@ h6 {
   margin: 0 auto;
 }
 
+
+
+/* lesson1 */
+.big {
+  font-size: 20px;
+  color: red;
+}
+
+span.bigger {
+  color: blue;
+}
+
+.bigger {
+  color: rgb(91, 254, 237);
+}
+
+.small span {
+  color: rgb(255, 0, 119);
+}
+
+.small>p {
+  color: rgb(192, 53, 143);
+}
+
+
+/* lesson2 */
+.arial {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.fontsize {
+  font-size: 30px;
+}
+
+/* font-size-размер шрифта */
+
+.italic {
+  font-style: italic;
+}
+
+/* :normal-вернет текст в нормальное состояние
+    oblic-наклонное начертание */
+
+.fontweight {
+  font-weight: 700;
+}
+
+/* жирность шрифта.  норм-400 */
+
+.color {
+  color: blue;
+}
+
+.align {
+  text-align: center;
+  /*положение текста  text-align: right; */
+
+}
+
+.justify {
+  text-align: justify;
+}
+
+/* выравн по ширине-растягивание */
+
+.decoration {
+  text-decoration: underline;
+  /* text-decoration: overline;-линия над текстом */
+  /* text-decoration: line-through;-зачеркнутый */
+  /* text-decoration: none;-уберет */
+
+}
+
+.shadow {
+  text-shadow: 1px 1px 1px black;
+  /* : смещение по гориз-по вертик-размер размытия тени-цвет */
+}
+
+.transform {
+  text-transform: uppercase;
+}
+
+/* capitalize-первый символ каж слова б заглавным 
+заглавные- или строчные-lowercase  none*/
+
+.indent {
+  text-indent: 50px;
+}
+
+/* уст велич отступа первой строки */
+
+.letterspasing {
+  letter-spacing: 5px;
+}
+
+/* опр-ет интервал между символами */
+
+.wordspacing {
+  word-spacing: 10px;
+}
+
+/* опр-ет интервал между словами */
+
+.whitespace {
+  white-space: nowrap;
+}
+
+/* упр-ет св-ми пробелов между словами 
+nowrap-убирает переносы*/
+
+.lineheight {
+  line-height: 20px;
+}
+
+/* уст-ет межстрочный интервал текста */
+
+/* lesson3 */
+.example-block {
+  padding: 10px 20px 30px 5px;
+  /* верх справа внизу слева */
+  /* padding: 10px 20px 30px;---верх   справа и слева   снизу*/
+  /* padding: 10px 20px;--- сверху и снизу    справа и слева */
+  /* padding: 10px  --- со всех сторон */
+  /* не прим к строчным тегам
+  не м б отрицат */
+  margin: 10px 20px 30px 5px;
+  /* м б отрицат */
+  border: 1px solid black;
+}
+
+.width {
+  width: 700px;
+  /* только для блочных */
+  border: 1px solid black;
+}
+
+.max-width {
+  max-width: 500px;
+  border: 1px solid black;
+}
+
+/* мах ширина бл тегов (ограничитель ширины) */
+
+.min-width {
+  min-width: 400px;
+  border: 1px solid black;
+}
+
+/* ограничитель  шир-ув может уменьш нет*/
+
+.height-px {
+  height: 200px;
+  border: 1px solid black;
+}
+
+/* height не д на стр теги */
+
+.height {
+  height: 50%;
+  border: 1px solid black;
+}
+
+.max-height {
+  max-height: 20px;
+  border: 1px solid black;
+}
+
+.min-height {
+  min-height: 200px;
+  border: 1px solid black;
+}
+
+/* если доб больше текста-блок увеличится */
+
+.overflow-visible {
+  overflow: visible;
+  max-height: 50px;
+  border: 1px solid black;
+}
+
+/* отображение содержания бл эл-та */
+
+.overflow-hidden {
+  overflow: hidden;
+  max-height: 50px;
+  border: 1px solid black;
+}
+
+/* обрезает все что выходит за пределы блока */
+
+.overflow-scroll {
+  overflow: scroll;
+  max-height: 50px;
+  border: 1px solid black;
+}
+
+/* появляется скролл */
+
+.overflow-auto {
+  overflow: auto;
+  max-height: 50px;
+  border: 1px solid black;
+}
+
+/* под-ет полосы прокрутки только когда они нужны */
+
+.display-block {
+  display: block;
+  padding: 20px;
+  border: 1px solid black;
+}
+
+/* строчному тегу задаются св-ва блока */
+
+.display-inline {
+  display: inline;
+}
+
+/* блочный становится строчным */
+
+.display-inline-block {
+  display: inline-block;
+  padding: 20px;
+  width: 500px;
+  border: 1px solid black;
+}
+
+/* эл ост строчным-выстраивается в строку,
+но на него д-ет знач высоты ширины и отступов */
+
+.display-none {
+  display: none;
+  padding: 20px;
+  width: 500px;
+  border: 1px solid black;
+}
+
+/* временно удаляет эл-т из док-та
+его место не резервир ся */
+
+.img-width {
+  width: 100px;
+}
+
+.img-max-min {
+  width: 100%;
+  max-width: 900px;
+  min-width: 600px;
+}
+
+.img-height {
+  height: 50px;
+}
+
+.img-max-height {
+  max-height: 100px;
+}
+
+/* lesson 4 */
+
+.border {
+  margin: 0 0 30px 0;
+  border: 3px solid #000;
+}
+
+/*solid-непрер граница
+dotted- точками
+dashed-пунктирная */
+
+.border-top {
+  margin: 0 0 30px 0;
+  border-top: 3px dashed red;
+}
+
+.border-none {
+  margin: 0 0 30px 0;
+  border: 3px dotted red;
+  border-top: none;
+}
+
+.border-radius {
+  width: 400px;
+  margin: 0 0 30px 30px;
+  padding: 10px;
+  border: 3px dotted red;
+  border-radius: 30px 0px 30px 0;
+}
+
+.radius {
+  overflow: hidden;
+  width: 100px;
+  height: 100px;
+  border: 3px dotted red;
+  border-radius: 50%;
+  margin: 0 0 30px 30px;
+}
+
+.outline {
+  outline: 3px solid red;
+  margin: 30px;
+}
+
+/* внешняя граница блока
+уст-ет линию вокруг всего блока на ВНЕШНЕМ пр-ве от блока
+его нельзя ук для одной из сторон
+order-radius не действует*/
+
+.outline-string {
+  outline: 3px solid black;
+}
+
+/* для строчных-огибает текст */
+
+.box-shadow {
+  width: 400px;
+  box-shadow: 5px 5px 10px 5px black;
+  margin: 30px;
+  padding: 10px;
+  border-radius: 30px;
+}
+
+/* тень к блоку : 
+сдвиг по гориз-по вертик-радиус тени-расстояние тени-цвет*/
+
+.shadow-inset {
+  width: 400px;
+  box-shadow: 5px 5px 10px 5px black, inset 3px 3px 10px 5px rgb(227, 193, 193);
+  margin: 30px;
+  padding: 10px;
+}
+
+/* м указать неск теней
+insert-внутр тень */
+
+.opacity {
+  width: 400px;
+  margin: 30px;
+  padding: 10px;
+  opacity: 0.2;
+}
+
+/* ур прозрачности бл или строч эл-та -от 0 до 1
+0-полная прозрачность*/
+
+.visibility {
+  width: 400px;
+  margin: 30px;
+  padding: 10px;
+  visibility: hidden;
+}
+
+/* для отобр или скрытия блочного или строчного
+visible-по ум  hidden-скрытый но место сохр-ся*/
+
+.ex-img {
+  border: 5px dotted #000;
+}
+
+.img {
+  max-width: 300px;
+  margin: 30px;
+  overflow: hidden;
+  border-radius: 50px;
+}
+
+
+/* lesson 5 */
+
+.lesson5 {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  padding: 30px;
+}
+
+.b-color {
+  background-color: rgba(211, 180, 209, 0.2);
+  margin: 20px;
+  height: 300px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px black;
+}
+
+.b-img {
+  background: url('../img/avatar.jpg');
+  margin: 20px;
+  height: 300px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px black;
+}
+
+.img-repeat {
+  background: url('../img/bg_repeat.jpg');
+  margin: 20px;
+  height: 300px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px black;
+}
+
+/* картинка вырезанная опр-м образом */
+
+.gradient {
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f5f6f6+0,dad9dd+45,b8bac6+100,f5f6f6+100,b8bac6+100 */
+  background: rgb(245, 246, 246);
+  /* Old browsers */
+  background: -moz-linear-gradient(top, rgba(245, 246, 246, 1) 0%, rgba(218, 217, 221, 1) 45%, rgba(184, 186, 198, 1) 100%, rgba(245, 246, 246, 1) 100%, rgba(184, 186, 198, 1) 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(245, 246, 246, 1) 0%, rgba(218, 217, 221, 1) 45%, rgba(184, 186, 198, 1) 100%, rgba(245, 246, 246, 1) 100%, rgba(184, 186, 198, 1) 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(245, 246, 246, 1) 0%, rgba(218, 217, 221, 1) 45%, rgba(184, 186, 198, 1) 100%, rgba(245, 246, 246, 1) 100%, rgba(184, 186, 198, 1) 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f5f6f6', endColorstr='#b8bac6', GradientType=0);
+  /* IE6-9 */
+  margin: 20px;
+  height: 300px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px black;
+}
+
+.gradient-radial {
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#b5bdc8+0,828c95+50,28343b+100 */
+  background: rgb(181, 189, 200);
+  /* Old browsers */
+  background: -moz-radial-gradient(center, ellipse cover, rgba(181, 189, 200, 1) 0%, rgba(130, 140, 149, 1) 50%, rgba(40, 52, 59, 1) 100%);
+  /* FF3.6-15 */
+  background: -webkit-radial-gradient(center, ellipse cover, rgba(181, 189, 200, 1) 0%, rgba(130, 140, 149, 1) 50%, rgba(40, 52, 59, 1) 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: radial-gradient(ellipse at center, rgba(181, 189, 200, 1) 0%, rgba(130, 140, 149, 1) 50%, rgba(40, 52, 59, 1) 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#b5bdc8', endColorstr='#28343b', GradientType=1);
+  /* IE6-9 fallback on horizontal gradient */
+  margin: 20px;
+  height: 300px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px black;
+}
+
+.no-repeat {
+  background: url('../img/avatar.jpg') no-repeat;
+  margin: 20px;
+  height: 300px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px black;
+}
+
+/* repeat-x
+repeat-y */
+
+.repeat-space {
+  background: url('../img/avatar.jpg') round;
+  margin: 20px;
+  height: 300px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px black;
+}
+
+/* space-из-е повтор ст раз чт полностью заполнить область,
+создает отступы между картинками
+round- то же но без отступов-растягивает из-е*/
+
+.position {
+  background-image: url('../img/avatar_3.jpg');
+  background-repeat: no-repeat;
+  background-position: top right;
+  margin: 20px;
+  height: 300px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px black;
+}
+
+/* позиция картинки в блоке */
+
+.attachment {
+  background: url('../img/bg.jpg') center no-repeat fixed;
+  margin: 20px;
+  height: 300px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px black;
+}
+
+/* scroll-перем вместе с окном-по умолч
+fixed-фон из-е неподвижно при скролле окна
+local-с учетом поведения эл-та */
+
+.size {
+  background-image: url('../img/bg.jpg');
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  margin: 20px;
+  height: 300px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px black;
+}
+
+.size-cover {
+  background-image: url('../img/bg.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 20px;
+  height: 300px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px black;
+}
+
+/* -!-если cover и позиция center=при сжатии окна бр
+картинка подстраивается под ширину! */
+
+.img-too {
+  background: url('../img/avatar_3.jpg') left no-repeat,
+    url('../img/bg.jpg') 50%/cover no-repeat;
+  margin: 20px;
+  height: 300px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px black;
+}
+
+.img-toocolor {
+  background-color: rgb(222, 182, 182);
+  background-image: url('../img/avatar_3.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 20px;
+  height: 300px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px black;
+}
+
+.list {
+  margin: 0 0 50px 0;
+}
+
+.list li {
+  font-size: 24px;
+  margin: 0 0 15px 0;
+  background: url('../img/icons/li.svg') left 5px no-repeat;
+  padding: 0 0 0 25px;
+}
+
+
+
+/* lesson6 */
+
+.lesson6 {
+  padding: 30px;
+}
+
+.block5 {
+  margin: 0 0 30px 0;
+}
+
+.block5 p:nth-child(odd) {
+  background-color: rgb(232, 232, 175);
+}
+
+.block5 p:nth-child(even) {
+  background-color: rgb(238, 226, 233);
+}
+
+.block5 p:nth-child(3):hover {
+  background-color: rgb(226, 238, 226);
+}
+
+.block5:hover {
+  background: rgb(218, 218, 223);
+}
+
+.block5 p {
+  font-style: 18px;
+  line-height: 24px;
+  margin: 0 0 20px 0;
+}
+
+.block5 p:last-child {
+  text-transform: uppercase;
+}
+
+/* если после последнего эл добавить еще какой-то эл напр
+<div class="block">text</div> то last-child перстанет дей-ть!! */
+
+.link5 {
+  color: red;
+}
+
+
+.link5:visited {
+  color: green;
+}
+
+.link5:hover {
+  text-decoration: underline;
+  color: blue;
+}
+
+.link5:active {
+  color: yellow;
+}
+
+
+
+
+.textinput5 {
+  border: 1px solid #666;
+  height: 50px;
+  padding: 0 15px;
+  font-style: 18px;
+  width: 300px;
+  margin: 0 0 10px 0;
+}
+
+.textinput5:focus {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+
+.textbutton5 {
+  display: block;
+  width: 300px;
+  height: 50px;
+  background-color: #666;
+  color: #fff;
+  text-transform: uppercase;
+  margin: 0 0 30px 0;
+}
+
+.textbutton5:hover {
+  background-color: #333;
+  color: aqua;
+}
+
+.textbutton5:active {
+  background-color: #eee;
+}
+
+.list5 li {
+  font-style: 18px;
+  margin: 0 0 15px 0;
+}
+
+.list5 li:first-child {
+  color: green;
+}
+
+.list5 li:last-child {
+  color: rgb(106, 0, 255);
+  font-size: 700;
+}
+
+.list5 li:nth-child(3) {
+  color: rgb(245, 80, 176);
+}
+
+.list5 li:nth-child(odd) {
+  text-transform: uppercase;
+}
+
+/* ко ксем нечетным эл */
+
+.list5 li:nth-child(even) {
+  text-decoration: line-through;
+}
+
+/* ко ксем четным эл */
+
+
+
+/* lesson7  before,
+ after*/
+
+.lesson7 {
+  padding: 30px;
+}
+
+.text7 {
+  font-style: 24px;
+  line-height: 33px;
+  margin: 0 0 30px 0;
+}
+
+.text7:first-line {
+  color: rgb(117, 236, 117);
+}
+
+.text7::first-letter {
+  color: rgb(243, 171, 16);
+  font-size: 50px;
+}
+
+.list7 li {
+  font-style: 24px;
+  margin: 0 0 20px 0;
+
+}
+
+.list7 li:before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: red;
+  display: inline-block;
+  margin: 0 5px 0 0;
+}
+
+.list7 li:after {
+  content: url('../img/icons/li.svg');
+  margin: 0 0 0 5px;
+}
+
+.list7 li:hover:before {
+  background-color: yellow;
+}
+
+
+/* Lesson8 position */
+
+.lesson8 {
+  padding: 30px;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.block8 {
+  border: 5px solid red;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.block8 div {
+  line-height: 50px;
+  font-style: 18px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.block8_1 {
+  background-color: rgb(244, 244, 179);
+}
+
+.block8_2 {
+  background-color: rgb(242, 184, 223);
+  position: relative;
+  left: 60px;
+  top: 30px;
+}
+
+.block8_3 {
+  background-color: rgb(190, 219, 230);
+  position: relative;
+  z-index: 2;
+}
+
+.block-abs {
+  border: 5px solid red;
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.block-abs div {
+  line-height: 50px;
+  font-style: 18px;
+  font-weight: 700;
+  text-align: center;
+}
+
+
+.block8_4 {
+  background-color: rgb(244, 244, 138);
+}
+
+.block8_5 {
+  background-color: rgb(248, 158, 218);
+  position: absolute;
+  top: 30px;
+  left: 0;
+  width: 30%;
+}
+
+.block8_6 {
+  background-color: rgb(148, 215, 241);
+  position: relative;
+  z-index: 2;
+}
+
+.block-fixed {
+  border: 5px solid red;
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.block-fixed div {
+  line-height: 50px;
+  font-style: 18px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.block8_7 {
+  background-color: rgb(210, 193, 233);
+}
+
+.block8_8 {
+  background-color: rgb(158, 248, 188);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 30%;
+}
+
+.block8_9 {
+  background-color: rgb(241, 157, 148);
+}
+
+
+
+.block-sticky {
+  border: 5px solid red;
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.block-sticky div {
+  line-height: 50px;
+  font-style: 18px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.block8_10 {
+  background-color: rgb(185, 153, 227);
+}
+
+.block8_11 {
+  background-color: rgb(114, 248, 159);
+  position: sticky;
+  top: 0;
+
+}
+
+.block8_12 {
+  background-color: rgb(238, 136, 125);
+}
+
+.block8_13 {
+  background-color: rgb(185, 153, 227);
+  position: sticky;
+  top: 0;
+}
+
+
+.list8 {
+  font-size: 18px;
+}
+
+.list8 li {
+  margin: 0px 0px 10px 0px;
+  position: relative;
+  padding: 0px 0px 0px 25px;
+
+}
+
+.list8 li::before {
+  content: '';
+  background: url('../img/icons/li.svg') 0 0 no-repeat;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 3px;
+  left: 0;
+
+}
+
+
+
+
+
+
+
+
 .background {
   background: url("../img/1641317373_1-abrakadabra-fun-p-klyaksa-kraski-png-2.jpg");
 }
@@ -426,22 +1306,6 @@ input[type=number] {
     -o-transform: translate3d(-50%, -96%, 0) rotate(360deg) scale(1);
   }
 }
-@-webkit-keyframes waves {
-  0% {
-    transform: translate3d(-50%, -96%, 0) rotate(0deg) scale(1);
-    -moz-transform: translate3d(-50%, -96%, 0) rotate(0deg) scale(1);
-    -ms-transform: translate3d(-50%, -96%, 0) rotate(0deg) scale(1);
-    -webkit-transform: translate3d(-50%, -96%, 0) rotate(0deg) scale(1);
-    -o-transform: translate3d(-50%, -96%, 0) rotate(0deg) scale(1);
-  }
-  100% {
-    transform: translate3d(-50%, -96%, 0) rotate(360deg) scale(1);
-    -moz-transform: translate3d(-50%, -96%, 0) rotate(360deg) scale(1);
-    -ms-transform: translate3d(-50%, -96%, 0) rotate(360deg) scale(1);
-    -webkit-transform: translate3d(-50%, -96%, 0) rotate(360deg) scale(1);
-    -o-transform: translate3d(-50%, -96%, 0) rotate(360deg) scale(1);
-  }
-}
 .example {
   display: flex;
   flex-direction: column;
@@ -468,3 +1332,7 @@ input[type=number] {
   color: #1e1e1e;
   font-weight: bold;
 }
+
+
+
+
