@@ -33,6 +33,80 @@ text-align: center;
 font-size: 20px;
 }
 
-// .btn_dark {
-//   background-color: #d43a3a;
-// }
+.button-jquery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70px;
+  width: 300px;
+  background-color: #8d8787;
+  margin: 0 auto;
+  span {
+      font-size: 30px;
+      color: #fff;
+    }
+}
+
+
+
+
+//--example-jquery
+
+ .example-jquery button {
+  width: 100px;
+  height: 40px;
+  margin-right: 50px;
+}
+
+.example-jquery .list {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+}
+
+.example-jquery .list-item {
+  display: block;
+  border-radius: 4px;
+  width: 150px;
+  height: 50px;
+  transition: 1s;
+  border: 1px solid navy;
+  font-size: 20px;
+}
+
+.jquery-active {
+  background-color: #806acb;
+  font-size: 30px;
+  width: 200px;
+  height: 80px;
+}
+
+.example-jquery .wrapper {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.example-jquery img {
+  height: 300px;
+}
+
+
+
+//--example--animation------
+
+.animation button {
+  display: block;
+  width: 100px;
+  height: 50px;
+}
+
+.animation img {
+  margin: 40px 0;
+  max-width: 300px;
+}
+
+

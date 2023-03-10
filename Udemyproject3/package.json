@@ -16,16 +16,29 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "browserslist": [
+    "> 1%"
+  ],
   "devDependencies": {
+    "@babel/cli": "7.21.0",
+    "@babel/core": "7.21.0",
+    "@babel/preset-env": "7.20.2",
+    "babel-loader": "9.1.2",
     "concurrently": "7.3.0",
+    "core-js": "3.29.0",
     "eslint": "8.31.0",
     "eslint-config-airbnb-base": "15.0.0",
     "eslint-plugin-import": "2.26.0",
     "json-server": "0.17.2",
-    "live-server": "1.2.2",
-    "node-sass": "6.0.1",
+    "live-server": "1.1.0",
+    "node-sass": "8.0.0",
     "rimraf": "3.0.2",
     "webpack": "5.75.0",
     "webpack-cli": "5.0.1"
+  },
+  "dependencies": {
+    "es6-promise": "4.2.8",
+    "jquery": "3.6.3",
+    "tiny-slider": "2.9.4"
   }
 }

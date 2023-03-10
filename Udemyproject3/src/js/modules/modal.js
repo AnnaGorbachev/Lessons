@@ -16,7 +16,7 @@ function openModal(modalSelector, modalTimerId) {
   document.body.style.overflow = 'hidden';//чт стр не прокруч при открытом modal
   //если польз-ль уже открывал сам мод окно то не откр его через время автом-ки
 
-  console.log(modalTimerId);
+  //console.log(modalTimerId);
   if (modalTimerId) {
     clearInterval(modalTimerId);
   }
