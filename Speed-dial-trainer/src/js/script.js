@@ -1,49 +1,86 @@
 
+//скролл
+//кнопка очистить все
+//
+
+
 "use strict";
 
 const wordByInput = document.querySelector('#words__text');
-const wordToOutput = document.querySelector('#output');
+const wordsToOutput = document.querySelector('#output');
 const buttonStart = document.querySelector('#start');
 const trainingText = document.querySelector('#training__text');
 
-wordByInput.addEventListener('keydown', setWords);
+wordByInput.addEventListener('keydown', setToTraining);
 buttonStart.addEventListener('click', setArrOfWords);
-
 let arrWords = [];
 
-function setWords() {
+if (localStorage.getItem('words')) {
+  let arrWordsLocal = JSON.parse(localStorage.getItem('words'));
+
+  arrWordsLocal.forEach(element => {
+    setToOutput(wordsToOutput, element)
+  });
+}
+
+
+function setToOutput(arr, element) {
+
+  let divWorld = document.createElement('div');
+  divWorld.classList.add('container-word');
+  divWorld.innerHTML += `<div class="delete"></div>${element}<br>`;
+  arr.append(divWorld);
+
+  arrWords.push(element);
+}
+
+
+function setToTraining() {
   if (event.code == 'Enter') {
-
     let val = wordByInput.value;
+
     if (val) {
-      wordToOutput.innerHTML += `${val}<div class="delete"></div><br>`;
-      arrWords.push(val);
+      setToOutput(wordsToOutput, val)
+      setToLocalStorage(arrWords);
     }
-
-
-    // const trash = document.createElement('div');
-    // trash.classList.add('delete');
-
-
     wordByInput.value = '';
   }
 }
 
+
+function deleteToTrash() {
+
+  wordsToOutput.addEventListener('click', (event) => {
+    event.stopPropagation();
+
+    if (event.target && event.target.matches('.delete')) {
+      event.target.parentNode.remove();
+    }
+  })
+
+}
+deleteToTrash();
+
+
 function setArrOfWords() {
   let result = [];
-  for (let i = 0; i < 3; i++) {
+  for (let i = 0; i < 7; i++) {
     let randomElement = getrandomElement(arrWords);
     result.push(randomElement);
   }
   trainingText.innerHTML = result;
 }
 
+
+
 function getrandomElement(arr) {
   return arr[Math.floor(Math.random() * arr.length)];
 }
 
-
-
+function setToLocalStorage(obj) {
+  const objToJson = JSON.stringify(obj);
+  localStorage.setItem('words', objToJson);
+}
 
 
 

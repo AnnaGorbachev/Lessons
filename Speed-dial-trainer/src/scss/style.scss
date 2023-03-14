@@ -6,25 +6,24 @@ body {
 }
 
 header {
- 
+ height: 150px;
+background-color: #ffffff;
 }
 
-// &:hover {
+// // &:hover {
   .delete {
     content: '';
-    display: block;
-    // position: absolute;
-    right: 0px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 20px;
-    height: 20px;
-    background: url('../img/trash.png') center (center / cover) no-repeat;
+    display: inline-block;
+    opacity: 0.7;
+    margin: 2px 15px 0px 3px;
+    width: 18px;
+    height: 18px;
+    background: url('../img/icons8-мусорная-корзина-48\ \(1\).png') center (center / cover) no-repeat;
     cursor: pointer;
   }
 
 .container {
-  background-color: #f6f1f4;
+  background-color: #f7f3f7;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -40,8 +39,8 @@ header {
   width: 340px;
   min-height: 60px;
   font-size: 20px;
-  border-radius: 5px;
-  border: 2px solid rgb(138, 133, 133);
+  border-radius: 15px;
+  border: 2px solid #eee8e8;
   box-shadow: 4px 4px 10px #cbc3c3;
 }
 
@@ -59,14 +58,34 @@ header {
 }
 
 #output {
-  border: 2px solid rgb(138, 133, 133);
+  border: 2px solid #eee8e8;
   width: 340px;
-  min-height: 60px;
-  font-size: 20px;
+  height: 250px;
+  font-size: 23px;
   padding: 10px 0px 10px 15px;
-  border-radius: 5px;
+  border-radius: 15px;
   box-shadow: 4px 4px 10px #cbc3c3;
   background-color: #fff;
+  overflow: auto;
+}
+
+.scroll::-webkit-scrollbar {
+  width: 18px;// ширина для вертикального скролла
+  height: 8px;// высота для горизонтального скролла
+  //background-color: #f7e9fb;
+}
+
+.scroll::-webkit-scrollbar-thumb {//Задает цвет и радиус скругления трэка
+  background-color: #917c94;
+  border-radius: 12px;
+}
+
+.scroll::-webkit-scrollbar-track {//Задает для трэка скругление краев
+  //border-radius: 7px;
+}
+
+.scroll:hover::-webkit-scrollbar-thumb {//При наведении на блок меняет цвет трэка
+  background-color: #77447f;
 }
 
 .training {
@@ -80,7 +99,7 @@ header {
 #start {
   display: block;
   margin: 0 auto;
-  border: 2px solid rgb(138, 133, 133);
+  border: 2px solid #eee8e8;
   width: 150px;
   height: 50px;
   border-radius: 23px;
@@ -114,8 +133,8 @@ header {
   width: 940px;
   min-height: 60px;
   font-size: 20px;
-  border-radius: 5px;
-  border: 2px solid rgb(138, 133, 133);
+  border-radius: 15px;
+  border: 2px solid #eee8e8;
   box-shadow: 4px 4px 10px #cbc3c3;
 }
 
