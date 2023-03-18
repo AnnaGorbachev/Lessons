@@ -33,11 +33,6 @@ function modal(triggerSelector, modalSelector, modalTimerId) {
     btn.addEventListener('click', () => openModal(modalSelector, modalTimerId));
   });
 
-
-
-
-  //modalClosedBtn.addEventListener('click', closeModal);
-
   //если клик на подложку или крестик то мод окно закрывается
   modal.addEventListener('click', (e) => {
     if (e.target === modal || e.target.getAttribute('data-close') == '') {

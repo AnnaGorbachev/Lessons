@@ -32,16 +32,6 @@
 
 // const arr = [5, 3, 8, 1];
 
-// function filterRange(arr, a, b) {
-//     return arr.filter(item => (item >= a && item <= b));
-// }
-
-// console.log(filterRange(arr, 1, 4));
-// console.log(arr);
-// -------[3, 1]---[5, 3, 8, 1]--------------
-
-// const arr = [5, 3, 8, 1];
-
 // function filterRangeInPlace(arr, a, b) {
 //     for (let i = 0; i < arr.length; i++) {
 //         if (arr[i] < a || arr[i] > b) {
@@ -72,9 +62,6 @@
 // console.log(result);
 // console.log(arr);
 // -----не меняет массив---[8, 5, 2, 1, -10]----[5, 2, 1, -10, 8]------
-
-
-
 
 
 
@@ -767,7 +754,7 @@ const elemsSix = document.querySelectorAll('.lesson_list .lesson_text');
 // Поиск по ID
 const elemsSeven = document.querySelectorAll('#listItem');
 
-// Поиск по атрибутуr
+// Поиск по атрибуту
 const elemsEight = document.querySelectorAll('[data-item]');
 
 // Поиск по атрибуту со значением
@@ -801,7 +788,7 @@ const elemId = document.getElementById('listItem');
 // Передав '*' вместо тега-получим всехпотомков
 const elemTag = document.getElementsByTagName('li');
 // По классу
-const elemKlass = document.getElementsByClassName('lesson_item-list');
+const elemClass = document.getElementsByClassName('lesson_item-list');
 // По name-редко
 const elemName = document.getElementsByName('list');
 
@@ -814,7 +801,7 @@ elemM[0].closest('.wrapper');
 
 //Метод matches--проверяет есть ли эл-т css -true  false 
 const elemM = document.querySelectorAll('.lesson_item-list');
-elemM.forEach(el => {
+elemM.forEach(elem => {
   if (elem.matches('[class$="item-red"]')) console.log('red');
 })
 // или
@@ -847,7 +834,7 @@ textElement.innerHTML = `<p>${textElementContent}</p> <p>'jhgjhgjhgm'</p>`;
 
 
 //Управление текстом эл-та с пом textContent-получаем только текст без тегов
-// или с тегами если они есть в самлм тексте
+// или с тегами если они есть в самом тексте
 const textElementContent2 = textElement.textContent;
 console.log(textElementContent2);
 
@@ -865,14 +852,13 @@ console.log(getComment.data);
 // ----------Создание нового эл-та--тега------
 
 const newElement = document.createElement('div');
-console.log(newElement);
+
 // Наполняем новый эл-т
 newElement.innerHTML = 'gsjg <span class="yellow">hgvjgmhh</span>fdfsdfgsf';
-console.log(newElement);
 
 // Создание нового узла
 const newText = document.createTextNode('Hello!');
-console.log(newText);
+
 // Созд-е об-ты нах-ся в константах но не явл частью документа
 
 // --------Вставляем новый элемент----
@@ -1091,7 +1077,7 @@ button.removeEventListener("mouseenter", showConsole);
 
 //-ВСПЛЫТИЕ И ПОГРУЖЕНИЕ
 //Чтобы остановыть всплытие
-event.stopPropagation()
+ev.stopPropagation()
 
 "capture": false,//-фаза на кот д ср-ть обр-к--чт отловить погружение
 
@@ -1109,15 +1095,19 @@ buttons.forEach(buttonItem => {
 const btns = document.querySelectorAll('button'),
   wrapper = document.querySelector('.btn__block');
 
-
-
 wrapper.addEventListener('click', (event) => {
   if (event.target && event.target.tagName == "BUTTON") { console.log('hello'); }
   //или так
   if (event.target && event.target.classList.closest('blue')) { console.log('hello'); }
+  //
+  if (event.target && event.target.classList.contains('blue')) { console.log('hello'); }
   //matches()  -какой-то эл совпадает с чем-то
   if (event.target && event.target.matches('button.red')) { console.log('hello'); }
+  //
+  if (event.target.nodeName != 'li') return;
 })
+
+
 
 
 // Действия бр-ра по ум и их отмена

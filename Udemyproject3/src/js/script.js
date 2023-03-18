@@ -195,4 +195,57 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 
+  const promisify = (item, delay) =>
+    new Promise(resolve => setTimeout(() => resolve(item), delay));
+
+  const a = () => promisify('a', 1000);
+  const b = () => promisify('b', 2000);
+  const c = () => promisify('c', 3000);
+
+  // function fn() {
+  //   const res = [];
+  //  return a().then((resA) => {
+  //     res.push(resA);
+  //     return b();
+  //   }).then((resB) => {
+  //     res.push(resB);
+  //     return c();
+  //   }).then ((resC)=> {
+  //     res.push(resC);
+  //     return res;
+  //   })
+  // }
+  // async function fn() {
+  //   const resA = await a();
+  //   const resB = await b();
+  //   const resC = await c();
+  //   return [resA, resB, resC];
+  // }
+
+  // async function fn() {
+  //   const arr = [a, b, c];
+  //   const res = [];
+
+  //   for (const func of arr) {
+  //     res.push(await func());
+  //   }
+
+  //   return res;
+  // }
+  function fn() {
+    const arr = [a, b, c];
+    const res = [];
+
+    let promise = Promise.resolve();
+
+    for (const func of arr) {
+      promise = promise.then(() => {
+        return func().then((r) => res.push(r))
+      });
+    }
+
+    return promise.then(() => res);
+  }
+
+  fn().then(console.log);
 })
